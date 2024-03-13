@@ -48,7 +48,7 @@ namespace wan24.I8NKws
         /// <summary>
         /// Keywords
         /// </summary>
-        public HashSet<KwsKeyword> Keywords { get; } = [];
+        public HashSet<KwsKeyword> Keywords { get; init; } = [];
 
         /// <summary>
         /// Validate the catalog

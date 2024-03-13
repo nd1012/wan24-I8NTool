@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using wan24.Core;
 
 namespace wan24.I8NKws
 {
@@ -8,6 +9,11 @@ namespace wan24.I8NKws
     /// </summary>
     public sealed record class KwsKeyword
     {
+        /// <summary>
+        /// ID literal
+        /// </summary>
+        private string? _IdLiteral = null;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -28,6 +34,11 @@ namespace wan24.I8NKws
         /// </summary>
         [MinLength(1)]
         public string ID { get; private set; } = null!;
+
+        /// <summary>
+        /// ID literal
+        /// </summary>
+        public string IdLiteral => _IdLiteral ??= ID.ToLiteral();
 
         /// <summary>
         /// Previous IDs (extended when the ID is being updated; last entry was the latest ID)
@@ -78,15 +89,20 @@ namespace wan24.I8NKws
         /// <summary>
         /// Translations
         /// </summary>
-        public List<string> Translations { get; } = [];
+        public List<string> Translations { get; init; } = [];
 
         /// <summary>
         /// Source references
         /// </summary>
-        public HashSet<string> SourceReferences { get; } = [];
+        public HashSet<KwsSourceReference> SourceReferences { get; init; } = [];
 
         /// <summary>
-        /// Update the ID
+        /// Previous source references (if fuzzy logicwas used to update the ID)
+        /// </summary>
+        public HashSet<KwsSourceReference> PreviousSourceReferences { get; init; } = [];
+
+        /// <summary>
+        /// Update the ID (source references will be moved to <see cref="PreviousSourceReferences"/>)
         /// </summary>
         /// <param name="newId">New ID</param>
         public void UpdateId(in string newId)
@@ -98,6 +114,9 @@ namespace wan24.I8NKws
             ID = newId;
             PreviousIds.Remove(oldId);
             PreviousIds.Add(oldId);
+            PreviousSourceReferences.Clear();
+            PreviousSourceReferences.AddRange(SourceReferences);
+            SourceReferences.Clear();
         }
 
         /// <summary>
@@ -107,16 +126,20 @@ namespace wan24.I8NKws
         public void UndoIdUpdate(string? id = null)
         {
             if (Obsolete || PreviousIds.Count == 0) throw new InvalidOperationException();
-            if (id is null)
+            bool lastId = id is null;
+            if (lastId)
             {
                 id = PreviousIds.Last();
             }
-            else if (!PreviousIds.Contains(id))
+            else if (!PreviousIds.Contains(id!))
             {
                 throw new ArgumentException("Unknown previous ID", nameof(id));
             }
-            ID = id;
+            ID = id!;
             PreviousIds = [.. PreviousIds.SkipWhile(pid => pid != id).Skip(1)];
+            SourceReferences.Clear();
+            SourceReferences.AddRange(PreviousSourceReferences);
+            PreviousSourceReferences.Clear();
         }
     }
 }
