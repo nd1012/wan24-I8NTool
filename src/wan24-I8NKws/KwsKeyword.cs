@@ -84,7 +84,7 @@ namespace wan24.I8NKws
         /// If a translation is missing (no translation at all, or any empty translations)
         /// </summary>
         [JsonIgnore]
-        public bool TranslationMissing => Translations.Count == 0 || Translations.Any(t => t.Length == 0);
+        public bool TranslationMissing => Translations.Count == 0 || Translations.Any(string.IsNullOrWhiteSpace);
 
         /// <summary>
         /// Translations
