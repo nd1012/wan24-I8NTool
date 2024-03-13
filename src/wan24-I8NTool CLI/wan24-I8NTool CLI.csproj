@@ -14,7 +14,7 @@
     <Authors>nd1012</Authors>
     <Company>Andreas Zimmermann, wan24.de</Company>
     <Product>wan24-I8NTool</Product>
-    <Description>Poedit source code extractor</Description>
+    <Description>Source code keyword extractor for i8n</Description>
     <Copyright>(c)2024 Andreas Zimmermann, wan24.de</Copyright>
     <PackageProjectUrl>https://github.com/nd1012/wan24-I8NTool</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -51,6 +51,7 @@
     <ProjectReference Include="..\..\..\wan24-Core\src\Wan24-Core\Wan24-Core.csproj" Condition="'$(Configuration)' == 'Trunk'" />
     <ProjectReference Include="..\..\..\wan24-Compression\src\wan24-Compression\wan24-Compression.csproj" Condition="'$(Configuration)' == 'Trunk'" />
     <ProjectReference Include="..\..\..\Stream-Serializer-Extensions\src\Stream-Serializer-Extensions\Stream-Serializer-Extensions.csproj" Condition="'$(Configuration)' == 'Trunk'" />
+    <ProjectReference Include="..\wan24-I8NKws\wan24-I8NKws.csproj" />
   </ItemGroup>
 
   <ItemGroup>
