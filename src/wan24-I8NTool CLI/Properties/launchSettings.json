@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "wan24-I8NTool CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "help -details --api i8n"
+    }
+  }
+}

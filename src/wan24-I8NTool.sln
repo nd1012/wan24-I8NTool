@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34607.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wan24-I8NTool CLI", "wan24-I8NTool CLI\wan24-I8NTool CLI.csproj", "{FF5C3149-6065-42D9-8D2F-19FDBE786880}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wan24-Core", "..\..\wan24-Core\src\Wan24-Core\Wan24-Core.csproj", "{678C5419-4AA9-4C31-A890-69A28ACD6A19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectValidation", "..\..\ObjectValidation\src\ObjectValidation\ObjectValidation.csproj", "{8748D230-C618-4E22-A722-BEB920C70389}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wan24-CLI", "..\..\wan24-CLI\src\wan24-CLI\wan24-CLI.csproj", "{0FFA8130-B9DB-4180-8A1F-8FF1B8164B52}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream-Serializer-Extensions", "..\..\Stream-Serializer-Extensions\src\Stream-Serializer-Extensions\Stream-Serializer-Extensions.csproj", "{F66E00A7-18A5-40E2-9C07-5F47AE798071}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wan24-Compression", "..\..\wan24-Compression\src\wan24-Compression\wan24-Compression.csproj", "{6378E572-5858-4766-9D26-ADB0DF766BCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Trunk|Any CPU = Trunk|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF5C3149-6065-42D9-8D2F-19FDBE786880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5C3149-6065-42D9-8D2F-19FDBE786880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5C3149-6065-42D9-8D2F-19FDBE786880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5C3149-6065-42D9-8D2F-19FDBE786880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF5C3149-6065-42D9-8D2F-19FDBE786880}.Trunk|Any CPU.ActiveCfg = Trunk|Any CPU
+		{FF5C3149-6065-42D9-8D2F-19FDBE786880}.Trunk|Any CPU.Build.0 = Trunk|Any CPU
+		{678C5419-4AA9-4C31-A890-69A28ACD6A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678C5419-4AA9-4C31-A890-69A28ACD6A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678C5419-4AA9-4C31-A890-69A28ACD6A19}.Trunk|Any CPU.ActiveCfg = Trunk|Any CPU
+		{678C5419-4AA9-4C31-A890-69A28ACD6A19}.Trunk|Any CPU.Build.0 = Trunk|Any CPU
+		{8748D230-C618-4E22-A722-BEB920C70389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8748D230-C618-4E22-A722-BEB920C70389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8748D230-C618-4E22-A722-BEB920C70389}.Trunk|Any CPU.ActiveCfg = Trunk|Any CPU
+		{8748D230-C618-4E22-A722-BEB920C70389}.Trunk|Any CPU.Build.0 = Trunk|Any CPU
+		{0FFA8130-B9DB-4180-8A1F-8FF1B8164B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FFA8130-B9DB-4180-8A1F-8FF1B8164B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FFA8130-B9DB-4180-8A1F-8FF1B8164B52}.Trunk|Any CPU.ActiveCfg = Trunk|Any CPU
+		{0FFA8130-B9DB-4180-8A1F-8FF1B8164B52}.Trunk|Any CPU.Build.0 = Trunk|Any CPU
+		{F66E00A7-18A5-40E2-9C07-5F47AE798071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66E00A7-18A5-40E2-9C07-5F47AE798071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66E00A7-18A5-40E2-9C07-5F47AE798071}.Trunk|Any CPU.ActiveCfg = Trunk|Any CPU
+		{F66E00A7-18A5-40E2-9C07-5F47AE798071}.Trunk|Any CPU.Build.0 = Trunk|Any CPU
+		{6378E572-5858-4766-9D26-ADB0DF766BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6378E572-5858-4766-9D26-ADB0DF766BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6378E572-5858-4766-9D26-ADB0DF766BCC}.Trunk|Any CPU.ActiveCfg = Trunk|Any CPU
+		{6378E572-5858-4766-9D26-ADB0DF766BCC}.Trunk|Any CPU.Build.0 = Trunk|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B24CB513-C0A9-4B38-9DC2-50F7FC31BE2A}
+	EndGlobalSection
+EndGlobal

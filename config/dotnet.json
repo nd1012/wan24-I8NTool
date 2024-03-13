@@ -1,0 +1,67 @@
+{
+	"SingleThread": false,
+	"Encoding": "UTF-8",
+	"Patterns": [
+		[
+			"(Description|DisplayText)\\(\\s*\\\".*[^\\\\]\\\"\\s*\\)",
+			"None"
+		],
+		[
+			"^.*(Description|DisplayText)\\(\\s*(\\\".*[^\\\\]\\\")\\s*\\).*$",
+			"None",
+			"$2"
+		],
+		[
+			"(__?|gettextn?|Translate(Plural)?|GetTerm|StdIn|StdOut)\\(\\s*\\\".*[^\\\\]\\\"",
+			"None"
+		],
+		[
+			"^.*(__?|gettextn?|Translate(Plural)?|GetTerm|StdIn|StdOut)\\(\\s*(\\\".*[^\\\\]\\\").*$",
+			"None",
+			"$3"
+		],
+		[
+			"CliApi[^\\(]*\\([^\\)]*Example\\s*\\=\\s*\\\".*[^\\\\]\\\"",
+			"None"
+		],
+		[
+			"^.*CliApi[^\\(]*\\([^\\)]*Example\\s*\\=\\s*(\\\".*[^\\\\]\\\").*$",
+			"None",
+			"$1"
+		],
+		[
+			"ExitCode[^\\(]*\\(\\d+,\\s*\\\".*[^\\\\]\\\"",
+			"None"
+		],
+		[
+			"^.*ExitCode[^\\(]*\\(\\d+,\\s*(\\\".*[^\\\\]\\\").*$",
+			"None",
+			"$1"
+		],
+		[
+			"[^\\@\\$]\\\".*[^\\\\]\\\".*;.*\\/\\/.*wan24I8NTool\\:include",
+			"IgnoreCase"
+		],
+		[
+			"^.*[^\\@\\$](\\\".*[^\\\\]\\\").*;.*\\/\\/.*wan24I8NTool\\:include.*$",
+			"IgnoreCase",
+			"$1"
+		],
+		[
+			"^\\s*(\\\".*[^\\\\]\\\").+$",
+			"None",
+			"$1"
+		]
+	],
+	"FileExtensions": [
+		".cs",
+		".razor",
+		".cshtml",
+		".aspx",
+		".cake",
+		".vb"
+	],
+	"MergeOutput": false,
+	"FailOnError": false,
+	"Merge": false
+}

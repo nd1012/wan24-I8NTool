@@ -1,0 +1,36 @@
+{
+	"SingleThread": false,
+	"Encoding": "UTF-8",
+	"Patterns": [
+		[
+			"(__?|gettextn?)\\(\\s*\\\".*[^\\\\]\\\"",
+			"None"
+		],
+		[
+			"^.*(__?|gettextn?)\\(\\s*(\\\".*[^\\\\]\\\").*$",
+			"None",
+			"$3"
+		],
+		[
+			"\\\".*[^\\\\]\\\".*;.*(#|\\/\\/).*wan24I8NTool\\:include",
+			"IgnoreCase"
+		],
+		[
+			"^.*(\\\".*[^\\\\]\\\").*;.*(#|\\/\\/).*wan24I8NTool\\:include.*$",
+			"IgnoreCase",
+			"$1"
+		],
+		[
+			"^\\s*(\\\".*[^\\\\]\\\").+$",
+			"None",
+			"$1"
+		]
+	],
+	"FileExtensions": [
+		".php",
+		".phar"
+	],
+	"MergeOutput": false,
+	"FailOnError": false,
+	"Merge": false
+}
