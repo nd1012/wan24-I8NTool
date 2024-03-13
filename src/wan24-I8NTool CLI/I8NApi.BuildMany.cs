@@ -15,6 +15,8 @@ namespace wan24.I8NTool
         /// </summary>
         /// <param name="jsonInput">JSON input file (UTF-8) folder (no recursion)</param>
         /// <param name="jsonInputPattern">JSON input pattern</param>
+        /// <param name="kwsInput">wan24-I8NKws JSON input file (UTF-8) folder (no recursion)</param>
+        /// <param name="kwsInputPattern">wan24-I8NKws JSON input pattern</param>
         /// <param name="poInput">PO (gettext) input file folder (no recursion)</param>
         /// <param name="poInputPattern">PO input pattern</param>
         /// <param name="moInput">MO (gettext) input file folder (no recursion)</param>
@@ -27,7 +29,7 @@ namespace wan24.I8NTool
         /// <returns>Exit code</returns>
         [CliApi("buildmany", IsDefault = true)]
         [DisplayText("Build i8n files")]
-        [Description("Build many internationalization (i8n) files from JSON (UTF-8) or PO/MO (gettext) source files (output filename is the input filename with the \".i8n\" extension instead - existing files will be overwritten; default is to convert all *.json/po/mo files in the working folder)")]
+        [Description("Build many internationalization (i8n) files from (wan24-I8N) JSON (UTF-8) or PO/MO (gettext) source files (output filename is the input filename with the \".i8n\" extension instead - existing files will be overwritten; default is to convert all *.json/kws/po/mo files in the working folder)")]
         [ExitCode(0, "Ok")]
         [ExitCode(1, "Had errors")]
         public static async Task<int> BuildManyAsync(
@@ -41,6 +43,16 @@ namespace wan24.I8NTool
             [DisplayText("JSON input pattern")]
             [Description("JSON input pattern (default is \"*.json\")")]
             string jsonInputPattern = "*.json",
+
+            [CliApi(Example = "/path/to/sources")]
+            [DisplayText("wan24-I8NKws JSON input")]
+            [Description("wan24-I8NKws JSON input file (UTF-8) folder (no recursion; default is the working folder)")]
+            string kwsInput = "./",
+
+            [CliApi(Example = "*.kws")]
+            [DisplayText("wan24-I8NKws JSON input pattern")]
+            [Description("wan24-I8NKws JSON input pattern (default is \"*.kws\")")]
+            string kwsInputPattern = "*.kws",
 
             [CliApi(Example = "/path/to/sources")]
             [DisplayText("PO input")]
@@ -102,6 +114,7 @@ namespace wan24.I8NTool
             {
                 // Output the used final settings
                 WriteInfo($"JSON files: {Path.GetFullPath(jsonInput)}{(ENV.IsWindows ? '\\' : '/')}{jsonInputPattern}");
+                WriteInfo($"wan24-I8NKws JSON files: {Path.GetFullPath(kwsInput)}{(ENV.IsWindows ? '\\' : '/')}{kwsInputPattern}");
                 WriteInfo($"PO files: {Path.GetFullPath(poInput)}{(ENV.IsWindows ? '\\' : '/')}{poInputPattern}");
                 WriteInfo($"MO files: {Path.GetFullPath(moInput)}{(ENV.IsWindows ? '\\' : '/')}{moInputPattern}");
                 WriteInfo($"Header: {!noHeader}");
@@ -172,6 +185,52 @@ namespace wan24.I8NTool
                     else if(verbose)
                     {
                         WriteInfo($"No JSON files found for \"{Path.GetFullPath(jsonInput)}{(ENV.IsWindows ? '\\' : '/')}{jsonInputPattern}\"");
+                    }
+                }
+                // KWS files
+                if (Directory.Exists(kwsInput))
+                {
+                    IEnumerable<string> files = FsHelper.FindFiles(kwsInput, searchPattern: kwsInputPattern, recursive: false);
+                    if (files.Any())
+                    {
+                        foreach (string fn in files)
+                        {
+                            if (excluding.IsMatch(fn))
+                            {
+                                if (verbose) WriteInfo($"File \"{fn}\" was excluded");
+                                continue;
+                            }
+                            if (Trace) WriteTrace($"Waiting for a thread for processing \"{fn}\"");
+                            await sync.WaitAsync(cts.Token).DynamicContext();
+                            _ = ((Func<Task>)(async () =>
+                            {
+                                try
+                                {
+                                    if (Trace) WriteTrace($"Thread processing \"{fn}\"");
+                                    await BuildAsync(
+                                        kwsInput: [fn],
+                                        output: Path.Combine(kwsInput, $"{Path.GetFileNameWithoutExtension(fn)}.i8n"),
+                                        compress: compress,
+                                        noHeader: noHeader,
+                                        verbose: verbose,
+                                        cancellationToken: cts.Token
+                                        ).DynamicContext();
+                                }
+                                catch (Exception ex)
+                                {
+                                    HandleError(fn, ex);
+                                }
+                                finally
+                                {
+                                    if (Trace) WriteTrace($"Processing \"{fn}\" done - releasing thread");
+                                    sync.Release();
+                                }
+                            })).StartFairTask();
+                        }
+                    }
+                    else if (verbose)
+                    {
+                        WriteInfo($"No wan24-I8NKws JSON files found for \"{Path.GetFullPath(kwsInput)}{(ENV.IsWindows ? '\\' : '/')}{kwsInputPattern}\"");
                     }
                 }
                 // PO files

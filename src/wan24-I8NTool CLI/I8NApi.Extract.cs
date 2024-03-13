@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Reflection;
 using wan24.CLI;
 using wan24.Core;
+using wan24.I8NKws;
 using static wan24.Core.Logger;
 using static wan24.Core.Logging;
 
@@ -17,8 +18,10 @@ namespace wan24.I8NTool
         /// <param name="input">Internationalization input filename (if not given, STDIN will be used)</param>
         /// <param name="uncompress">To uncompress the internationalization file (not required to use, if a header will be red)</param>
         /// <param name="jsonOutput">JSON (UTF-8) output filename</param>
+        /// <param name="kwsOutput">wan24-I8NKws JSON (UTF-8) output filename</param>
         /// <param name="poOutput">PO (gettext) output filename</param>
         /// <param name="json">To write JSON (UTF-8) to STDOUT</param>
+        /// <param name="kws">To write wan24-I8NKws JSON (UTF-8) to STDOUT</param>
         /// <param name="po">To write PO (gettext) (UTF-8) to STDOUT</param>
         /// <param name="noHeader">To skip reading a header with the version number and the compression flag</param>
         /// <param name="verbose">Write verbose informations to STDERR</param>
@@ -44,6 +47,11 @@ namespace wan24.I8NTool
             [Description("JSON (UTF-8) output filename")]
             string? jsonOutput = null,
 
+            [CliApi(Example = "/path/to/output.kws")]
+            [DisplayText("wan24-I8NKws JSON output")]
+            [Description("wan24-I8NKws JSON (UTF-8) output filename")]
+            string? kwsOutput = null,
+
             [CliApi(Example = "/path/to/output.po")]
             [DisplayText("PO output")]
             [Description("PO (gettext) (UTF-8) output filename")]
@@ -53,6 +61,11 @@ namespace wan24.I8NTool
             [DisplayText("JSON")]
             [Description("To write JSON (UTF-8) to STDOUT")]
             bool json = false,
+
+            [CliApi]
+            [DisplayText("KWS")]
+            [Description("To write wan24-I8NKws JSON (UTF-8) to STDOUT")]
+            bool kws = false,
 
             [CliApi]
             [DisplayText("PO")]
@@ -74,7 +87,7 @@ namespace wan24.I8NTool
             verbose |= Trace;
             if (Trace) WriteTrace("Extracting internationalization file");
             if (json && po) throw new ArgumentException("Can't write JSON AND PO to STDOUT", nameof(po));
-            if (!json && !po && jsonOutput is null && poOutput is null) json = true;
+            if (!json && !kws && !po && jsonOutput is null && kwsOutput is null && poOutput is null) json = true;
             // Read internationalization input
             Stream inputStream = input is null
                 ? Console.OpenStandardInput()
@@ -88,6 +101,22 @@ namespace wan24.I8NTool
                 await using (fs.DynamicContext())
                     await JsonHelper.EncodeAsync(terms, fs, prettify: true).DynamicContext();
             }
+            // Write KWS output file
+            KwsCatalog? kwsCatalog = null;
+            if(kwsOutput is not null)
+            {
+                if (verbose) WriteInfo($"Writing wan24-I8NKws JSON to ouput file \"{kwsOutput}\"");
+                kwsCatalog = new KwsCatalog()
+                {
+                    Keywords = new(terms.Select(kvp => new KwsKeyword(kvp.Key)
+                    {
+                        Translations = [.. kvp.Value]
+                    }))
+                };
+                FileStream fs = FsHelper.CreateFileStream(kwsOutput, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None, overwrite: true);
+                await using (fs.DynamicContext())
+                    await JsonHelper.EncodeAsync(kwsCatalog, fs, prettify: true).DynamicContext();
+            }
             // Write JSON to STDOUT
             if (json)
             {
@@ -95,6 +124,21 @@ namespace wan24.I8NTool
                 Stream stdout = Console.OpenStandardOutput();
                 await using (stdout.DynamicContext())
                     await JsonHelper.EncodeAsync(terms, stdout, prettify: true).DynamicContext();
+            }
+            // Write KWS to STDOUT
+            if (kws)
+            {
+                if (verbose) WriteInfo($"Writing wan24-I8NKws JSON to STDOUT");
+                kwsCatalog ??= new KwsCatalog()
+                {
+                    Keywords = new(terms.Select(kvp => new KwsKeyword(kvp.Key)
+                    {
+                        Translations = [.. kvp.Value]
+                    }))
+                };
+                Stream stdout = Console.OpenStandardOutput();
+                await using (stdout.DynamicContext())
+                    await JsonHelper.EncodeAsync(kwsCatalog, stdout, prettify: true).DynamicContext();
             }
             // Generate PO in memory
             if (poOutput is null && !po)

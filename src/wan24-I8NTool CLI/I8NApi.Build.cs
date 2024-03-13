@@ -17,11 +17,13 @@ namespace wan24.I8NTool
         /// Build an internationalization file from multiple input sources
         /// </summary>
         /// <param name="jsonInput">JSON (UTF-8) input filenames</param>
+        /// <param name="kwsInput">wan24-I8NKws JSON (UTF-8) input filenames</param>
         /// <param name="poInput">PO (gettext) input filenames</param>
         /// <param name="moInput">MO (gettext) input filenames</param>
         /// <param name="output">Internationalization output filename (if not given, STDOUT will be used; existing file will be overwritten)</param>
         /// <param name="compress">To compress the internationalization file</param>
         /// <param name="json">To read JSON (UTF-8) from STDIN</param>
+        /// <param name="kws">To read wan24-I8NKws JSON (UTF-8) from STDIN</param>
         /// <param name="po">To read PO (gettext) from STDIN</param>
         /// <param name="mo">To read MO (gettext) from STDIN</param>
         /// <param name="noHeader">To skip writing a header with the version number and the compression flag</param>
@@ -39,6 +41,11 @@ namespace wan24.I8NTool
             [DisplayText("JSON input")]
             [Description("JSON (UTF-8) input filenames")]
             string[]? jsonInput = null,
+
+            [CliApi(Example = "/path/to/input.kws")]
+            [DisplayText("wan24-I8NKws JSON input")]
+            [Description("wan24-I8NKws JSON (UTF-8) input filenames")]
+            string[]? kwsInput = null,
 
             [CliApi(Example = "/path/to/input.po")]
             [DisplayText("PO input")]
@@ -66,6 +73,11 @@ namespace wan24.I8NTool
             bool json = false,
 
             [CliApi]
+            [DisplayText("wan24-I8NKws JSON")]
+            [Description("To read wan24-I8NKws JSON (UTF-8) from STDIN")]
+            bool kws = false,
+
+            [CliApi]
             [DisplayText("PO")]
             [Description("To read PO (gettext) from STDIN")]
             bool po = false,
@@ -91,13 +103,13 @@ namespace wan24.I8NTool
             bool failOnExistingKey = false,
 
             CancellationToken cancellationToken = default
-
             )
         {
             verbose |= Trace;
             if (Trace) WriteTrace($"Creating internationalization to {(output is null ? "STDOUT" : $"output file \"{output}\"")}");
             int stdInCnt = 0;
             if (json) stdInCnt++;
+            if (kws) stdInCnt++;
             if (po) stdInCnt++;
             if (mo) stdInCnt++;
             if (stdInCnt > 1)
@@ -114,6 +126,20 @@ namespace wan24.I8NTool
                         terms, 
                         failOnExistingKey, 
                         verbose, 
+                        cancellationToken
+                        ).DynamicContext();
+                }
+            // Read KWS source files
+            if (kwsInput is not null && kwsInput.Length > 0)
+                foreach (string fn in kwsInput)
+                {
+                    if (verbose) WriteInfo($"Processing wan24-I8NKws JSON source file \"{fn}\" for {(output is null ? "STDOUT" : $"output file \"{output}\"")}");
+                    await ReadJsonSourceAsync(//TODO
+                        FsHelper.CreateFileStream(fn, FileMode.Open, FileAccess.Read, FileShare.Read),
+                        fn,
+                        terms,
+                        failOnExistingKey,
+                        verbose,
                         cancellationToken
                         ).DynamicContext();
                 }
@@ -164,6 +190,12 @@ namespace wan24.I8NTool
             {
                 if (verbose) WriteInfo($"Processing JSON from STDIN for {(output is null ? "STDOUT" : $"output file \"{output}\"")}");
                 await ReadJsonSourceAsync(Console.OpenStandardInput(), fn: null, terms, failOnExistingKey, verbose, cancellationToken).DynamicContext();
+            }
+            // Read JSON from STDIN
+            if (kws)
+            {
+                if (verbose) WriteInfo($"Processing wan24-I8NKws JSON from STDIN for {(output is null ? "STDOUT" : $"output file \"{output}\"")}");
+                await ReadJsonSourceAsync(Console.OpenStandardInput(), fn: null, terms, failOnExistingKey, verbose, cancellationToken).DynamicContext();//TODO
             }
             // Read MO from STDIN
             if (mo)

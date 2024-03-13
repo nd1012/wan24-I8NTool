@@ -2,6 +2,7 @@
 using Karambolo.PO;
 using wan24.Compression;
 using wan24.Core;
+using wan24.I8NKws;
 using wan24.StreamSerializerExtensions;
 using static wan24.Core.Logger;
 using static wan24.Core.Logging;
@@ -61,6 +62,50 @@ namespace wan24.I8NTool
         }
 
         /// <summary>
+        /// Read a wan24-I8NKws JSON source
+        /// </summary>
+        /// <param name="source">Source (will be disposed)</param>
+        /// <param name="fn">Filename</param>
+        /// <param name="terms">Terms</param>
+        /// <param name="failOnExistingKey">To fail, if an existing key would be overwritten by an additional source</param>
+        /// <param name="verbose">Verbose</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        private static async Task ReadKwsSourceAsync(
+            Stream source,
+            string? fn,
+            Dictionary<string, string[]> terms,
+            bool failOnExistingKey,
+            bool verbose,
+            CancellationToken cancellationToken = default
+            )
+        {
+            int newTerms = 0,
+                overwrittenTerms = 0;
+            await using (source.DynamicContext())
+            {
+                KwsCatalog catalog = await JsonHelper.DecodeAsync<KwsCatalog>(source, cancellationToken).DynamicContext()
+                    ?? throw new InvalidDataException($"Failed to read wan24-I8NKws JSON from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
+                if (verbose) WriteInfo($"Found {catalog.Keywords.Count} terms");
+                foreach (KwsKeyword keyword in catalog.Keywords)
+                {
+                    if (terms.ContainsKey(keyword.ID))
+                    {
+                        if (failOnExistingKey)
+                            throw new InvalidDataException($"Won't overwrite existing key \"{keyword.IdLiteral}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
+                        if (Trace) WriteTrace($"Overwriting existing key \"{keyword.IdLiteral}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
+                        overwrittenTerms++;
+                    }
+                    else
+                    {
+                        newTerms++;
+                    }
+                    terms[keyword.ID] = [.. keyword.Translations];
+                }
+            }
+            if (verbose) WriteInfo($"Added {newTerms} new terms, {overwrittenTerms} overwritten from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
+        }
+
+        /// <summary>
         /// Read PO from a PO source
         /// </summary>
         /// <param name="source">Source (will be disposed)</param>
@@ -97,19 +142,19 @@ namespace wan24.I8NTool
                     switch (diag.Severity)
                     {
                         case DiagnosticSeverity.Unknown:
-                            WriteDebug($"PO parser code \"{diag.Code}\", arguments {diag.Args.Length}: {diag}");
+                            WriteDebug($"PO parser code \"{diag.Code}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}, arguments {diag.Args.Length}: {diag}");
                             break;
                         case DiagnosticSeverity.Information:
-                            WriteInfo($"PO parser information code \"{diag.Code}\", arguments {diag.Args.Length}: {diag}");
+                            WriteInfo($"PO parser information code \"{diag.Code}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}, arguments {diag.Args.Length}: {diag}");
                             break;
                         case DiagnosticSeverity.Warning:
-                            WriteWarning($"PO parser warning code \"{diag.Code}\", arguments {diag.Args.Length}: {diag}");
+                            WriteWarning($"PO parser warning code \"{diag.Code}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}, arguments {diag.Args.Length}: {diag}");
                             break;
                         case DiagnosticSeverity.Error:
-                            WriteError($"PO parser error code \"{diag.Code}\", arguments {diag.Args.Length}: {diag}");
+                            WriteError($"PO parser error code \"{diag.Code}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}, arguments {diag.Args.Length}: {diag}");
                             break;
                         default:
-                            WriteWarning($"PO parser {diag.Severity} code \"{diag.Code}\", arguments {diag.Args.Length}: {diag}");
+                            WriteWarning($"PO parser {diag.Severity} code \"{diag.Code}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}, arguments {diag.Args.Length}: {diag}");
                             break;
                     }
             if (!result.Success)
@@ -122,26 +167,26 @@ namespace wan24.I8NTool
                     switch (diag.Severity)
                     {
                         case DiagnosticSeverity.Information:
-                            WriteInfo($"PO parser information code \"{diag.Code}\", arguments {diag.Args.Length}: {diag}");
+                            WriteInfo($"PO parser information code \"{diag.Code}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}, arguments {diag.Args.Length}: {diag}");
                             break;
                         case DiagnosticSeverity.Warning:
-                            WriteWarning($"PO parser warning code \"{diag.Code}\", arguments {diag.Args.Length}: {diag}");
+                            WriteWarning($"PO parser warning code \"{diag.Code}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}, arguments {diag.Args.Length}: {diag}");
                             break;
                         case DiagnosticSeverity.Error:
-                            WriteError($"PO parser error code \"{diag.Code}\", arguments {diag.Args.Length}: {diag}");
+                            WriteError($"PO parser error code \"{diag.Code}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}, arguments {diag.Args.Length}: {diag}");
                             break;
                         default:
-                            WriteWarning($"PO parser {diag.Severity} code \"{diag.Code}\", arguments {diag.Args.Length}: {diag}");
+                            WriteWarning($"PO parser {diag.Severity} code \"{diag.Code}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}, arguments {diag.Args.Length}: {diag}");
                             break;
                     }
-            if (verbose) WriteInfo($"Found {result.Catalog.Count} terms");
+            if (verbose) WriteInfo($"Found {result.Catalog.Count} terms in {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
             foreach (IPOEntry entry in result.Catalog)
             {
                 if (terms.ContainsKey(entry.Key.Id))
                 {
                     if (failOnExistingKey)
                         throw new InvalidDataException($"Won't overwrite existing key \"{entry.Key.Id.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
-                    if (Trace) WriteTrace($"Overwriting existing key \"{entry.Key.Id.ToLiteral()}\"");
+                    if (Trace) WriteTrace($"Overwriting existing key \"{entry.Key.Id.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
                     overwrittenTerms++;
                 }
                 else
@@ -155,7 +200,7 @@ namespace wan24.I8NTool
                     _ => throw new NotImplementedException($"PO entry \"{entry.Key.Id.ToLiteral()}\" type {entry.GetType()} can't be red from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}")
                 };
             }
-            if (verbose) WriteInfo($"Added {newTerms} new terms, {overwrittenTerms} overwritten");
+            if (verbose) WriteInfo($"Added {newTerms} new terms, {overwrittenTerms} overwritten from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
         }
 
         /// <summary>
@@ -190,14 +235,14 @@ namespace wan24.I8NTool
                 mo = parser.Parse(ms);
                 ms.SetLength(0);
             }
-            if (verbose) WriteInfo($"Found {mo.Translations.Count} terms");
+            if (verbose) WriteInfo($"Found {mo.Translations.Count} terms in {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
             foreach (var kvp in mo.Translations)
             {
                 if (terms.ContainsKey(kvp.Key))
                 {
                     if (failOnExistingKey)
                         throw new InvalidDataException($"Won't overwrite existing key \"{kvp.Key.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
-                    if (Trace) WriteTrace($"Overwriting existing key \"{kvp.Key.ToLiteral()}\"");
+                    if (Trace) WriteTrace($"Overwriting existing key \"{kvp.Key.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
                     overwrittenTerms++;
                 }
                 else
@@ -206,7 +251,7 @@ namespace wan24.I8NTool
                 }
                 terms[kvp.Key] = kvp.Value;
             }
-            if (verbose) WriteInfo($"Added {newTerms} new terms, {overwrittenTerms} overwritten");
+            if (verbose) WriteInfo($"Added {newTerms} new terms, {overwrittenTerms} overwritten from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
         }
 
         /// <summary>
