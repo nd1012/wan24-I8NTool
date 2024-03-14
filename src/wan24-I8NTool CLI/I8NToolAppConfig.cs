@@ -71,6 +71,11 @@ namespace wan24.I8NTool
         public string[]? FileExtensions { get; set; }
 
         /// <summary>
+        /// Path to excluded source files (absolute path or filename only (\"*\" (any or none) and \"+\" (one or many) may be used as wildcard); case insensitive)
+        /// </summary>
+        public static string[]? Exclude { get; }
+
+        /// <summary>
         /// Merge the PO contents with an existing output PO file?
         /// </summary>
         public bool MergeOutput { get; set; }
@@ -117,6 +122,11 @@ namespace wan24.I8NTool
                 if (!Merge) I8NToolConfig.FileExtensions.Clear();
                 I8NToolConfig.FileExtensions.AddRange(FileExtensions);
             }
+            if(Exclude is not null)
+            {
+                if (!Merge) I8NToolConfig.Exclude.Clear();
+                I8NToolConfig.Exclude.AddRange(Exclude);
+            }
             I8NToolConfig.MergeOutput = MergeOutput;
             I8NToolConfig.FailOnError = FailOnError;
         }
@@ -152,6 +162,11 @@ namespace wan24.I8NTool
             {
                 if (!Merge) I8NToolConfig.FileExtensions.Clear();
                 I8NToolConfig.FileExtensions.AddRange(FileExtensions);
+            }
+            if (Exclude is not null)
+            {
+                if (!Merge) I8NToolConfig.Exclude.Clear();
+                I8NToolConfig.Exclude.AddRange(Exclude);
             }
             I8NToolConfig.MergeOutput = MergeOutput;
             I8NToolConfig.FailOnError = FailOnError;

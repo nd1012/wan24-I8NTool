@@ -39,7 +39,17 @@ namespace wan24.I8NTool
         /// <summary>
         /// Positions
         /// </summary>
-        public HashSet<Position> Positions { get; } = [];
+        public HashSet<Position> Positions { get; init; } = [];
+
+        /// <summary>
+        /// Matching pattern indexes
+        /// </summary>
+        public HashSet<int> MatchingPatterns { get; init; } = [];
+
+        /// <summary>
+        /// Applied replacing pattern indexes
+        /// </summary>
+        public HashSet<int> ReplacingPatterns { get; init; } = [];
 
         /// <summary>
         /// Match position

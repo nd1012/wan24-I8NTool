@@ -3,52 +3,48 @@
 	"Encoding": "UTF-8",
 	"Patterns": [
 		[
-			"(Description|DisplayText)\\(\\s*\\\".*[^\\\\]\\\"\\s*\\)",
+			"(__?|gettextn?|Translate(Plural)?|GetTerm|Std(In|Out)|Description|DisplayText)\\s*\\([^\\@\\$\\\"\\\\]\\\".*[^\\\\]\\\"",
 			"None"
 		],
 		[
-			"^.*(Description|DisplayText)\\(\\s*(\\\".*[^\\\\]\\\")\\s*\\).*$",
+			"^.*(__?|gettextn?|Translate(Plural)?|GetTerm|Std(In|Out)|Description|DisplayText)\\s*\\([^\\@\\$\\\"\\\\](\\\".*[^\\\\]\\\").*$",
+			"None",
+			"$4"
+		],
+		[
+			"[^\\(]*\\([^\\)]*(Example|ErrorMessage)\\s*\\=[^\\@\\$\\\"\\\\]\\\".*[^\\\\]\\\"",
+			"None"
+		],
+		[
+			"^.*[^\\(]*\\([^\\)]*(Example|ErrorMessage)\\s*\\=[^\\@\\$\\\"\\\\](\\\".*[^\\\\]\\\").*$",
 			"None",
 			"$2"
 		],
 		[
-			"(__?|gettextn?|Translate(Plural)?|GetTerm|StdIn|StdOut)\\(\\s*\\\".*[^\\\\]\\\"",
+			"ExitCode[^\\(]*\\(\\d+\\s*,[^\\@\\$\\\"\\\\]\\\".*[^\\\\]\\\"",
 			"None"
 		],
 		[
-			"^.*(__?|gettextn?|Translate(Plural)?|GetTerm|StdIn|StdOut)\\(\\s*(\\\".*[^\\\\]\\\").*$",
-			"None",
-			"$3"
-		],
-		[
-			"CliApi[^\\(]*\\([^\\)]*Example\\s*\\=\\s*\\\".*[^\\\\]\\\"",
-			"None"
-		],
-		[
-			"^.*CliApi[^\\(]*\\([^\\)]*Example\\s*\\=\\s*(\\\".*[^\\\\]\\\").*$",
+			"^.*ExitCode[^\\(]*\\(\\d+\\s*,[^\\@\\$\\\"\\\\](\\\".*[^\\\\]\\\").*$",
 			"None",
 			"$1"
 		],
 		[
-			"ExitCode[^\\(]*\\(\\d+,\\s*\\\".*[^\\\\]\\\"",
+			"[^\\@\\$\\\"\\\\]\\\".*[^\\\\]\\\".*\\/\\/.*wan24I8NTool\\:include",
 			"None"
 		],
 		[
-			"^.*ExitCode[^\\(]*\\(\\d+,\\s*(\\\".*[^\\\\]\\\").*$",
+			"^.*[^\\@\\$\\\"\\\\](\\\".*[^\\\\]\\\").*\\/\\/.*wan24I8NTool\\:include.*$",
 			"None",
 			"$1"
 		],
 		[
-			"[^\\@\\$]\\\".*[^\\\\]\\\".*;.*\\/\\/.*wan24I8NTool\\:include",
-			"IgnoreCase"
-		],
-		[
-			"^.*[^\\@\\$](\\\".*[^\\\\]\\\").*;.*\\/\\/.*wan24I8NTool\\:include.*$",
-			"IgnoreCase",
+			"^[^\\@\\$\\\"\\\\]+(\\\".*[^\\\\]\\\").*$",
+			"None",
 			"$1"
 		],
 		[
-			"^\\s*(\\\".*[^\\\\]\\\").+$",
+			"^[^\\@\\$\\\"\\\\]*(\\\".*[^\\\\]\\\").+$",
 			"None",
 			"$1"
 		]
@@ -60,6 +56,9 @@
 		".aspx",
 		".cake",
 		".vb"
+	],
+	"Exclude": [
+		"*/obj/*"
 	],
 	"MergeOutput": false,
 	"FailOnError": false,

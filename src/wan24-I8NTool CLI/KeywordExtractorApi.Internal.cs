@@ -17,7 +17,8 @@ namespace wan24.I8NTool
         /// <param name="keywords">Keywords</param>
         /// <param name="verbose">Be verbose?</param>
         /// <param name="fileName">Filename</param>
-        private static async Task ProcessFileAsync(
+        /// <returns>Number of parsed non-empty lines</returns>
+        private static async Task<int> ProcessFileAsync(
             Stream stream,
             HashSet<KeywordMatch> keywords,
             bool verbose,
@@ -25,6 +26,7 @@ namespace wan24.I8NTool
             )
         {
             if (verbose) WriteInfo($"Processing source file \"{fileName}\"");
+            int parsedLines = 0;
             await using (stream.DynamicContext())
             {
                 bool replaced;// If a replace pattern did match during the replace loop
@@ -34,6 +36,8 @@ namespace wan24.I8NTool
                 KeywordMatch? match;// Existing/new Poedit parser match
                 KeywordParserPattern? pattern;// First matching Poedit parser pattern (may be a matching pattern or a replacement)
                 Match? rxMatch = null;// Regular expression match of the first matching Poedit parser pattern
+                HashSet<int> matched = [],// Indexes of keyword matching patterns
+                    replacing = [];// Indexes of keyword applied replacing patterns
                 using StreamReader reader = new(stream, I8NToolConfig.SourceEncoding);// Source file reader which uses the configured source encoding
                 while (await reader.ReadLineAsync().DynamicContext() is string line)
                 {
@@ -45,7 +49,10 @@ namespace wan24.I8NTool
                         if (Trace) WriteTrace($"Skipping empty source file \"{fileName}\" line #{lineNumber}");
                         continue;
                     }
+                    parsedLines++;
                     currentLine = keyword = line;
+                    matched.Clear();
+                    replacing.Clear();
                     while (true)
                     {
                         // Current line parsing loop (parse until no Poedit parser pattern is matching)
@@ -56,22 +63,32 @@ namespace wan24.I8NTool
                             if (Trace) WriteTrace($"No pattern matching for source file \"{fileName}\" line #{lineNumber}");
                             break;
                         }
+                        matched.Add(I8NToolConfig.Patterns.ElementIndex(pattern));
                         // Handle the current match
                         Contract.Assert(rxMatch is not null);
                         if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} pattern \"{pattern.Pattern}\" matched \"{rxMatch.Groups[1].Value}\"");
                         replaced = true;
                         keyword = currentLine;
+                        bool br = false, dbg = true;
                         while (replaced)
                         {
                             // Poedit parser pattern loop (replace until we have the final keyword)
                             replaced = false;
+                            br = false;
                             foreach (KeywordParserPattern replace in I8NToolConfig.Patterns.Where(p => p.Replacement is not null && p.Expression.IsMatch(keyword)))
                             {
+                                if (dbg && keyword.Contains("), Done == DateTime.MinValue ?"))
+                                {
+                                    br = true;
+                                    System.Diagnostics.Debugger.Break();
+                                }
                                 if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} replacement pattern \"{replace.Pattern}\" matched \"{keyword}\"");
                                 replaced = true;
                                 keyword = replace.Expression.Replace(keyword, replace.Replacement!);
+                                replacing.Add(I8NToolConfig.Patterns.ElementIndex(replace));
                                 if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} replacement pattern \"{replace.Pattern}\" replaced to \"{keyword}\"");
                             }
+                            if (dbg && (br || keyword.Contains("), Done == DateTime.MinValue ?"))) System.Diagnostics.Debugger.Break();
                         }
                         // Remove the parsed keyword from the current line and store its position
                         currentLine = currentLine.Replace(keyword, string.Empty);
@@ -107,13 +124,17 @@ namespace wan24.I8NTool
                                 if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} new keyword \"{keyword.ToLiteral()}\"");
                                 keywords.Add(match = new()
                                 {
-                                    Keyword = keyword,
+                                    Keyword = keyword
                                 });
                             }
                             else if (Trace)
                             {
                                 WriteTrace($"Source file \"{fileName}\" line #{lineNumber} existing keyword \"{match.KeywordLiteral}\"");
                             }
+                            match.MatchingPatterns.Clear();
+                            match.MatchingPatterns.AddRange(matched);
+                            match.ReplacingPatterns.Clear();
+                            match.ReplacingPatterns.AddRange(replacing);
                             match.Positions.Add(new()
                             {
                                 FileName = fileName,
@@ -124,6 +145,7 @@ namespace wan24.I8NTool
                     }
                 }
             }
+            return parsedLines;
         }
 
         /// <summary>
@@ -170,6 +192,15 @@ namespace wan24.I8NTool
             : ParallelItemQueueWorkerBase<string>(capacity, threads: capacity)
         {
             /// <summary>
+            /// Thread synchronization
+            /// </summary>
+            private readonly SemaphoreSync ParsedLinesSync = new();
+            /// <summary>
+            /// Total number of parsed non-empty lines from processed files
+            /// </summary>
+            private long _ParsedLines = 0;
+
+            /// <summary>
             /// Keywords
             /// </summary>
             public HashSet<KeywordMatch> Keywords { get; } = keywords;
@@ -179,12 +210,35 @@ namespace wan24.I8NTool
             /// </summary>
             public bool Verbose { get; } = verbose;
 
+            /// <summary>
+            /// Total number of parsed non-empty lines from processed files
+            /// </summary>
+            public long ParsedLines => _ParsedLines;
+
             /// <inheritdoc/>
             protected override async Task ProcessItem(string item, CancellationToken cancellationToken)
             {
                 if (Trace) WriteTrace($"Now going to process source file \"{item}\"");
+                long lines;
                 FileStream fs = FsHelper.CreateFileStream(item, FileMode.Open, FileAccess.Read, FileShare.Read);
-                await using (fs.DynamicContext()) await ProcessFileAsync(fs, Keywords, Verbose, item).DynamicContext();
+                await using (fs.DynamicContext())
+                     lines = await ProcessFileAsync(fs, Keywords, Verbose, item).DynamicContext();
+                using SemaphoreSyncContext ssc = await ParsedLinesSync.SyncContextAsync(cancellationToken).DynamicContext();
+                _ParsedLines += lines;
+            }
+
+            /// <inheritdoc/>
+            protected override void Dispose(bool disposing)
+            {
+                base.Dispose(disposing);
+                ParsedLinesSync.Dispose();
+            }
+
+            /// <inheritdoc/>
+            protected override async Task DisposeCore()
+            {
+                await base.DisposeCore().DynamicContext();
+                await ParsedLinesSync.DisposeAsync().DynamicContext();
             }
         }
     }

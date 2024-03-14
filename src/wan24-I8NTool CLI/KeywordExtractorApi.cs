@@ -39,10 +39,10 @@ namespace wan24.I8NTool
         /// <param name="singleThread">Disable multi-threading?</param>
         /// <param name="verbose">Be verbose?</param>
         /// <param name="noRecursive">Disable directory recursion?</param>
-        /// <param name="ext">File extensions to use (including dot)</param>
+        /// <param name="ext">File extensions to use (including dot; will override the configuration)</param>
         /// <param name="encoding">Source text encoding identifier</param>
         /// <param name="input">Input file-/foldernames (may be relative or absolute)</param>
-        /// <param name="exclude">Excluded file-/foldernames (absolute path or filename only)</param>
+        /// <param name="exclude">Excluded file-/foldernames (absolute path or filename only; will override the configuration)</param>
         /// <param name="output">Output PO filename (may be relative or absolute)</param>
         /// <param name="noHeader">Skip writing a header</param>
         /// <param name="mergeOutput">Merge the PO output to the existing PO file</param>
@@ -67,7 +67,7 @@ namespace wan24.I8NTool
 
             [CliApi]
             [DisplayText("Verbose")]
-            [Description("Log processing details (to STDERR; multi-threading will be disabled)")]
+            [Description("Log processing details (to STDERR)")]
             bool verbose = false,
 
             [CliApi]
@@ -77,7 +77,7 @@ namespace wan24.I8NTool
 
             [CliApi]
             [DisplayText("Extensions")]
-            [Description("File extensions to look for (including dot)")]
+            [Description("File extensions to look for (including dot; will override the configuration)")]
             string[]? ext = null,
 
             [CliApi(Example = "UTF-8")]
@@ -92,7 +92,7 @@ namespace wan24.I8NTool
 
             [CliApi(Example = "/path/to/source/sub/folder")]
             [DisplayText("Exclude files/folders")]
-            [Description("Path to excluded source files and folders (absolute or partial path or file-/foldername only (\"*\" (any or none) and \"+\" (one or many) may be used as wildcard); case insensitive)")]
+            [Description("Path to excluded source files and folders (absolute or partial path or file-/foldername only (\"*\" (any or none) and \"+\" (one or many) may be used as wildcard); case insensitive; will override the configuration)")]
             string[]? exclude = null,
 
             [CliApi(Example = "/path/to/output.po")]
@@ -136,18 +136,20 @@ namespace wan24.I8NTool
                 configFn = fn;
                 await AppConfig.LoadAsync<I8NToolAppConfig>(fn).DynamicContext();
             }
-            if (singleThread || verbose)
-            {
-                // Override multithreading
-                if (Trace) WriteTrace($"Single threaded {verbose || singleThread}");
-                I8NToolConfig.SingleThread = verbose || singleThread;
-            }
+            if (singleThread) I8NToolConfig.SingleThread = true;// Override multithreading
             if (ext is not null && ext.Length > 0)
             {
                 // Override file extensions
                 if (Trace) WriteTrace($"Override file extensions with \"{string.Join(", ", ext)}\"");
                 I8NToolConfig.FileExtensions.Clear();
                 I8NToolConfig.FileExtensions.AddRange(ext);
+            }
+            if(exclude is not null && exclude.Length > 0)
+            {
+                // Override excludes
+                if (Trace) WriteTrace($"Override excludes with \"{string.Join(" | ", exclude)}\"");
+                I8NToolConfig.Exclude.Clear();
+                I8NToolConfig.Exclude.AddRange(exclude);
             }
             mergeOutput |= I8NToolConfig.MergeOutput;
             if (mergeOutput)
@@ -189,6 +191,7 @@ namespace wan24.I8NTool
             // Process
             DateTime started = DateTime.Now;// Part start time
             int sources = 0;// Number of source files parsed
+            long lines = 0;// Number of non-empty lines parsed
             HashSet<KeywordMatch> keywords = [];// Extracted keywords
             if (input is null)
             {
@@ -202,7 +205,7 @@ namespace wan24.I8NTool
                 // Use given file-/foldernames
                 if (verbose) WriteInfo("Using given file-/foldernames");
                 if (input.Length < 1) throw new ArgumentException("Missing input locations", nameof(input));
-                PathMatching excluding = new(exclude ?? []);
+                PathMatching excluding = new([..I8NToolConfig.Exclude]);
                 ParallelFileWorker worker = new(I8NToolConfig.SingleThread ? 1 : Environment.ProcessorCount << 1, keywords, verbose)
                 {
                     Name = "i8n parallel file worker"
@@ -213,13 +216,15 @@ namespace wan24.I8NTool
                     await worker.StartAsync().DynamicContext();
                     string[] extensions = [.. I8NToolConfig.FileExtensions],// File extensions to look for
                         files;// Found files in an input source folder
+                    HashSet<string> filteredFiles;// Filtered files without excluded files
                     string fullPath;// Full path of the current input source
                     foreach (string path in input)
                     {
                         // Process input file-/foldernames
                         if (Trace) WriteTrace($"Handling input path \"{path}\"");
                         fullPath = Path.GetFullPath(path);
-                        if (Trace) WriteTrace($"Full input path for \"{path}\" is \"{fullPath}\"");
+                        if (Trace && !path.Equals(fullPath, StringComparison.OrdinalIgnoreCase))
+                            WriteTrace($"Full input path for \"{path}\" is \"{fullPath}\"");
                         if (Directory.Exists(fullPath))
                         {
                             // Find files in a folder (optional recursive)
@@ -234,12 +239,27 @@ namespace wan24.I8NTool
                                 if (verbose) WriteInfo($"Found no files in \"{fullPath}\"");
                                 continue;
                             }
-                            if (verbose) WriteInfo($"Found {files.Length} files in \"{fullPath}\"");
+                            filteredFiles = new(files.Length);
+                            foreach(string fn in files)
+                                if (excluding.IsMatch(fn))
+                                {
+                                    if (verbose) WriteInfo($"File \"{fn}\" was excluded");
+                                }
+                                else
+                                {
+                                    filteredFiles.Add(fn);
+                                }
+                            if (filteredFiles.Count < 1)
+                            {
+                                if (verbose) WriteInfo($"Found no files in \"{fullPath}\" after applying exclude filters");
+                                continue;
+                            }
+                            if (verbose) WriteInfo($"Found {filteredFiles.Count} source files in \"{fullPath}\"");
                             if (Trace)
-                                foreach (string file in files)
+                                foreach (string file in filteredFiles)
                                     WriteTrace($"Going to process file \"{file}\"");
-                            await worker.EnqueueRangeAsync(files).DynamicContext();
-                            sources += files.Length;
+                            await worker.EnqueueRangeAsync(filteredFiles).DynamicContext();
+                            sources += filteredFiles.Count;
                         }
                         else if (File.Exists(fullPath))
                         {
@@ -262,9 +282,10 @@ namespace wan24.I8NTool
                     if (Trace) WriteTrace("Waiting for all files to finish processing");
                     await worker.WaitBoringAsync().DynamicContext();
                     if (worker.LastException is not null) throw new IOException("Failed to process input sources", worker.LastException);
+                    lines = worker.ParsedLines;
                 }
             }
-            if (verbose) WriteInfo($"Done processing input source files (extracted {keywords.Count} keywords from {sources} source files; took {DateTime.Now - started})");
+            if (verbose) WriteInfo($"Done processing input source files (extracted {keywords.Count} keywords from {sources} source files with {lines} non-empty lines; took {DateTime.Now - started})");
             // Write output
             started = DateTime.Now;
             Stream? outputStream = null;// Output (file?)stream

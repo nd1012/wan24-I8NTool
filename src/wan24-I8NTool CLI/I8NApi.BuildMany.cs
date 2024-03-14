@@ -21,7 +21,7 @@ namespace wan24.I8NTool
         /// <param name="poInputPattern">PO input pattern</param>
         /// <param name="moInput">MO (gettext) input file folder (no recursion)</param>
         /// <param name="moInputPattern">MO input pattern</param>
-        /// <param name="excluded">Path to excluded source files (absolute path or filename only ("*" (any or none) and "+" (one or many) may be used as wildcard); case insensitive)</param>
+        /// <param name="exclude">Path to excluded source files (absolute path or filename only ("*" (any or none) and "+" (one or many) may be used as wildcard); case insensitive)</param>
         /// <param name="compress">To compress the internationalization files</param>
         /// <param name="noHeader">To skip writing a header with the version number and the compression flag</param>
         /// <param name="singleThread">Disable multi-threading?</param>
@@ -76,8 +76,8 @@ namespace wan24.I8NTool
 
             [CliApi(Example = "/path/to/sources/non-i8n.json")]
             [DisplayText("Exclude files")]
-            [Description("Path to excluded source files (absolute path or filename only (\"*\" (any or none) and \"+\" (one or many) may be used as wildcard); case insensitive)")]
-            string[]? excluded = null,
+            [Description("Path to excluded source files (absolute path or filename only (\"*\" (any or none) and \"+\" (one or many) may be used as wildcard); case insensitive; will override the configuration)")]
+            string[]? exclude = null,
 
             [CliApi]
             [DisplayText("Compress")]
@@ -103,11 +103,13 @@ namespace wan24.I8NTool
         {
             verbose |= Trace;
             if (Trace) WriteTrace("Creating many internationalization files");
-            if (singleThread || verbose)
+            if (singleThread) I8NToolConfig.SingleThread = true;// Override multithreading
+            if (exclude is not null && exclude.Length > 0)
             {
-                // Override multithreading
-                if (Trace) WriteTrace($"Single threaded {verbose || singleThread}");
-                I8NToolConfig.SingleThread = verbose || singleThread;
+                // Override excludes
+                if (Trace) WriteTrace($"Override excludes with \"{string.Join(" | ", exclude)}\"");
+                I8NToolConfig.Exclude.Clear();
+                I8NToolConfig.Exclude.AddRange(exclude);
             }
             int threads = I8NToolConfig.SingleThread ? 1 : Environment.ProcessorCount << 1;// Number of threads to use for parallel file processing
             if (verbose)
@@ -123,7 +125,7 @@ namespace wan24.I8NTool
                 WriteInfo($"Number of threads: {threads}");
                 WriteInfo($"Fail on error: {DoFailOnError()}");
             }
-            PathMatching excluding = new(excluded ?? []);// Excluding pattern helper
+            PathMatching excluding = new([.. I8NToolConfig.Exclude]);// Excluding pattern helper
             using SemaphoreSlim sync = new(threads, threads);// Task limitation (also used for synchronizing firstException)
             using CancellationTokenSource cts = new();// Cancellation on error
             Exception? firstException = null;// The last exception
