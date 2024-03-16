@@ -193,6 +193,35 @@ namespace wan24.I8NKws
         }
 
         /// <summary>
+        /// Merge with another catalog (existing keywords will be revisioned for merging)
+        /// </summary>
+        /// <param name="other">Other catalog to merge into this catalog</param>
+        /// <param name="ignoreLocale">Ignore merging with another locale?</param>
+        /// <returns>Merged existing keywords</returns>
+        public KwsKeyword[] Merge(KwsCatalog other, bool ignoreLocale = false)
+        {
+            if (!ignoreLocale && other.Locale != Locale) throw new ArgumentException("Locale mismatch", nameof(other));
+            List<KwsKeyword> res = [];
+            Modified = DateTime.UtcNow;
+            // Merge the catalog meta data
+            if (string.IsNullOrWhiteSpace(Project) && !string.IsNullOrWhiteSpace(other.Project)) Project = other.Project;
+            if (string.IsNullOrWhiteSpace(Translator) && !string.IsNullOrWhiteSpace(other.Translator)) Translator = other.Translator;
+            RightToLeft = other.RightToLeft;
+            // Merge keywords
+            foreach(KwsKeyword otherKeyword in other.NonObsoleteKeywords)
+            {
+                if (this[otherKeyword.ID] is not KwsKeyword existing)
+                {
+                    Keywords.Add(otherKeyword);
+                    continue;
+                }
+                existing.Merge(otherKeyword);
+                res.Add(existing);
+            }
+            return [.. res];
+        }
+
+        /// <summary>
         /// Convert to a dictionary (only non-obsolete keywords)
         /// </summary>
         /// <returns>Dictionary</returns>

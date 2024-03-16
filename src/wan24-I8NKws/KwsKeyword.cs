@@ -207,5 +207,57 @@ namespace wan24.I8NKws
             }
             return true;
         }
+
+        /// <summary>
+        /// Merge with another keyword
+        /// </summary>
+        /// <param name="other">Other keyword</param>
+        public void Merge(KwsKeyword other)
+        {
+            // Create a revision of the existing keyword
+            CreateRevision();
+            // Merge general meta data
+            Updated = DateTime.UtcNow;
+            if (string.IsNullOrWhiteSpace(Translator) && !string.IsNullOrWhiteSpace(other.Translator))
+                Translator = other.Translator;
+            if (string.IsNullOrWhiteSpace(DeveloperComments) && !string.IsNullOrWhiteSpace(other.DeveloperComments))
+                DeveloperComments = other.DeveloperComments;
+            if (string.IsNullOrWhiteSpace(TranslatorComments) && !string.IsNullOrWhiteSpace(other.TranslatorComments))
+                TranslatorComments = other.TranslatorComments;
+            Obsolete = false;
+            Fuzzy = other.Fuzzy;
+            Invalid = other.Invalid;
+            // Merge translations
+            List<string> translations = new(Math.Max(Translations.Count, other.Translations.Count));
+            for (int i = 0, len = translations.Count; i < len; i++)
+                if (i > Translations.Count)
+                {
+                    Translations.Add(other.Translations[i]);
+                }
+                else if (i > other.Translations.Count)
+                {
+                }
+                else if (string.IsNullOrWhiteSpace(Translations[i]))
+                {
+                    Translations[i] = other.Translations[i];
+                }
+                else if (string.IsNullOrWhiteSpace(other.Translations[i]))
+                {
+                }
+                else
+                {
+                    Translations[i] = other.Translations[i];
+                }
+            Translations.Clear();
+            Translations.AddRange(translations);
+            // Merge references
+            HashSet<KwsSourceReference> references = [.. SourceReferences, .. other.SourceReferences];
+            SourceReferences.Clear();
+            SourceReferences.AddRange(references);
+            // Merge revisions
+            HashSet<KwsKeyword> revisions = [.. Revisions.Concat(other.Revisions).OrderBy(r => r.Updated).Distinct()];
+            Revisions.Clear();
+            Revisions.AddRange(revisions);
+        }
     }
 }
