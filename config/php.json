@@ -2,29 +2,28 @@
 	"SingleThread": false,
 	"Encoding": "UTF-8",
 	"Patterns": [
-		[
-			"(__?|gettextn?)\\(\\s*\\\".*[^\\\\]\\\"",
-			"None"
-		],
-		[
-			"^.*(__?|gettextn?)\\(\\s*(\\\".*[^\\\\]\\\").*$",
-			"None",
-			"$3"
-		],
-		[
-			"\\\".*[^\\\\]\\\".*;.*(#|\\/\\/).*wan24I8NTool\\:include",
-			"IgnoreCase"
-		],
-		[
-			"^.*(\\\".*[^\\\\]\\\").*;.*(#|\\/\\/).*wan24I8NTool\\:include.*$",
-			"IgnoreCase",
-			"$1"
-		],
-		[
-			"^\\s*(\\\".*[^\\\\]\\\").+$",
-			"None",
-			"$1"
-		]
+		{
+			"Pattern": "^.*[^\\@\\$\\\"\\\\](%{rxStringLiteral}).*$",
+			"Options": "NonBacktracking",
+			"Replacement": "$1",
+			"ReplaceOnly": true
+		},
+		{
+			"Pattern": "^(%{rxStringLiteral}).+$",
+			"Options": "NonBacktracking",
+			"Replacement": "$1",
+			"ReplaceOnly": true
+		},
+		{
+			"Pattern": "^.*(_+|gettextn?)\\s*\\(\\s*(%{rxStringLiteral}).*$",
+			"Options": "NonBacktracking",
+			"Replacement": "$4"
+		},
+		{
+			"Pattern": "^.*[^\\@\\$\\\"\\\\](%{rxStringLiteral}).*wan24I8NTool\\:include.*$",
+			"Options": "NonBacktracking",
+			"Replacement": "$1"
+		}
 	],
 	"FileExtensions": [
 		".php",

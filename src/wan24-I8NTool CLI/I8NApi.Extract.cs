@@ -30,6 +30,7 @@ namespace wan24.I8NTool
         [Description("Extract an internationalization (i8n) file to JSON or PO (gettext) format")]
         [StdIn("/path/to/input.i8n")]
         [StdOut("/path/to/output.(json|po)")]
+        [StdErr("Verbose output and errors")]
         public static async Task ExtractAsync(
 
             [CliApi(Example = "/path/to/input.i8n")]

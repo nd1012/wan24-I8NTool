@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using System.Text.RegularExpressions;
 
 namespace wan24.I8NTool
 {
@@ -14,66 +13,50 @@ namespace wan24.I8NTool
         static I8NToolConfig()
         {
             Patterns = [
-                // Methods and attributes
+                // Cut out multiple possible keywords within one line to end up with only one
                 new KeywordParserPattern()
                 {
-                    Pattern = @"(__?|gettextn?|Translate(Plural)?|GetTerm|Std(In|Out)|Description|DisplayText)\s*\(\s*\"".*[^\\]\""",
-                    Options = RegexOptions.None
+                    // Normalize a string literal (remove characters before and maybe after)
+                    Pattern = KeywordParserPattern.NORMALIZE1,
+                    Expression = KeywordParserPattern.RX_NORMALIZE1,
+                    Replacement = KeywordParserPattern.NORMALIZE2,
+                    ReplaceOnly = true
                 },
                 new KeywordParserPattern()
                 {
-                    Pattern = @"^.*(__?|gettextn?|Translate(Plural)?|GetTerm|Std(In|Out)|Description|DisplayText)\s*\(\s*(\"".*[^\\]\"").*$",
-                    Options = RegexOptions.None,
-                    Replacement = "$4"
+                    // Normalize a string literal without characters before (remove characters after)
+                    Pattern = KeywordParserPattern.NORMALIZE2,
+                    Expression = KeywordParserPattern.RX_NORMALIZE2,
+                    Replacement = KeywordParserPattern.NORMALIZE2_RPL,
+                    ReplaceOnly = true
+                },
+                // Methods and attributes
+                new KeywordParserPattern()
+                {
+                    Pattern = KeywordParserPattern.METHODS_AND_ATTRIBUTES,
+                    Expression = KeywordParserPattern.RX_METHODS_AND_ATTRIBUTES,
+                    Replacement = KeywordParserPattern.METHODS_AND_ATTRIBUTES_RPL
                 },
                 // Attribute properties
                 new KeywordParserPattern()
                 {
-                    Pattern = @"[^\(]*\([^\)]*(Example|ErrorMessage)\s*\=\s*\"".*[^\\]\""",
-                    Options = RegexOptions.None
-                },
-                new KeywordParserPattern()
-                {
-                    Pattern = @"^.*[^\(]*\([^\)]*(Example|ErrorMessage)\s*\=\s*(\"".*[^\\]\"").*$",
-                    Options = RegexOptions.None,
-                    Replacement = "$2"
+                    Pattern = KeywordParserPattern.ATTRIBUTE_PROPERTIES,
+                    Expression = KeywordParserPattern.RX_ATTRIBUTE_PROPERTIES,
+                    Replacement = KeywordParserPattern.ATTRIBUTE_PROPERTIES_RPL
                 },
                 // ExitCode attribute examples
                 new KeywordParserPattern()
                 {
-                    Pattern = @"ExitCode[^\(]*\(\d+\s*,\s*\"".*[^\\]\""",
-                    Options = RegexOptions.None
+                    Pattern = KeywordParserPattern.EXIT_CODE_ATTRIBUTE,
+                    Expression = KeywordParserPattern.RX_EXIT_CODE_ATTRIBUTE,
+                    Replacement = KeywordParserPattern.EXIT_CODE_ATTRIBUTE_RPL
                 },
+                // Include strings
                 new KeywordParserPattern()
                 {
-                    Pattern = @"^.*ExitCode[^\(]*\(\d+\s*,\s*(\"".*[^\\]\"").*$",
-                    Options = RegexOptions.None,
-                    Replacement = "$1"
-                },
-                // Forced strings
-                new KeywordParserPattern()
-                {
-                    Pattern = @"[^\@\$\""\\]*\s*\"".*[^\\]\"".*\/\/.*wan24I8NTool\:include",
-                    Options = RegexOptions.None
-                },
-                new KeywordParserPattern()
-                {
-                    Pattern = @"^.*[^\@\$\""\\]*\s*(\"".*[^\\]\"").*\/\/.*wan24I8NTool\:include.*$",
-                    Options = RegexOptions.None,
-                    Replacement = "$1"
-                },
-                // Cut out multiple possible keywords within one line to get only one, finally
-                new KeywordParserPattern()
-                {
-                    Pattern = @"^(\"".*[^\\]\"").+$",
-                    Options = RegexOptions.None,
-                    Replacement = "$1"
-                },
-                new KeywordParserPattern()
-                {
-                    Pattern = @"^.*[^\@\$\""\\](\"".*[^\\]\"")$",
-                    Options = RegexOptions.None,
-                    Replacement = "$1"
+                    Pattern = KeywordParserPattern.INCLUDE_STRINGS,
+                    Expression = KeywordParserPattern.RX_INCLUDE_STRINGS,
+                    Replacement = KeywordParserPattern.INCLUDE_STRINGS_RPL
                 }
                 ];
             FileExtensions = [".cs", ".razor", ".cshtml", ".aspx", ".cake", ".vb"];

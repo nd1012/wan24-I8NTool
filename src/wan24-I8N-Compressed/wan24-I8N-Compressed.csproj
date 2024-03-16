@@ -2,19 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>wan24.I8NKws</RootNamespace>
+    <RootNamespace>wan24.I8N</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>wan24I8NKws</AssemblyName>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Configurations>Debug;Release;Trunk</Configurations>
-    <PackageId>wan24-I8NKws</PackageId>
-    <Title>wan24-I8NKws</Title>
+    <AssemblyName>wan24I8NCompressed</AssemblyName>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageId>wan24-I8N-Compressed</PackageId>
+    <Title>wan24-I8N-Compressed</Title>
     <Version>1.0.0</Version>
     <Authors>nd1012</Authors>
     <Company>Andreas Zimmermann, wan24.de</Company>
-    <Product>wan24-I8NKws</Product>
-    <Description>Keyword catalog for translations</Description>
+    <Product>wan24-I8N-Compressed</Product>
+    <Description>wan24-Core translation terms for the i8n compressed file format</Description>
     <Copyright>(c)2024 Andreas Zimmermann, wan24.de</Copyright>
     <PackageProjectUrl>https://github.com/nd1012/wan24-I8NTool</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -22,7 +22,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>i8n</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <DebugType>embedded</DebugType>
+    <EmbedAllSources>true</EmbedAllSources>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Trunk|AnyCPU'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
   </PropertyGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(OS)' == 'Windows_NT'">
@@ -30,23 +35,25 @@
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="ObjectValidation" Version="2.4.0" Condition="'$(Configuration)' != 'Trunk'" />
+    <PackageReference Include="wan24-Compression" Version="2.5.0" Condition="'$(Configuration)' != 'Trunk'" />
     <PackageReference Include="wan24-Core" Version="2.12.0" Condition="'$(Configuration)' != 'Trunk'" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\ObjectValidation\src\ObjectValidation\ObjectValidation.csproj" Condition="'$(Configuration)' == 'Trunk'" />
+    <ProjectReference Include="..\..\..\Stream-Serializer-Extensions\src\Stream-Serializer-Extensions\Stream-Serializer-Extensions.csproj" Condition="'$(Configuration)' == 'Trunk'" />
+    <ProjectReference Include="..\..\..\wan24-Compression\src\wan24-Compression\wan24-Compression.csproj" Condition="'$(Configuration)' == 'Trunk'" />
     <ProjectReference Include="..\..\..\wan24-Core\src\Wan24-Core\Wan24-Core.csproj" Condition="'$(Configuration)' == 'Trunk'" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="LICENSE">
-      <PackagePath>\</PackagePath>
       <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
     <None Update="README.md">
-      <PackagePath>\</PackagePath>
       <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 

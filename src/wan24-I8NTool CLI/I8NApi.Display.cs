@@ -20,6 +20,7 @@ namespace wan24.I8NTool
         [DisplayText("Display i8n file")]
         [Description("Display internationalization (i8n) file informations")]
         [StdIn("/path/to/input.i8n")]
+        [StdErr("Output and errors")]
         public static async Task DisplayAsync(
 
             [CliApi(Example = "/path/to/input.i8n")]

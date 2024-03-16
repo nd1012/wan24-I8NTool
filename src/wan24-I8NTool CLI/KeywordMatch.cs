@@ -41,6 +41,7 @@ namespace wan24.I8NTool
         /// </summary>
         public HashSet<Position> Positions { get; init; } = [];
 
+#if DEBUG
         /// <summary>
         /// Matching pattern indexes
         /// </summary>
@@ -50,6 +51,7 @@ namespace wan24.I8NTool
         /// Applied replacing pattern indexes
         /// </summary>
         public HashSet<int> ReplacingPatterns { get; init; } = [];
+#endif
 
         /// <summary>
         /// Match position

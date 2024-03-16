@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using wan24.Core;
+using wan24.ObjectValidation;
 
 namespace wan24.I8NKws
 {
@@ -30,6 +31,13 @@ namespace wan24.I8NKws
         }
 
         /// <summary>
+        /// Get a plural translation
+        /// </summary>
+        /// <param name="count">Count</param>
+        /// <returns>Translation</returns>
+        public string this[in int count] => Plural(count);
+
+        /// <summary>
         /// ID (keyword)
         /// </summary>
         [MinLength(1)]
@@ -38,12 +46,8 @@ namespace wan24.I8NKws
         /// <summary>
         /// ID literal
         /// </summary>
+        [JsonIgnore, NoValidation]
         public string IdLiteral => _IdLiteral ??= ID.ToLiteral();
-
-        /// <summary>
-        /// Previous IDs (extended when the ID is being updated; last entry was the latest ID)
-        /// </summary>
-        public HashSet<string> PreviousIds { get; private set; } = [];
 
         /// <summary>
         /// Extracted time (UTC)
@@ -81,9 +85,14 @@ namespace wan24.I8NKws
         public bool Fuzzy { get; set; }
 
         /// <summary>
-        /// If a translation is missing (no translation at all, or any empty translations)
+        /// If the keyword is invalid
         /// </summary>
-        [JsonIgnore]
+        public bool Invalid { get; set; }
+
+        /// <summary>
+        /// If a translation is missing (no translation at all, or any empty translation)
+        /// </summary>
+        [JsonIgnore, NoValidation]
         public bool TranslationMissing => Translations.Count == 0 || Translations.Any(string.IsNullOrWhiteSpace);
 
         /// <summary>
@@ -97,12 +106,67 @@ namespace wan24.I8NKws
         public HashSet<KwsSourceReference> SourceReferences { get; init; } = [];
 
         /// <summary>
-        /// Previous source references (if fuzzy logicwas used to update the ID)
+        /// Revisions of this keyword
         /// </summary>
-        public HashSet<KwsSourceReference> PreviousSourceReferences { get; init; } = [];
+        public HashSet<KwsKeyword> Revisions { get; init; } = [];
 
         /// <summary>
-        /// Update the ID (source references will be moved to <see cref="PreviousSourceReferences"/>)
+        /// Get a plural translation
+        /// </summary>
+        /// <param name="count">Count</param>
+        /// <returns>Translation</returns>
+        public string Plural(in int count)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegative(count);
+            if (Translations.Count == 0) return string.Empty;
+            if (count >= Translations.Count) return Translations[^1];
+            return Translations[count];
+        }
+
+        /// <summary>
+        /// Create a revision from this keyword
+        /// </summary>
+        public void CreateRevision()
+        {
+            if (Obsolete) throw new InvalidOperationException();
+            Revisions.Add(this with
+            {
+                Revisions = []
+            });
+        }
+
+        /// <summary>
+        /// Restore a revision (will remove the revision and all newer revisions)
+        /// </summary>
+        /// <param name="revision">Revision to restore</param>
+        public void RestoreRevision(in KwsKeyword revision)
+        {
+            if (!Revisions.Contains(revision)) throw new ArgumentException("Unknown revision", nameof(revision));
+            Obsolete = false;
+            ID = revision.ID;
+            _IdLiteral = null;
+            Extracted = revision.Extracted;
+            Updated = revision.Updated;
+            Translator = revision.Translator;
+            DeveloperComments = revision.DeveloperComments;
+            TranslatorComments = revision.TranslatorComments;
+            Fuzzy = revision.Fuzzy;
+            Invalid = revision.Invalid;
+            Translations.Clear();
+            Translations.AddRange(revision.Translations);
+            SourceReferences.Clear();
+            SourceReferences.AddRange(revision.SourceReferences);
+            KwsKeyword[] revisions = [.. Revisions];
+            Revisions.Clear();
+            for(int i = 0, len = revisions.Length; i < len; i++)
+            {
+                if (revisions[i] == revision) break;
+                Revisions.Add(revisions[i]);
+            }
+        }
+
+        /// <summary>
+        /// Update the ID (wll create a new revision and clear source references, too; won't set <see cref="Updated"/>)
         /// </summary>
         /// <param name="newId">New ID</param>
         public void UpdateId(in string newId)
@@ -111,35 +175,37 @@ namespace wan24.I8NKws
             if (newId.Length < 1) throw new ArgumentException("ID required", nameof(newId));
             string oldId = ID;
             if (newId == oldId) return;
+            CreateRevision();
             ID = newId;
-            PreviousIds.Remove(oldId);
-            PreviousIds.Add(oldId);
-            PreviousSourceReferences.Clear();
-            PreviousSourceReferences.AddRange(SourceReferences);
+            _IdLiteral = null;
             SourceReferences.Clear();
         }
 
         /// <summary>
-        /// Undo an ID update
+        /// Validate the keyword
         /// </summary>
-        /// <param name="id">Target ID to use</param>
-        public void UndoIdUpdate(string? id = null)
+        /// <param name="throwOnError">Throw an exception on error?</param>
+        /// <param name="requireCompleteTranslations">Require all translations to be complete?</param>
+        /// <returns>If the keyword is valid</returns>
+        /// <exception cref="InvalidDataException">Keyword is invalid</exception>
+        public bool Validate(in bool throwOnError = true, in bool requireCompleteTranslations = false)
         {
-            if (Obsolete || PreviousIds.Count == 0) throw new InvalidOperationException();
-            bool lastId = id is null;
-            if (lastId)
+            if (string.IsNullOrEmpty(ID))
             {
-                id = PreviousIds.Last();
+                if (!throwOnError) return false;
+                throw new InvalidDataException("Missing keyword ID");
             }
-            else if (!PreviousIds.Contains(id!))
+            if (requireCompleteTranslations && !Obsolete && TranslationMissing)
             {
-                throw new ArgumentException("Unknown previous ID", nameof(id));
+                if (!throwOnError) return false;
+                throw new InvalidDataException($"Missing translation of keyword \"{IdLiteral}\"");
             }
-            ID = id!;
-            PreviousIds = [.. PreviousIds.SkipWhile(pid => pid != id).Skip(1)];
-            SourceReferences.Clear();
-            SourceReferences.AddRange(PreviousSourceReferences);
-            PreviousSourceReferences.Clear();
+            if (!this.TryValidateObject(out List<ValidationResult> results, throwOnError: false))
+            {
+                if (!throwOnError) return false;
+                throw new InvalidDataException($"Found {results.Count} keyword object \"{IdLiteral}\" errors - first error: {results.First().ErrorMessage}");
+            }
+            return true;
         }
     }
 }

@@ -61,33 +61,9 @@ advanced configuration is possible using those special command line arguments.
 ### Default keyword extraction process
 
 Per default keywords will be found by the regular expressions you can find in 
-`config/dotnet.json`. They'll then be post-processed by the replacement 
-expressions, until the final quoted keyword was extracted from a line.
-
-These default translation method names can be parsed from source code:
-
-- `_`
-- `gettext(n)("..."`
-- `Translate(Plural)("..."`
-- `GetTerm("..."`
-
-There are also some attributes, which can define translated text:
-
-- `StdIn("..."`
-- `StdOut("..."`
-- `StdErr("..."`
-- `Description("..."`
-- `DisplayText("..."`
-
-And these attribute peoperty strings will also be parsed:
-
-- `Example = "..."`
-- `ErrorMessage = "..."`
-
-Finally, there are also attributes, which get the text to translate as a 2nd 
-argument after a numeric argument:
-
-- `ExitCode(N, "..."`
+`config/dotnet.json` (without replacement). They'll then be post-processed by 
+the replacement expressions, until the final quoted keyword was extracted from 
+a line.
 
 To force including any string (from a constant definition, for example), 
 simply add a comment `wan24I8NTool:include` at the end of the line - example:
@@ -97,8 +73,8 @@ public const string NAME = "Any PO included keyword";// wan24I8NTool:include
 ```
 
 **NOTE**: (Multiline) concatenated string value definitions (like 
-`@"Part \ a" + $"Part b {variable}"`) or interpolations can't be parsed. The 
-matched string literal must be JSON style escaped.
+`"Part a" + "Part b"`) or interpolations can't be parsed. The matched keyword 
+must be C style escaped.
 
 ### Custom parser configuration
 
@@ -129,7 +105,7 @@ Example parser JSON configuration:
 			"Pattern": "Regular expression",// Pattern for use with RegEx
 			"Options": "None",// RegexOptions enumeration
 			"Replacement": "$1",// Replacement expression
-			"ReplaceOnly": true// Disable use for matching
+			"ReplaceOnly": true
 		}
 		...
 	],
@@ -144,14 +120,15 @@ Example parser JSON configuration:
 ```
 
 When loading the configuration, the pattern property `Options` will be 
-extended by the `SingleLine` and `Compiled` default options.
+extended by `SingleLine` and `Compiled`.
 
 The parser looks for any matching non-replacement-only expression, then 
 applies all matching replacement expressions to refer to the keyword to use, 
-finally.
+finally. If no replacement matched the search expression string, the full 
+search match will be the used keyword.
 
-**NOTE**: The final keyword must be a valid JSON string literal in single or 
-double quotes!
+**NOTE**: The final keyword must be a string literal in single or double 
+quotes!
 
 During merging lists will be combined, and single options will be overwritten.
 
@@ -198,37 +175,13 @@ To extract some i8n file to a PO file:
 wan24I8NTool i8n extract --input /path/to/input.i8n --poOutput /path/to/output.po
 ```
 
-To extract some i8n file to a wan24-I8NLws file:
-
-```bash
-wan24I8NTool i8n extract --input /path/to/input.i8n --kwsOutput /path/to/output.po
-```
-
 **NOTE**: For more options and usage instructions please use the CLI API help 
 (see below).
 
+#TODO Add wan24-I8N usage instructions
+
 **TIPP**: You can use the i8n API for converting, merging and validating the 
 supported source formats also.
-
-In a .NET app you can use an i8n file using the `wan24-I8N(-Compressed)` NuGet 
-packages and `wan24-Core`:
-
-```cs
-// Uncompressed using the wan24-I8N NuGet package
-Translation.Current = new(await I8NTranslationTerms.FromStreamAsync(fileStream));
-
-// Compressed using the wan24-I8N-Compressed NuGet package
-Translation.Current = new(await I8NCompressedTranslationTerms.FromStreamAsync(fileStream));
-```
-
-The `FromStream(Async)` methods also allow to specify, if there's no i8n 
-header to read.
-
-Links to used NuGet packages:
-
-- [wan24-Core](https://www.nuget.org/packages/wan24-Core/)
-- [wan24-I8N](https://www.nuget.org/packages/wan24-I8N/)
-- [wan24-I8N-Compressed](https://www.nuget.org/packages/wan24-I8N-Compressed/)
 
 #### i8n file structure in detail
 
@@ -263,18 +216,17 @@ and seem to satisfy developers, translators and end users.
 
 The steps to i8n your app are:
 
-1. use l10n methods in your code when you want to translate a term
+1. use i8n methods in your code when you want to translate a term
 1. extract keywords (terms) from your source code into a PO file using an 
 extractor
 1. translate the terms using an editor tool and create a MO file
 1. load the MO file using your apps gettext-supporting library
 
 `wan24-I8NTool` is a CLI tool which you can use as extractor to 
-automatize things a bit more, and you're also free to use other translation 
-file formats.
+automatize things a bit more.
 
-If you'd like to use the i8n file format from `wan24-I8NTool` in your .NET 
-app, the last step is replaced by:
+If you'd like to use the i8n file format from `wan24-I8NTool` in your 
+.NET app, the last step is replaced by:
 
 - convert the PO/MO file to an i8n file using `wan24-I8NTool`
 - load the i8n file using your .NET app using the `wan24-I8N` library
@@ -282,13 +234,6 @@ app, the last step is replaced by:
 This is one additional step, but maybe worth it, if you don't want to miss 
 features like compressed i8n files ready-to-use i8n `wan24-Core` localization 
 (l10n) features. You'll also not need to reference any gettext supporting 
-library or do the parsing of the PO/MO format by yourself. You also may not 
-need to reference the `wan24-I8N(-Compressed)` NuGet package, if you can 
-manage to load the i8n structure by yourself (which is an easy task) - find 
-examples in the `wan24-I8N(-Compressed)` projects in this repository.
+library or do the parsing of the PO/MO format by yourself.
 
-Links to useful NuGet packages:
-
-- [wan24-Core](https://www.nuget.org/packages/wan24-Core/)
-- [wan24-I8N](https://www.nuget.org/packages/wan24-I8N/)
-- [wan24-I8N-Compressed](https://www.nuget.org/packages/wan24-I8N-Compressed/)
+#TODO Links to Github

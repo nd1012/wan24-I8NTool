@@ -2,52 +2,38 @@
 	"SingleThread": false,
 	"Encoding": "UTF-8",
 	"Patterns": [
-		[
-			"(__?|gettextn?|Translate(Plural)?|GetTerm|Std(In|Out)|Description|DisplayText)\\s*\\([^\\@\\$\\\"\\\\]\\\".*[^\\\\]\\\"",
-			"None"
-		],
-		[
-			"^.*(__?|gettextn?|Translate(Plural)?|GetTerm|Std(In|Out)|Description|DisplayText)\\s*\\([^\\@\\$\\\"\\\\](\\\".*[^\\\\]\\\").*$",
-			"None",
-			"$4"
-		],
-		[
-			"[^\\(]*\\([^\\)]*(Example|ErrorMessage)\\s*\\=[^\\@\\$\\\"\\\\]\\\".*[^\\\\]\\\"",
-			"None"
-		],
-		[
-			"^.*[^\\(]*\\([^\\)]*(Example|ErrorMessage)\\s*\\=[^\\@\\$\\\"\\\\](\\\".*[^\\\\]\\\").*$",
-			"None",
-			"$2"
-		],
-		[
-			"ExitCode[^\\(]*\\(\\d+\\s*,[^\\@\\$\\\"\\\\]\\\".*[^\\\\]\\\"",
-			"None"
-		],
-		[
-			"^.*ExitCode[^\\(]*\\(\\d+\\s*,[^\\@\\$\\\"\\\\](\\\".*[^\\\\]\\\").*$",
-			"None",
-			"$1"
-		],
-		[
-			"[^\\@\\$\\\"\\\\]\\\".*[^\\\\]\\\".*\\/\\/.*wan24I8NTool\\:include",
-			"None"
-		],
-		[
-			"^.*[^\\@\\$\\\"\\\\](\\\".*[^\\\\]\\\").*\\/\\/.*wan24I8NTool\\:include.*$",
-			"None",
-			"$1"
-		],
-		[
-			"^[^\\@\\$\\\"\\\\]+(\\\".*[^\\\\]\\\").*$",
-			"None",
-			"$1"
-		],
-		[
-			"^[^\\@\\$\\\"\\\\]*(\\\".*[^\\\\]\\\").+$",
-			"None",
-			"$1"
-		]
+		{
+			"Pattern": "^.*[^\\@\\$\\\"\\\\](%{rxStringLiteral}).*$",
+			"Options": "NonBacktracking",
+			"Replacement": "$1",
+			"ReplaceOnly": true
+		},
+		{
+			"Pattern": "^(%{rxStringLiteral}).+$",
+			"Options": "NonBacktracking",
+			"Replacement": "$1",
+			"ReplaceOnly": true
+		},
+		{
+			"Pattern": "^.*(_+|gettextn?|Translate(Plural)?|GetTerm|Std(In|OutErr)|Description|DisplayText)\\s*\\(\\s*(%{rxStringLiteral}).*$",
+			"Options": "NonBacktracking",
+			"Replacement": "$4"
+		},
+		{
+			"Pattern": "^.*\\(.*(Example|ErrorMessage)\\s*\\=\\s*(%{rxStringLiteral}).*$",
+			"Options": "NonBacktracking",
+			"Replacement": "$2"
+		},
+		{
+			"Pattern": "^.*ExitCode[^\\(]*\\(\\d+\\s*,\\s*(%{rxStringLiteral}).*$",
+			"Options": "NonBacktracking",
+			"Replacement": "$1"
+		},
+		{
+			"Pattern": "^.*[^\\@\\$\\\"\\\\](%{rxStringLiteral}).*wan24I8NTool\\:include.*$",
+			"Options": "NonBacktracking",
+			"Replacement": "$1"
+		}
 	],
 	"FileExtensions": [
 		".cs",

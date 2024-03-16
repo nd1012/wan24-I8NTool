@@ -53,6 +53,7 @@ namespace wan24.I8NTool
         [Description("Creates/merges a PO file with from source code extracted keywords")]
         [StdIn("/path/to/source.cs")]
         [StdOut("/path/to/target.po")]
+        [StdErr("Verbose output and errors")]
         public static async Task ExtractAsync(
 
             [CliApi(Example = "/path/to/config.json")]
@@ -186,8 +187,9 @@ namespace wan24.I8NTool
                 WriteInfo($"Fail on error: {FailOnError || I8NToolConfig.FailOnError}");
             }
             if (input is not null && I8NToolConfig.FileExtensions.Count < 1) throw new InvalidDataException("Missing file extensions to look for");
-            if (!I8NToolConfig.Patterns.Any(p => p.Replacement is null)) throw new InvalidDataException("Missing matching-only patterns");
-            if (!I8NToolConfig.Patterns.Any(p => p.Replacement is not null)) throw new InvalidDataException("Missing replace patterns");
+            if (!I8NToolConfig.Patterns.Any(p => !p.ReplaceOnly)) throw new InvalidDataException("Missing matching-only patterns");
+            if (I8NToolConfig.Patterns.Any(p => p.ReplaceOnly && p.Replacement is null)) throw new InvalidDataException("Found replace pattern without replacement");
+            if (!I8NToolConfig.Patterns.Any(p => p.ReplaceOnly && p.Replacement is not null)) throw new InvalidDataException("Missing replace patterns");
             // Process
             DateTime started = DateTime.Now;// Part start time
             int sources = 0;// Number of source files parsed
@@ -221,7 +223,7 @@ namespace wan24.I8NTool
                     foreach (string path in input)
                     {
                         // Process input file-/foldernames
-                        if (Trace) WriteTrace($"Handling input path \"{path}\"");
+                        if (verbose) WriteInfo($"Handling input path \"{path}\"");
                         fullPath = Path.GetFullPath(path);
                         if (Trace && !path.Equals(fullPath, StringComparison.OrdinalIgnoreCase))
                             WriteTrace($"Full input path for \"{path}\" is \"{fullPath}\"");

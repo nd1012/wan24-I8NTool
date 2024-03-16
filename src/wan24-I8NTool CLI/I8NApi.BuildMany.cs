@@ -27,9 +27,10 @@ namespace wan24.I8NTool
         /// <param name="singleThread">Disable multi-threading?</param>
         /// <param name="verbose">Write verbose informations to STDERR</param>
         /// <returns>Exit code</returns>
-        [CliApi("buildmany", IsDefault = true)]
+        [CliApi("buildmany")]
         [DisplayText("Build i8n files")]
         [Description("Build many internationalization (i8n) files from (wan24-I8N) JSON (UTF-8) or PO/MO (gettext) source files (output filename is the input filename with the \".i8n\" extension instead - existing files will be overwritten; default is to convert all *.json/kws/po/mo files in the working folder)")]
+        [StdErr("Verbose output and errors")]
         [ExitCode(0, "Ok")]
         [ExitCode(1, "Had errors")]
         public static async Task<int> BuildManyAsync(

@@ -48,7 +48,7 @@ namespace wan24.I8NTool
                     {
                         if (failOnExistingKey)
                             throw new InvalidDataException($"Won't overwrite existing key \"{key.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
-                        if (Trace) WriteTrace($"Overwriting existing key \"{key.ToLiteral()}\"");
+                        if (verbose) WriteInfo($"Overwriting existing key \"{key.ToLiteral()}\"");
                         overwrittenTerms++;
                     }
                     else
@@ -85,14 +85,15 @@ namespace wan24.I8NTool
             {
                 KwsCatalog catalog = await JsonHelper.DecodeAsync<KwsCatalog>(source, cancellationToken).DynamicContext()
                     ?? throw new InvalidDataException($"Failed to read wan24-I8NKws JSON from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
+                catalog.Validate();
                 if (verbose) WriteInfo($"Found {catalog.Keywords.Count} terms");
-                foreach (KwsKeyword keyword in catalog.Keywords)
+                foreach (KwsKeyword keyword in catalog.NonObsoleteKeywords)
                 {
                     if (terms.ContainsKey(keyword.ID))
                     {
                         if (failOnExistingKey)
                             throw new InvalidDataException($"Won't overwrite existing key \"{keyword.IdLiteral}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
-                        if (Trace) WriteTrace($"Overwriting existing key \"{keyword.IdLiteral}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
+                        if (verbose) WriteInfo($"Overwriting existing key \"{keyword.IdLiteral}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
                         overwrittenTerms++;
                     }
                     else
@@ -186,7 +187,7 @@ namespace wan24.I8NTool
                 {
                     if (failOnExistingKey)
                         throw new InvalidDataException($"Won't overwrite existing key \"{entry.Key.Id.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
-                    if (Trace) WriteTrace($"Overwriting existing key \"{entry.Key.Id.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
+                    if (verbose) WriteInfo($"Overwriting existing key \"{entry.Key.Id.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
                     overwrittenTerms++;
                 }
                 else
@@ -242,7 +243,7 @@ namespace wan24.I8NTool
                 {
                     if (failOnExistingKey)
                         throw new InvalidDataException($"Won't overwrite existing key \"{kvp.Key.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
-                    if (Trace) WriteTrace($"Overwriting existing key \"{kvp.Key.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
+                    if (verbose) WriteInfo($"Overwriting existing key \"{kvp.Key.ToLiteral()}\" from {(fn is null ? "STDIN" : $"source file \"{fn}\"")}");
                     overwrittenTerms++;
                 }
                 else

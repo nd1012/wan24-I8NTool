@@ -1,6 +1,4 @@
 ﻿using FuzzySharp;
-using System.Diagnostics.Contracts;
-using System.Text.RegularExpressions;
 using wan24.Core;
 using static wan24.Core.Logger;
 using static wan24.Core.Logging;
@@ -29,120 +27,165 @@ namespace wan24.I8NTool
             int parsedLines = 0;
             await using (stream.DynamicContext())
             {
-                bool replaced;// If a replace pattern did match during the replace loop
+                bool replaced,// If a replace pattern did match during the replace loop
+                    trace = Trace;// If tracing
                 string currentLine,// Current line in the source file (without the last matched patterns)
                     keyword;// Currently matched keyword
-                int lineNumber = 0;// Current line number in the source file (starts with 1)
-                KeywordMatch? match;// Existing/new Poedit parser match
-                KeywordParserPattern? pattern;// First matching Poedit parser pattern (may be a matching pattern or a replacement)
-                Match? rxMatch = null;// Regular expression match of the first matching Poedit parser pattern
+                int lineNumber = 0,// Current line number in the source file (starts with 1)
+                    patternCount = I8NToolConfig.Patterns.Count,// Number of patterns
+                    i;// Index counter
+                KeywordMatch? match;// Current keyword match
+                KeywordParserPattern[] patterns = [.. I8NToolConfig.Patterns];// Available patterns
+                KeywordParserPattern? pattern = null,// First matching pattern (may be a matching pattern or a replacement)
+                    tempPattern;// Temporary pattern variable
+#if DEBUG
                 HashSet<int> matched = [],// Indexes of keyword matching patterns
                     replacing = [];// Indexes of keyword applied replacing patterns
-                using StreamReader reader = new(stream, I8NToolConfig.SourceEncoding);// Source file reader which uses the configured source encoding
-                while (await reader.ReadLineAsync().DynamicContext() is string line)
+#endif
+                using StreamReader reader = new(stream, I8NToolConfig.SourceEncoding, leaveOpen: true);// Source file reader which uses the configured source encoding
+                Task<string?> nextLine = reader.ReadLineAsync();// Task which reads the next line to process
+                try
                 {
-                    // File contents per line loop
-                    lineNumber++;
-                    if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber}");
-                    if (line.Trim() == string.Empty)
+                    while (await nextLine.DynamicContext() is string line)
                     {
-                        if (Trace) WriteTrace($"Skipping empty source file \"{fileName}\" line #{lineNumber}");
-                        continue;
-                    }
-                    parsedLines++;
-                    currentLine = keyword = line;
-                    matched.Clear();
-                    replacing.Clear();
-                    while (true)
-                    {
-                        // Current line parsing loop (parse until no Poedit parser pattern is matching)
-                        pattern = I8NToolConfig.Patterns
-                            .FirstOrDefault(p => p.Replacement is null && (rxMatch = p.Expression.Matches(currentLine).FirstOrDefault()) is not null);
-                        if (pattern is null)
+                        // Pre-read the next line during processing the current line
+                        nextLine = reader.ReadLineAsync();
+                        // File contents per line loop
+                        lineNumber++;
+                        if (trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber}");
+                        if (string.IsNullOrWhiteSpace(line))
                         {
-                            if (Trace) WriteTrace($"No pattern matching for source file \"{fileName}\" line #{lineNumber}");
-                            break;
+                            if (trace) WriteTrace($"Skipping empty source file \"{fileName}\" line #{lineNumber}");
+                            continue;
                         }
-                        matched.Add(I8NToolConfig.Patterns.ElementIndex(pattern));
-                        // Handle the current match
-                        Contract.Assert(rxMatch is not null);
-                        if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} pattern \"{pattern.Pattern}\" matched \"{rxMatch.Groups[1].Value}\"");
-                        replaced = true;
-                        keyword = currentLine;
-                        bool br = false, dbg = true;
-                        while (replaced)
+                        parsedLines++;
+                        currentLine = keyword = line;
+#if DEBUG
+                        matched.Clear();
+                        replacing.Clear();
+#endif
+                        while (true)
                         {
-                            // Poedit parser pattern loop (replace until we have the final keyword)
-                            replaced = false;
-                            br = false;
-                            foreach (KeywordParserPattern replace in I8NToolConfig.Patterns.Where(p => p.Replacement is not null && p.Expression.IsMatch(keyword)))
+                            // Current line parsing loop (parse until no pattern is matching)
+                            pattern = null;
+                            for (i = 0; i < patternCount; i++)
                             {
-                                if (dbg && keyword.Contains("), Done == DateTime.MinValue ?"))
-                                {
-                                    br = true;
-                                    System.Diagnostics.Debugger.Break();
-                                }
-                                if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} replacement pattern \"{replace.Pattern}\" matched \"{keyword}\"");
-                                replaced = true;
-                                keyword = replace.Expression.Replace(keyword, replace.Replacement!);
-                                replacing.Add(I8NToolConfig.Patterns.ElementIndex(replace));
-                                if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} replacement pattern \"{replace.Pattern}\" replaced to \"{keyword}\"");
+                                tempPattern = patterns[i];
+                                if (tempPattern.ReplaceOnly || !tempPattern.Expression.IsMatch(currentLine)) continue;
+                                pattern = tempPattern;
+                                break;
                             }
-                            if (dbg && (br || keyword.Contains("), Done == DateTime.MinValue ?"))) System.Diagnostics.Debugger.Break();
-                        }
-                        // Remove the parsed keyword from the current line and store its position
-                        currentLine = currentLine.Replace(keyword, string.Empty);
-                        if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} new line is \"{currentLine}\" after keyword \"{keyword}\" was extracted");
-                        // Decode the parsed keyword literal to a string
-                        keyword = keyword.Trim();
-                        if (keyword.StartsWith('\'')) keyword = $"\"{keyword[1..]}";
-                        if (keyword.EndsWith('\'')) keyword = $"{keyword[..^1]}\"";
-                        if (!keyword.StartsWith('\"') || !keyword.EndsWith('\"'))
-                        {
-                            WriteError($"Source file \"{fileName}\" line #{lineNumber} keyword \"{keyword}\" is not a valid string literal (regular expression pattern failure)");
-                            if (System.Diagnostics.Debugger.IsAttached) System.Diagnostics.Debugger.Break();
-                            FailOnErrorIfRequested();
-                            continue;
-                        }
-                        try
-                        {
-                            keyword = JsonHelper.Decode<string>(keyword) ?? throw new InvalidDataException($"Failed to decode keyword \"{keyword}\"");// keyword = "message"
-                        }
-                        catch(Exception ex)
-                        {
-                            WriteError($"Source file \"{fileName}\" line #{lineNumber} keyword \"{keyword.ToLiteral()}\" failed to decode to string: ({ex.GetType()}) {ex.Message}");
-                            if (System.Diagnostics.Debugger.IsAttached) System.Diagnostics.Debugger.Break();
-                            FailOnErrorIfRequested();
-                            continue;
-                        }
-                        // Store the parsed keyword (position)
-                        lock (keywords)
-                        {
-                            match = keywords.FirstOrDefault(m => m.Keyword == keyword);
-                            if (match is null)
+                            if (pattern is null)
                             {
-                                if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} new keyword \"{keyword.ToLiteral()}\"");
-                                keywords.Add(match = new()
+                                if (trace) WriteTrace($"No pattern matching for source file \"{fileName}\" line #{lineNumber}");
+                                break;
+                            }
+#if DEBUG
+                            matched.Add(i);
+#endif
+                            // Handle the current match
+                            if (trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} matched by pattern \"{pattern.Pattern}\"");
+                            replaced = true;
+                            if (pattern.Replacement is null)
+                            {
+                                keyword = currentLine;
+                            }
+                            else
+                            {
+                                keyword = pattern.Expression.Replace(currentLine, pattern.Replacement);
+                                if (trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} matching pattern \"{pattern.Pattern}\" replaced to \"{keyword.ToLiteral()}\"");
+                            }
+                            while (replaced)
+                            {
+                                // Parser pattern loop (replace until we have the final keyword)
+                                replaced = false;
+                                for (i = 0; i < patternCount; i++)
                                 {
-                                    Keyword = keyword
+                                    tempPattern = patterns[i];
+                                    if (tempPattern == pattern || !tempPattern.ReplaceOnly || !tempPattern.Expression.IsMatch(keyword)) continue;
+                                    if (trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} replacement pattern \"{tempPattern.Pattern}\" matched \"{keyword.ToLiteral()}\"");
+                                    replaced = true;
+                                    keyword = tempPattern.Expression.Replace(keyword, tempPattern.Replacement!);
+#if DEBUG
+                                    replacing.Add(i);
+#endif
+                                    if (trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} replacement pattern \"{tempPattern.Pattern}\" replaced to \"{keyword.ToLiteral()}\"");
+                                }
+                            }
+                            // Remove the parsed keyword from the current line and store its position
+                            if (keyword.Length < 1)
+                            {
+                                WriteError($"Empty keyword matched in source file \"{fileName}\" line #{lineNumber} - skip parsing the rest of the line");
+                                if (System.Diagnostics.Debugger.IsAttached) System.Diagnostics.Debugger.Break();
+                                FailOnErrorIfRequested();
+                                break;
+                            }
+                            currentLine = currentLine.Replace(keyword, string.Empty);
+                            if (trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} new line is \"{currentLine}\" after keyword \"{keyword.ToLiteral()}\" was extracted");
+                            // Decode the parsed keyword literal to a string
+                            keyword = keyword.Trim();
+                            if (keyword.StartsWith('\'')) keyword = $"\"{keyword[1..]}";
+                            if (keyword.EndsWith('\'')) keyword = $"{keyword[..^1]}\"";
+                            if (!keyword.StartsWith('\"') || !keyword.EndsWith('\"'))
+                            {
+                                WriteError($"Source file \"{fileName}\" line #{lineNumber} keyword \"{keyword.ToLiteral()}\" is not a valid string literal (regular expression pattern failure)");
+                                if (System.Diagnostics.Debugger.IsAttached) System.Diagnostics.Debugger.Break();
+                                FailOnErrorIfRequested();
+                                continue;
+                            }
+                            try
+                            {
+                                keyword = JsonHelper.Decode<string>(keyword) ?? throw new InvalidDataException($"Failed to decode keyword \"{keyword}\"");// keyword = "message"
+                            }
+                            catch (Exception ex)
+                            {
+                                WriteError($"Source file \"{fileName}\" line #{lineNumber} keyword \"{keyword.ToLiteral()}\" failed to decode to string: ({ex.GetType()}) {ex.Message}");
+                                if (System.Diagnostics.Debugger.IsAttached) System.Diagnostics.Debugger.Break();
+                                FailOnErrorIfRequested();
+                                continue;
+                            }
+                            // Store the parsed keyword (position)
+                            lock (keywords)
+                            {
+                                match = keywords.FirstOrDefault(m => m.Keyword == keyword);
+                                if (match is null)
+                                {
+                                    if (Trace) WriteTrace($"Source file \"{fileName}\" line #{lineNumber} new keyword \"{keyword.ToLiteral()}\"");
+                                    keywords.Add(match = new()
+                                    {
+                                        Keyword = keyword
+                                    });
+                                }
+                                else if (trace)
+                                {
+                                    WriteTrace($"Source file \"{fileName}\" line #{lineNumber} existing keyword \"{match.KeywordLiteral}\"");
+                                }
+#if DEBUG
+                                match.MatchingPatterns.Clear();
+                                match.MatchingPatterns.AddRange(matched);
+                                match.ReplacingPatterns.Clear();
+                                match.ReplacingPatterns.AddRange(replacing);
+#endif
+                                match.Positions.Add(new()
+                                {
+                                    FileName = fileName,
+                                    LineNumber = lineNumber
                                 });
                             }
-                            else if (Trace)
-                            {
-                                WriteTrace($"Source file \"{fileName}\" line #{lineNumber} existing keyword \"{match.KeywordLiteral}\"");
-                            }
-                            match.MatchingPatterns.Clear();
-                            match.MatchingPatterns.AddRange(matched);
-                            match.ReplacingPatterns.Clear();
-                            match.ReplacingPatterns.AddRange(replacing);
-                            match.Positions.Add(new()
-                            {
-                                FileName = fileName,
-                                LineNumber = lineNumber
-                            });
+                            if (verbose) WriteInfo($"Found keyword \"{match.KeywordLiteral}\" in source {(fileName is null ? string.Empty : $" file \"{fileName}\"")} on line #{lineNumber}");
                         }
-                        if (verbose) WriteInfo($"Found keyword \"{match.KeywordLiteral}\" in source {(fileName is null ? string.Empty : $" file \"{fileName}\"")} on line #{lineNumber}");
                     }
+                }
+                finally
+                {
+                    if(!nextLine.IsCompleted)
+                        try
+                        {
+                            await nextLine.DynamicContext();
+                        }
+                        catch
+                        {
+                        }
                 }
             }
             return parsedLines;
@@ -177,7 +220,7 @@ namespace wan24.I8NTool
                     .Where(info => info.Item2 <= minWeight)
                     .OrderBy(info => info.Item2)
                     .Select(info => info.keyword)
-                    .FirstOrDefault() ?? null;
+                    .FirstOrDefault();
 
         /// <summary>
         /// File worker
@@ -194,7 +237,7 @@ namespace wan24.I8NTool
             /// <summary>
             /// Thread synchronization
             /// </summary>
-            private readonly SemaphoreSync ParsedLinesSync = new();
+            private readonly object ParsedLinesSync = new();
             /// <summary>
             /// Total number of parsed non-empty lines from processed files
             /// </summary>
@@ -223,22 +266,7 @@ namespace wan24.I8NTool
                 FileStream fs = FsHelper.CreateFileStream(item, FileMode.Open, FileAccess.Read, FileShare.Read);
                 await using (fs.DynamicContext())
                      lines = await ProcessFileAsync(fs, Keywords, Verbose, item).DynamicContext();
-                using SemaphoreSyncContext ssc = await ParsedLinesSync.SyncContextAsync(cancellationToken).DynamicContext();
-                _ParsedLines += lines;
-            }
-
-            /// <inheritdoc/>
-            protected override void Dispose(bool disposing)
-            {
-                base.Dispose(disposing);
-                ParsedLinesSync.Dispose();
-            }
-
-            /// <inheritdoc/>
-            protected override async Task DisposeCore()
-            {
-                await base.DisposeCore().DynamicContext();
-                await ParsedLinesSync.DisposeAsync().DynamicContext();
+                lock (ParsedLinesSync) _ParsedLines += lines;
             }
         }
     }

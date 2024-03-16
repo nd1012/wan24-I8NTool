@@ -35,6 +35,7 @@ namespace wan24.I8NTool
         [Description("Build an internationalization (i8n) file from JSON (UTF-8) and/or PO/MO (gettext) source files")]
         [StdIn("/path/to/input.(json|po|mo)")]
         [StdOut("/path/to/output.i8n")]
+        [StdErr("Verbose output and errors")]
         public static async Task BuildAsync(
 
             [CliApi(Example = "/path/to/input.json")]
