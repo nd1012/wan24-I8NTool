@@ -116,6 +116,11 @@ namespace wan24.I8NKws
         public HashSet<KwsKeyword> Revisions { get; init; } = [];
 
         /// <summary>
+        /// Properties
+        /// </summary>
+        public Dictionary<string, string> Properties { get; init; } = [];
+
+        /// <summary>
         /// Get a plural translation
         /// </summary>
         /// <param name="count">Count</param>
@@ -169,6 +174,8 @@ namespace wan24.I8NKws
                 if (revisions[i] == revision) break;
                 Revisions.Add(revisions[i]);
             }
+            Properties.Clear();
+            Properties.AddRange(revision.Properties);
         }
 
         /// <summary>
@@ -273,6 +280,8 @@ namespace wan24.I8NKws
             HashSet<KwsKeyword> revisions = [.. Revisions.Concat(other.Revisions).OrderBy(r => r.Updated).Distinct()];
             Revisions.Clear();
             Revisions.AddRange(revisions);
+            // Merge properties
+            foreach (var kvp in other.Properties) Properties[kvp.Key] = kvp.Value;
         }
     }
 }

@@ -67,6 +67,11 @@ namespace wan24.I8NKws
         public bool RightToLeft { get; set; }
 
         /// <summary>
+        /// Properties
+        /// </summary>
+        public Dictionary<string, string> Properties { get; init; } = [];
+
+        /// <summary>
         /// Complete keywords (non-obsolete)
         /// </summary>
         [NoValidation]
@@ -213,6 +218,7 @@ namespace wan24.I8NKws
             if (string.IsNullOrWhiteSpace(Project) && !string.IsNullOrWhiteSpace(other.Project)) Project = other.Project;
             if (string.IsNullOrWhiteSpace(Translator) && !string.IsNullOrWhiteSpace(other.Translator)) Translator = other.Translator;
             RightToLeft = other.RightToLeft;
+            foreach (var kvp in other.Properties) Properties[kvp.Key] = kvp.Value;
             // Merge keywords
             foreach(KwsKeyword otherKeyword in other.NonObsoleteKeywords)
             {
