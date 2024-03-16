@@ -1,0 +1,683 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class I8NApi | wan24-I8N </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class I8NApi | wan24-I8N ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <!-- Header required for docfx anchor scroll to work -->
+        <header id="head"></header>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../logo.svg" alt="" class="logomark">
+              <span class="brand-title"></span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../logo.svg" alt="" class="logomark">
+                          <span class="brand-title"></span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  (c) 2024 Andreas Zimmermann, wan24.de
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NTool_I8NApi.md&amp;value=---%0Auid%3A%20wan24.I8NTool.I8NApi%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="wan24.I8NTool.I8NApi">
+
+
+
+  <h1 id="wan24_I8NTool_I8NApi" data-uid="wan24.I8NTool.I8NApi" class="text-break">Class I8NApi</h1>
+  <div class="markdown level0 summary"><p>i8n API</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">I8NApi</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="wan24.html">wan24</a>.<a class="xref" href="wan24.I8NTool.html">I8NTool</a></h6>
+  <h6><strong>Assembly</strong>: wan24I8NTool.dll</h6>
+  <h5 id="wan24_I8NTool_I8NApi_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CliApi(&quot;i8n&quot;, false)]
+[DisplayText(&quot;Internationalization&quot;)]
+public sealed class I8NApi</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NTool_I8NApi__ctor.md&amp;value=---%0Auid%3A%20wan24.I8NTool.I8NApi.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NTool CLI/I8NApi.cs/#L23">View Source</a>
+  </span>
+  <a id="wan24_I8NTool_I8NApi__ctor_" data-uid="wan24.I8NTool.I8NApi.#ctor*"></a>
+  <h4 id="wan24_I8NTool_I8NApi__ctor" data-uid="wan24.I8NTool.I8NApi.#ctor">I8NApi()</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public I8NApi()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NTool_I8NApi_HEADER_COMPRESSION_FLAG.md&amp;value=---%0Auid%3A%20wan24.I8NTool.I8NApi.HEADER_COMPRESSION_FLAG%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NTool CLI/I8NApi.cs/#L18">View Source</a>
+  </span>
+  <h4 id="wan24_I8NTool_I8NApi_HEADER_COMPRESSION_FLAG" data-uid="wan24.I8NTool.I8NApi.HEADER_COMPRESSION_FLAG">HEADER_COMPRESSION_FLAG</h4>
+  <div class="markdown level1 summary"><p>i8n file structure header byte compression flag (bit 8)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int HEADER_COMPRESSION_FLAG = 128</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NTool_I8NApi_FailOnError.md&amp;value=---%0Auid%3A%20wan24.I8NTool.I8NApi.FailOnError%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NTool CLI/I8NApi.cs/#L28">View Source</a>
+  </span>
+  <a id="wan24_I8NTool_I8NApi_FailOnError_" data-uid="wan24.I8NTool.I8NApi.FailOnError*"></a>
+  <h4 id="wan24_I8NTool_I8NApi_FailOnError" data-uid="wan24.I8NTool.I8NApi.FailOnError">FailOnError</h4>
+  <div class="markdown level1 summary"><p>Fail on error?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CliApi(&quot;failOnError&quot;, false)]
+[DisplayText(&quot;Fail on error&quot;)]
+public static bool FailOnError { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NTool_I8NApi_BuildAsync_System_String___System_String___System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20wan24.I8NTool.I8NApi.BuildAsync(System.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NTool CLI/I8NApi.Build.cs/#L33">View Source</a>
+  </span>
+  <a id="wan24_I8NTool_I8NApi_BuildAsync_" data-uid="wan24.I8NTool.I8NApi.BuildAsync*"></a>
+  <h4 id="wan24_I8NTool_I8NApi_BuildAsync_System_String___System_String___System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Threading_CancellationToken_" data-uid="wan24.I8NTool.I8NApi.BuildAsync(System.String[],System.String[],System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Threading.CancellationToken)">BuildAsync(string[]?, string[]?, string[]?, string[]?, string?, bool, bool, bool, bool, bool, bool, bool, bool, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Build an internationalization file from multiple input sources</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CliApi(&quot;build&quot;, false, IsDefault = true)]
+[DisplayText(&quot;Build i8n file&quot;)]
+[StdIn(&quot;/path/to/input.(json|po|mo)&quot;, false)]
+[StdOut(&quot;/path/to/output.i8n&quot;, false)]
+[StdErr(&quot;Verbose output and errors&quot;)]
+public static Task BuildAsync(string[]? jsonInput = null, string[]? kwsInput = null, string[]? poInput = null, string[]? moInput = null, string? output = null, bool compress = false, bool json = false, bool kws = false, bool po = false, bool mo = false, bool noHeader = false, bool verbose = false, bool failOnExistingKey = false, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">jsonInput</span></td>
+        <td><p>JSON (UTF-8) input filenames</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">kwsInput</span></td>
+        <td><p>wan24-I8NKws JSON (UTF-8) input filenames</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">poInput</span></td>
+        <td><p>PO (gettext) input filenames</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">moInput</span></td>
+        <td><p>MO (gettext) input filenames</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">output</span></td>
+        <td><p>Internationalization output filename (if not given, STDOUT will be used; existing file will be overwritten)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">compress</span></td>
+        <td><p>To compress the internationalization file</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">json</span></td>
+        <td><p>To read JSON (UTF-8) from STDIN</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">kws</span></td>
+        <td><p>To read wan24-I8NKws JSON (UTF-8) from STDIN</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">po</span></td>
+        <td><p>To read PO (gettext) from STDIN</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">mo</span></td>
+        <td><p>To read MO (gettext) from STDIN</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">noHeader</span></td>
+        <td><p>To skip writing a header with the version number and the compression flag</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">verbose</span></td>
+        <td><p>Write verbose informations to STDERR</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">failOnExistingKey</span></td>
+        <td><p>To fail, if an existing key would be overwritten by an additional source</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NTool_I8NApi_BuildManyAsync_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String___System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20wan24.I8NTool.I8NApi.BuildManyAsync(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NTool CLI/I8NApi.BuildMany.cs/#L30">View Source</a>
+  </span>
+  <a id="wan24_I8NTool_I8NApi_BuildManyAsync_" data-uid="wan24.I8NTool.I8NApi.BuildManyAsync*"></a>
+  <h4 id="wan24_I8NTool_I8NApi_BuildManyAsync_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String___System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="wan24.I8NTool.I8NApi.BuildManyAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String[],System.Boolean,System.Boolean,System.Boolean,System.Boolean)">BuildManyAsync(string, string, string, string, string, string, string, string, string[]?, bool, bool, bool, bool)</h4>
+  <div class="markdown level1 summary"><p>Build many internationalization (i8n) files from JSON (UTF-8) and/or PO/MO (gettext) source files (output filename is the input filename with the
+<code>.i8n</code> extension instead - existing files will be overwritten; default is to convert all *.json/po/mo files in the working folder)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CliApi(&quot;buildmany&quot;, false)]
+[DisplayText(&quot;Build i8n files&quot;)]
+[StdErr(&quot;Verbose output and errors&quot;)]
+[ExitCode(0, &quot;Ok&quot;)]
+[ExitCode(1, &quot;Had errors&quot;)]
+public static Task&lt;int&gt; BuildManyAsync(string jsonInput = &quot;./&quot;, string jsonInputPattern = &quot;*.json&quot;, string kwsInput = &quot;./&quot;, string kwsInputPattern = &quot;*.kws&quot;, string poInput = &quot;./&quot;, string poInputPattern = &quot;*.po&quot;, string moInput = &quot;./&quot;, string moInputPattern = &quot;*.mo&quot;, string[]? exclude = null, bool compress = false, bool noHeader = false, bool singleThread = false, bool verbose = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">jsonInput</span></td>
+        <td><p>JSON input file (UTF-8) folder (no recursion)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">jsonInputPattern</span></td>
+        <td><p>JSON input pattern</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">kwsInput</span></td>
+        <td><p>wan24-I8NKws JSON input file (UTF-8) folder (no recursion)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">kwsInputPattern</span></td>
+        <td><p>wan24-I8NKws JSON input pattern</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">poInput</span></td>
+        <td><p>PO (gettext) input file folder (no recursion)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">poInputPattern</span></td>
+        <td><p>PO input pattern</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">moInput</span></td>
+        <td><p>MO (gettext) input file folder (no recursion)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">moInputPattern</span></td>
+        <td><p>MO input pattern</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">exclude</span></td>
+        <td><p>Path to excluded source files (absolute path or filename only (&quot;*&quot; (any or none) and &quot;+&quot; (one or many) may be used as wildcard); case insensitive)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">compress</span></td>
+        <td><p>To compress the internationalization files</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">noHeader</span></td>
+        <td><p>To skip writing a header with the version number and the compression flag</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">singleThread</span></td>
+        <td><p>Disable multi-threading?</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">verbose</span></td>
+        <td><p>Write verbose informations to STDERR</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><p>Exit code</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NTool_I8NApi_DisplayAsync_System_String_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20wan24.I8NTool.I8NApi.DisplayAsync(System.String%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NTool CLI/I8NApi.Display.cs/#L19">View Source</a>
+  </span>
+  <a id="wan24_I8NTool_I8NApi_DisplayAsync_" data-uid="wan24.I8NTool.I8NApi.DisplayAsync*"></a>
+  <h4 id="wan24_I8NTool_I8NApi_DisplayAsync_System_String_System_Boolean_System_Boolean_" data-uid="wan24.I8NTool.I8NApi.DisplayAsync(System.String,System.Boolean,System.Boolean)">DisplayAsync(string?, bool, bool)</h4>
+  <div class="markdown level1 summary"><p>Display internationalization file informations</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CliApi(&quot;display&quot;, false)]
+[DisplayText(&quot;Display i8n file&quot;)]
+[StdIn(&quot;/path/to/input.i8n&quot;, false)]
+[StdErr(&quot;Output and errors&quot;)]
+public static Task DisplayAsync(string? input = null, bool uncompress = false, bool noHeader = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">input</span></td>
+        <td><p>Internationalization input filename (if not given, STDIN will be used)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">uncompress</span></td>
+        <td><p>To uncompress the internationalization file (not required to use, if a header will be red)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">noHeader</span></td>
+        <td><p>To skip reading a header with the version number and the compression flag</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NTool_I8NApi_ExtractAsync_System_String_System_Boolean_System_String_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20wan24.I8NTool.I8NApi.ExtractAsync(System.String%2CSystem.Boolean%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NTool CLI/I8NApi.Extract.cs/#L28">View Source</a>
+  </span>
+  <a id="wan24_I8NTool_I8NApi_ExtractAsync_" data-uid="wan24.I8NTool.I8NApi.ExtractAsync*"></a>
+  <h4 id="wan24_I8NTool_I8NApi_ExtractAsync_System_String_System_Boolean_System_String_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="wan24.I8NTool.I8NApi.ExtractAsync(System.String,System.Boolean,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ExtractAsync(string?, bool, string?, string?, string?, bool, bool, bool, bool, bool)</h4>
+  <div class="markdown level1 summary"><p>Extract an internationalization file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CliApi(&quot;extract&quot;, false)]
+[DisplayText(&quot;Extract i8n file&quot;)]
+[StdIn(&quot;/path/to/input.i8n&quot;, false)]
+[StdOut(&quot;/path/to/output.(json|po)&quot;, false)]
+[StdErr(&quot;Verbose output and errors&quot;)]
+public static Task ExtractAsync(string? input = null, bool uncompress = false, string? jsonOutput = null, string? kwsOutput = null, string? poOutput = null, bool json = false, bool kws = false, bool po = false, bool noHeader = false, bool verbose = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">input</span></td>
+        <td><p>Internationalization input filename (if not given, STDIN will be used)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">uncompress</span></td>
+        <td><p>To uncompress the internationalization file (not required to use, if a header will be red)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">jsonOutput</span></td>
+        <td><p>JSON (UTF-8) output filename</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">kwsOutput</span></td>
+        <td><p>wan24-I8NKws JSON (UTF-8) output filename</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">poOutput</span></td>
+        <td><p>PO (gettext) output filename</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">json</span></td>
+        <td><p>To write JSON (UTF-8) to STDOUT</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">kws</span></td>
+        <td><p>To write wan24-I8NKws JSON (UTF-8) to STDOUT</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">po</span></td>
+        <td><p>To write PO (gettext) (UTF-8) to STDOUT</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">noHeader</span></td>
+        <td><p>To skip reading a header with the version number and the compression flag</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">verbose</span></td>
+        <td><p>Write verbose informations to STDERR</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>(c) 2024 Andreas Zimmermann, wan24.de</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

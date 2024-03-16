@@ -1,0 +1,826 @@
+### YamlMime:ManagedReference
+items:
+- uid: wan24.I8NTool.KeywordExtractorApi
+  commentId: T:wan24.I8NTool.KeywordExtractorApi
+  id: KeywordExtractorApi
+  parent: wan24.I8NTool
+  children:
+  - wan24.I8NTool.KeywordExtractorApi.#ctor
+  - wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+  - wan24.I8NTool.KeywordExtractorApi.FailOnError
+  langs:
+  - csharp
+  - vb
+  name: KeywordExtractorApi
+  nameWithType: KeywordExtractorApi
+  fullName: wan24.I8NTool.KeywordExtractorApi
+  type: Class
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/KeywordExtractorApi.Internal.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: KeywordExtractorApi
+    path: ../wan24-I8NTool CLI/KeywordExtractorApi.Internal.cs
+    startLine: 8
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: PO extractor CLI API
+  example: []
+  syntax:
+    content: >-
+      [CliApi("extractor", false, IsDefault = true)]
+
+      [DisplayText("PO extractor")]
+
+      public sealed class KeywordExtractorApi
+    content.vb: >-
+      <CliApi("extractor", False, IsDefault:=True)>
+
+      <DisplayText("PO extractor")>
+
+      Public NotInheritable Class KeywordExtractorApi
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: wan24.CLI.CliApiAttribute
+    ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+    arguments:
+    - type: System.String
+      value: extractor
+    - type: System.Boolean
+      value: false
+    namedArguments:
+    - name: IsDefault
+      type: System.Boolean
+      value: true
+  - type: wan24.Core.DisplayTextAttribute
+    ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: PO extractor
+- uid: wan24.I8NTool.KeywordExtractorApi.#ctor
+  commentId: M:wan24.I8NTool.KeywordExtractorApi.#ctor
+  id: '#ctor'
+  parent: wan24.I8NTool.KeywordExtractorApi
+  langs:
+  - csharp
+  - vb
+  name: KeywordExtractorApi()
+  nameWithType: KeywordExtractorApi.KeywordExtractorApi()
+  fullName: wan24.I8NTool.KeywordExtractorApi.KeywordExtractorApi()
+  type: Constructor
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/KeywordExtractorApi.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: .ctor
+    path: ../wan24-I8NTool CLI/KeywordExtractorApi.cs
+    startLine: 24
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: Constructor
+  example: []
+  syntax:
+    content: public KeywordExtractorApi()
+    content.vb: Public Sub New()
+  overload: wan24.I8NTool.KeywordExtractorApi.#ctor*
+  nameWithType.vb: KeywordExtractorApi.New()
+  fullName.vb: wan24.I8NTool.KeywordExtractorApi.New()
+  name.vb: New()
+- uid: wan24.I8NTool.KeywordExtractorApi.FailOnError
+  commentId: P:wan24.I8NTool.KeywordExtractorApi.FailOnError
+  id: FailOnError
+  parent: wan24.I8NTool.KeywordExtractorApi
+  langs:
+  - csharp
+  - vb
+  name: FailOnError
+  nameWithType: KeywordExtractorApi.FailOnError
+  fullName: wan24.I8NTool.KeywordExtractorApi.FailOnError
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/KeywordExtractorApi.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: FailOnError
+    path: ../wan24-I8NTool CLI/KeywordExtractorApi.cs
+    startLine: 29
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: Fail on error?
+  example: []
+  syntax:
+    content: >-
+      [CliApi("failOnError", false)]
+
+      [DisplayText("Fail on error")]
+
+      public static bool FailOnError { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <CliApi("failOnError", False)>
+
+      <DisplayText("Fail on error")>
+
+      Public Shared Property FailOnError As Boolean
+  overload: wan24.I8NTool.KeywordExtractorApi.FailOnError*
+  attributes:
+  - type: wan24.CLI.CliApiAttribute
+    ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+    arguments:
+    - type: System.String
+      value: failOnError
+    - type: System.Boolean
+      value: false
+  - type: wan24.Core.DisplayTextAttribute
+    ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Fail on error
+- uid: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+  commentId: M:wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+  id: ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+  parent: wan24.I8NTool.KeywordExtractorApi
+  langs:
+  - csharp
+  - vb
+  name: ExtractAsync(string?, bool, bool, bool, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
+  nameWithType: KeywordExtractorApi.ExtractAsync(string?, bool, bool, bool, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
+  fullName: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(string?, bool, bool, bool, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/KeywordExtractorApi.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: ExtractAsync
+    path: ../wan24-I8NTool CLI/KeywordExtractorApi.cs
+    startLine: 50
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: Extract keywords from source code
+  example: []
+  syntax:
+    content: >-
+      [CliApi("extract", false, IsDefault = true)]
+
+      [DisplayText("Extract")]
+
+      [StdIn("/path/to/source.cs", false)]
+
+      [StdOut("/path/to/target.po", false)]
+
+      [StdErr("Verbose output and errors")]
+
+      public static Task ExtractAsync(string? config = null, bool singleThread = false, bool verbose = false, bool noRecursive = false, string[]? ext = null, string? encoding = null, string[]? input = null, string[]? exclude = null, string? output = null, bool noHeader = false, bool mergeOutput = false, bool json = false, int fuzzy = 0)
+    parameters:
+    - id: config
+      type: System.String
+      description: Custom configuration file
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+        namedArguments:
+        - name: Example
+          type: System.String
+          value: /path/to/config.json
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Configuration
+    - id: singleThread
+      type: System.Boolean
+      description: Disable multi-threading?
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Single threaded
+    - id: verbose
+      type: System.Boolean
+      description: Be verbose?
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Verbose
+    - id: noRecursive
+      type: System.Boolean
+      description: Disable directory recursion?
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: No recursive
+    - id: ext
+      type: System.String[]
+      description: File extensions to use (including dot; will override the configuration)
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Extensions
+    - id: encoding
+      type: System.String
+      description: Source text encoding identifier
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+        namedArguments:
+        - name: Example
+          type: System.String
+          value: UTF-8
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Encoding
+    - id: input
+      type: System.String[]
+      description: Input file-/foldernames (may be relative or absolute)
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+        namedArguments:
+        - name: Example
+          type: System.String
+          value: /path/to/source.cs
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Source files/folders
+    - id: exclude
+      type: System.String[]
+      description: Excluded file-/foldernames (absolute path or filename only; will override the configuration)
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+        namedArguments:
+        - name: Example
+          type: System.String
+          value: /path/to/source/sub/folder
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Exclude files/folders
+    - id: output
+      type: System.String
+      description: Output PO filename (may be relative or absolute)
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+        namedArguments:
+        - name: Example
+          type: System.String
+          value: /path/to/output.po
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Output path
+    - id: noHeader
+      type: System.Boolean
+      description: Skip writing a header
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: No header
+    - id: mergeOutput
+      type: System.Boolean
+      description: Merge the PO output to the existing PO file
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Merge output
+    - id: json
+      type: System.Boolean
+      description: Output wan24-I8NKws JSON format
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Output JSON
+    - id: fuzzy
+      type: System.Int32
+      description: Maximum old/new key distance in percent (only when merging)
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+        namedArguments:
+        - name: Example
+          type: System.String
+          value: "10"
+        - name: ParseJson
+          type: System.Boolean
+          value: true
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Fuzzy factor
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <CliApi("extract", False, IsDefault:=True)>
+
+      <DisplayText("Extract")>
+
+      <StdIn("/path/to/source.cs", False)>
+
+      <StdOut("/path/to/target.po", False)>
+
+      <StdErr("Verbose output and errors")>
+
+      Public Shared Function ExtractAsync(config As String = Nothing, singleThread As Boolean = False, verbose As Boolean = False, noRecursive As Boolean = False, ext As String() = Nothing, encoding As String = Nothing, input As String() = Nothing, exclude As String() = Nothing, output As String = Nothing, noHeader As Boolean = False, mergeOutput As Boolean = False, json As Boolean = False, fuzzy As Integer = 0) As Task
+  overload: wan24.I8NTool.KeywordExtractorApi.ExtractAsync*
+  attributes:
+  - type: wan24.CLI.CliApiAttribute
+    ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+    arguments:
+    - type: System.String
+      value: extract
+    - type: System.Boolean
+      value: false
+    namedArguments:
+    - name: IsDefault
+      type: System.Boolean
+      value: true
+  - type: wan24.Core.DisplayTextAttribute
+    ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Extract
+  - type: wan24.CLI.StdInAttribute
+    ctor: wan24.CLI.StdInAttribute.#ctor(System.String,System.Boolean)
+    arguments:
+    - type: System.String
+      value: /path/to/source.cs
+    - type: System.Boolean
+      value: false
+  - type: wan24.CLI.StdOutAttribute
+    ctor: wan24.CLI.StdOutAttribute.#ctor(System.String,System.Boolean)
+    arguments:
+    - type: System.String
+      value: /path/to/target.po
+    - type: System.Boolean
+      value: false
+  - type: wan24.CLI.StdErrAttribute
+    ctor: wan24.CLI.StdErrAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Verbose output and errors
+  nameWithType.vb: KeywordExtractorApi.ExtractAsync(String, Boolean, Boolean, Boolean, String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
+  fullName.vb: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(String, Boolean, Boolean, Boolean, String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
+  name.vb: ExtractAsync(String, Boolean, Boolean, Boolean, String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
+references:
+- uid: wan24.I8NTool
+  commentId: N:wan24.I8NTool
+  href: wan24.html
+  name: wan24.I8NTool
+  nameWithType: wan24.I8NTool
+  fullName: wan24.I8NTool
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NTool
+    name: I8NTool
+    href: wan24.I8NTool.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NTool
+    name: I8NTool
+    href: wan24.I8NTool.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: wan24.I8NTool.KeywordExtractorApi.#ctor*
+  commentId: Overload:wan24.I8NTool.KeywordExtractorApi.#ctor
+  href: wan24.I8NTool.KeywordExtractorApi.html#wan24_I8NTool_KeywordExtractorApi__ctor
+  name: KeywordExtractorApi
+  nameWithType: KeywordExtractorApi.KeywordExtractorApi
+  fullName: wan24.I8NTool.KeywordExtractorApi.KeywordExtractorApi
+  nameWithType.vb: KeywordExtractorApi.New
+  fullName.vb: wan24.I8NTool.KeywordExtractorApi.New
+  name.vb: New
+- uid: wan24.I8NTool.KeywordExtractorApi.FailOnError*
+  commentId: Overload:wan24.I8NTool.KeywordExtractorApi.FailOnError
+  href: wan24.I8NTool.KeywordExtractorApi.html#wan24_I8NTool_KeywordExtractorApi_FailOnError
+  name: FailOnError
+  nameWithType: KeywordExtractorApi.FailOnError
+  fullName: wan24.I8NTool.KeywordExtractorApi.FailOnError
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: wan24.I8NTool.KeywordExtractorApi.ExtractAsync*
+  commentId: Overload:wan24.I8NTool.KeywordExtractorApi.ExtractAsync
+  href: wan24.I8NTool.KeywordExtractorApi.html#wan24_I8NTool_KeywordExtractorApi_ExtractAsync_System_String_System_Boolean_System_Boolean_System_Boolean_System_String___System_String_System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Int32_
+  name: ExtractAsync
+  nameWithType: KeywordExtractorApi.ExtractAsync
+  fullName: wan24.I8NTool.KeywordExtractorApi.ExtractAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

@@ -1,0 +1,503 @@
+### YamlMime:ManagedReference
+items:
+- uid: wan24.I8NKws.KwsSourceReference
+  commentId: T:wan24.I8NKws.KwsSourceReference
+  id: KwsSourceReference
+  parent: wan24.I8NKws
+  children:
+  - wan24.I8NKws.KwsSourceReference.#ctor
+  - wan24.I8NKws.KwsSourceReference.FileName
+  - wan24.I8NKws.KwsSourceReference.LineNumber
+  langs:
+  - csharp
+  - vb
+  name: KwsSourceReference
+  nameWithType: KwsSourceReference
+  fullName: wan24.I8NKws.KwsSourceReference
+  type: Class
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsSourceReference.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: KwsSourceReference
+    path: ../wan24-I8NKws/KwsSourceReference.cs
+    startLine: 7
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: KWS source reference
+  example: []
+  syntax:
+    content: 'public sealed record KwsSourceReference : IEquatable<KwsSourceReference>'
+    content.vb: Public NotInheritable Class KwsSourceReference Implements IEquatable(Of KwsSourceReference)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{wan24.I8NKws.KwsSourceReference}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: wan24.I8NKws.KwsSourceReference.#ctor
+  commentId: M:wan24.I8NKws.KwsSourceReference.#ctor
+  id: '#ctor'
+  parent: wan24.I8NKws.KwsSourceReference
+  langs:
+  - csharp
+  - vb
+  name: KwsSourceReference()
+  nameWithType: KwsSourceReference.KwsSourceReference()
+  fullName: wan24.I8NKws.KwsSourceReference.KwsSourceReference()
+  type: Constructor
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsSourceReference.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: .ctor
+    path: ../wan24-I8NKws/KwsSourceReference.cs
+    startLine: 12
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Constructor
+  example: []
+  syntax:
+    content: public KwsSourceReference()
+    content.vb: Public Sub New()
+  overload: wan24.I8NKws.KwsSourceReference.#ctor*
+  nameWithType.vb: KwsSourceReference.New()
+  fullName.vb: wan24.I8NKws.KwsSourceReference.New()
+  name.vb: New()
+- uid: wan24.I8NKws.KwsSourceReference.FileName
+  commentId: P:wan24.I8NKws.KwsSourceReference.FileName
+  id: FileName
+  parent: wan24.I8NKws.KwsSourceReference
+  langs:
+  - csharp
+  - vb
+  name: FileName
+  nameWithType: KwsSourceReference.FileName
+  fullName: wan24.I8NKws.KwsSourceReference.FileName
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsSourceReference.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: FileName
+    path: ../wan24-I8NKws/KwsSourceReference.cs
+    startLine: 17
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Filename
+  example: []
+  syntax:
+    content: >-
+      [MinLength(1)]
+
+      public required string FileName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MinLength(1)>
+
+      Public Property FileName As String
+  overload: wan24.I8NKws.KwsSourceReference.FileName*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MinLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MinLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+- uid: wan24.I8NKws.KwsSourceReference.LineNumber
+  commentId: P:wan24.I8NKws.KwsSourceReference.LineNumber
+  id: LineNumber
+  parent: wan24.I8NKws.KwsSourceReference
+  langs:
+  - csharp
+  - vb
+  name: LineNumber
+  nameWithType: KwsSourceReference.LineNumber
+  fullName: wan24.I8NKws.KwsSourceReference.LineNumber
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsSourceReference.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: LineNumber
+    path: ../wan24-I8NKws/KwsSourceReference.cs
+    startLine: 23
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Line number (starts with <code>1</code>)
+  example: []
+  syntax:
+    content: >-
+      [Range(1, 2147483647)]
+
+      public required int LineNumber { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Range(1, 2147483647)>
+
+      Public Property LineNumber As Integer
+  overload: wan24.I8NKws.KwsSourceReference.LineNumber*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    - type: System.Int32
+      value: 2147483647
+references:
+- uid: wan24.I8NKws
+  commentId: N:wan24.I8NKws
+  href: wan24.html
+  name: wan24.I8NKws
+  nameWithType: wan24.I8NKws
+  fullName: wan24.I8NKws
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NKws
+    name: I8NKws
+    href: wan24.I8NKws.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NKws
+    name: I8NKws
+    href: wan24.I8NKws.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{wan24.I8NKws.KwsSourceReference}
+  commentId: T:System.IEquatable{wan24.I8NKws.KwsSourceReference}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<KwsSourceReference>
+  nameWithType: IEquatable<KwsSourceReference>
+  fullName: System.IEquatable<wan24.I8NKws.KwsSourceReference>
+  nameWithType.vb: IEquatable(Of KwsSourceReference)
+  fullName.vb: System.IEquatable(Of wan24.I8NKws.KwsSourceReference)
+  name.vb: IEquatable(Of KwsSourceReference)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: wan24.I8NKws.KwsSourceReference
+    name: KwsSourceReference
+    href: wan24.I8NKws.KwsSourceReference.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: wan24.I8NKws.KwsSourceReference
+    name: KwsSourceReference
+    href: wan24.I8NKws.KwsSourceReference.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: wan24.I8NKws.KwsSourceReference.#ctor*
+  commentId: Overload:wan24.I8NKws.KwsSourceReference.#ctor
+  href: wan24.I8NKws.KwsSourceReference.html#wan24_I8NKws_KwsSourceReference__ctor
+  name: KwsSourceReference
+  nameWithType: KwsSourceReference.KwsSourceReference
+  fullName: wan24.I8NKws.KwsSourceReference.KwsSourceReference
+  nameWithType.vb: KwsSourceReference.New
+  fullName.vb: wan24.I8NKws.KwsSourceReference.New
+  name.vb: New
+- uid: wan24.I8NKws.KwsSourceReference.FileName*
+  commentId: Overload:wan24.I8NKws.KwsSourceReference.FileName
+  href: wan24.I8NKws.KwsSourceReference.html#wan24_I8NKws_KwsSourceReference_FileName
+  name: FileName
+  nameWithType: KwsSourceReference.FileName
+  fullName: wan24.I8NKws.KwsSourceReference.FileName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: wan24.I8NKws.KwsSourceReference.LineNumber*
+  commentId: Overload:wan24.I8NKws.KwsSourceReference.LineNumber
+  href: wan24.I8NKws.KwsSourceReference.html#wan24_I8NKws_KwsSourceReference_LineNumber
+  name: LineNumber
+  nameWithType: KwsSourceReference.LineNumber
+  fullName: wan24.I8NKws.KwsSourceReference.LineNumber
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

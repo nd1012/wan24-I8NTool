@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: wan24.I8NKws
+  commentId: N:wan24.I8NKws
+  id: wan24.I8NKws
+  children:
+  - wan24.I8NKws.I8NKwsTranslationTerms
+  - wan24.I8NKws.KwsCatalog
+  - wan24.I8NKws.KwsKeyword
+  - wan24.I8NKws.KwsSourceReference
+  langs:
+  - csharp
+  - vb
+  name: wan24.I8NKws
+  nameWithType: wan24.I8NKws
+  fullName: wan24.I8NKws
+  type: Namespace
+  assemblies:
+  - wan24I8NKws
+references:
+- uid: wan24.I8NKws.I8NKwsTranslationTerms
+  commentId: T:wan24.I8NKws.I8NKwsTranslationTerms
+  parent: wan24.I8NKws
+  href: wan24.I8NKws.I8NKwsTranslationTerms.html
+  name: I8NKwsTranslationTerms
+  nameWithType: I8NKwsTranslationTerms
+  fullName: wan24.I8NKws.I8NKwsTranslationTerms
+- uid: wan24.I8NKws.KwsCatalog
+  commentId: T:wan24.I8NKws.KwsCatalog
+  parent: wan24.I8NKws
+  href: wan24.I8NKws.KwsCatalog.html
+  name: KwsCatalog
+  nameWithType: KwsCatalog
+  fullName: wan24.I8NKws.KwsCatalog
+- uid: wan24.I8NKws.KwsKeyword
+  commentId: T:wan24.I8NKws.KwsKeyword
+  parent: wan24.I8NKws
+  href: wan24.I8NKws.KwsKeyword.html
+  name: KwsKeyword
+  nameWithType: KwsKeyword
+  fullName: wan24.I8NKws.KwsKeyword
+- uid: wan24.I8NKws.KwsSourceReference
+  commentId: T:wan24.I8NKws.KwsSourceReference
+  href: wan24.I8NKws.KwsSourceReference.html
+  name: KwsSourceReference
+  nameWithType: KwsSourceReference
+  fullName: wan24.I8NKws.KwsSourceReference
+- uid: wan24.I8NKws
+  commentId: N:wan24.I8NKws
+  href: wan24.html
+  name: wan24.I8NKws
+  nameWithType: wan24.I8NKws
+  fullName: wan24.I8NKws
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NKws
+    name: I8NKws
+    href: wan24.I8NKws.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NKws
+    name: I8NKws
+    href: wan24.I8NKws.html

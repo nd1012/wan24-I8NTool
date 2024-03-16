@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>wan24-I8NTool | wan24-I8N </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="wan24-I8NTool | wan24-I8N ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="styles/config.css">
+      <link rel="stylesheet" href="styles/singulink.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <!-- Header required for docfx anchor scroll to work -->
+        <header id="head"></header>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="index.html">
+              <img src="logo.svg" alt="" class="logomark">
+              <span class="brand-title"></span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="index.html">
+                          <img src="logo.svg" alt="" class="logomark">
+                          <span class="brand-title"></span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+                </div>
+                <div class="footer">
+  (c) 2024 Andreas Zimmermann, wan24.de
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8N Docs/index.md/#L1" class="contribution-link">Edit this page</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="">
+<h1 id="wan24-i8ntool">wan24-I8NTool</h1>
+
+<p>This is a small dotnet tool for extracting stings to translate from source
+code and writing the result in the PO format to a file or STDOUT. It can also
+be used to create i8n files, which are easy to use from any app.</p>
+<p>It's pre-configured for use with the
+<a href="https://github.com/WAN-Solutions/wan24-Core"><code>wan24-Core</code></a> translation
+helpers for C#, but it can be customized easily for any environment and any
+programming language by customizing the used regular expressions in your own
+configuration file (find available presets in the <code>config</code> folder of this
+repository).</p>
+<h2 id="usage">Usage</h2>
+<h3 id="where-to-get-it">Where to get it</h3>
+<p>This is a dotnet tool and can be installed from the command line:</p>
+<pre><code class="lang-bash">dotnet tool install -g wan24-I8NTool
+</code></pre>
+<p>The default installation folder is</p>
+<ul>
+<li><code>%USER%\.dotnet\tools</code> for Windows</li>
+<li><code>~/.dotnet/tools</code> for Linux (or MAC)</li>
+</ul>
+<p><strong>NOTE</strong>: Please ensure that your global .NET tool path is in the <code>PATH</code>
+environment variable (open a new Windows terminal after adding the path using
+<em>Settings</em> -&gt; <em>System</em> -&gt; <em>Extended system settings</em> -&gt; <em>Extended</em> -&gt;
+<em>Environment variables</em>).</p>
+<h3 id="simple-usage">Simple usage</h3>
+<p>With pre-configuration for .NET:</p>
+<pre><code class="lang-bash">wan24I8NTool --input ./ &gt; keywords.po
+</code></pre>
+<p>You can find other pre-configurations in the <code>config/*.json</code> files in the
+GitHub repository:</p>
+<pre><code class="lang-bash">wan24I8NTool --config file.json --input ./ &gt; keywords.po
+</code></pre>
+<p>If you want to use advanced options, you can display help like this:</p>
+<pre><code class="lang-bash">wan24I8NTool help (--api API (--method METHOD)) (-details)
+</code></pre>
+<p>For individual usage support, please
+<a href="https://github.com/nd1012/wan24-I8NTool/issues">open an issue here</a>.</p>
+<p><strong>NOTE</strong>: The <code>wan4-Core</code> CLI configuration (<code>CliConfig</code>) will be applied, so
+advanced configuration is possible using those special command line arguments.</p>
+<h3 id="default-keyword-extraction-process">Default keyword extraction process</h3>
+<p>Per default keywords will be found by the regular expressions you can find in
+<code>config/dotnet.json</code>. They'll then be post-processed by the replacement
+expressions, until the final quoted keyword was extracted from a line.</p>
+<p>These default translation method names can be parsed from source code:</p>
+<ul>
+<li><code>_</code></li>
+<li><code>gettext(n)(&quot;...&quot;</code></li>
+<li><code>Translate(Plural)(&quot;...&quot;</code></li>
+<li><code>GetTerm(&quot;...&quot;</code></li>
+</ul>
+<p>There are also some attributes, which can define translated text:</p>
+<ul>
+<li><code>StdIn(&quot;...&quot;</code></li>
+<li><code>StdOut(&quot;...&quot;</code></li>
+<li><code>StdErr(&quot;...&quot;</code></li>
+<li><code>Description(&quot;...&quot;</code></li>
+<li><code>DisplayText(&quot;...&quot;</code></li>
+</ul>
+<p>And these attribute peoperty strings will also be parsed:</p>
+<ul>
+<li><code>Example = &quot;...&quot;</code></li>
+<li><code>ErrorMessage = &quot;...&quot;</code></li>
+</ul>
+<p>Finally, there are also attributes, which get the text to translate as a 2nd
+argument after a numeric argument:</p>
+<ul>
+<li><code>ExitCode(N, &quot;...&quot;</code></li>
+</ul>
+<p>To force including any string (from a constant definition, for example),
+simply add a comment <code>wan24I8NTool:include</code> at the end of the line - example:</p>
+<pre><code class="lang-cs">public const string NAME = &quot;Any PO included keyword&quot;;// wan24I8NTool:include
+</code></pre>
+<p><strong>NOTE</strong>: (Multiline) concatenated string value definitions (like
+<code>@&quot;Part \ a&quot; + $&quot;Part b {variable}&quot;</code>) or interpolations can't be parsed. The
+matched string literal must be JSON style escaped.</p>
+<h3 id="custom-parser-configuration">Custom parser configuration</h3>
+<p>In the <code>config/dotnet.json</code> file of this repository you find the default
+configuration. You can download and modify it for your needs, and use it with
+the <code>--config</code> parameter.</p>
+<p>Example parser JSON configuration:</p>
+<pre><code class="lang-json">{
+	&quot;SingleThread&quot;: false,// (optional) Set to true to disable multithreading (may be overridden by -singleThread)
+	&quot;Encoding&quot;: &quot;UTF-8&quot;,// (optional) Source encoding to use (default is UTF-8; may be overridden by --encoding)
+	&quot;Patterns&quot;: [// (optional)
+		{
+			// Matching only pattern
+			&quot;Pattern&quot;: &quot;Regular expression&quot;,// Pattern for use with RegEx
+			&quot;Options&quot;: &quot;None&quot;// RegexOptions enumeration
+		},
+		{
+			// Matching and replacement pattern
+			&quot;Pattern&quot;: &quot;Regular expression&quot;,// Pattern for use with RegEx
+			&quot;Options&quot;: &quot;None&quot;,// RegexOptions enumeration
+			&quot;Replacement&quot;: &quot;$1&quot;// Replacement expression
+		},
+		{
+			// Replacement-only pattern
+			&quot;Pattern&quot;: &quot;Regular expression&quot;,// Pattern for use with RegEx
+			&quot;Options&quot;: &quot;None&quot;,// RegexOptions enumeration
+			&quot;Replacement&quot;: &quot;$1&quot;,// Replacement expression
+			&quot;ReplaceOnly&quot;: true// Disable use for matching
+		}
+		...
+	],
+	&quot;FileExtensions&quot;: [// (optional) File extensions to include when walking through a folder tree (may be overridden by --ext)
+		&quot;.ext&quot;,
+		...
+	],
+	&quot;MergeOutput&quot;: true,// (optional) Merge the extracted keywords to the existing output PO file
+	&quot;FailOnError&quot;: true,// (optional) To fail thewhole process on any error
+	&quot;Merge&quot;: false// (optional) Set to true to merge your custom configuration with the default configuration
+}
+</code></pre>
+<p>When loading the configuration, the pattern property <code>Options</code> will be
+extended by the <code>SingleLine</code> and <code>Compiled</code> default options.</p>
+<p><strong>TIPP</strong>: You may use the variable <code>%{rxStringLiteral}</code> to match a double
+quoted string literal.</p>
+<p>The parser looks for any matching non-replacement-only expression, then
+applies all matching replacement expressions to refer to the keyword to use,
+finally.</p>
+<p><strong>NOTE</strong>: The final keyword must be a valid JSON string literal in single or
+double quotes!</p>
+<p>During merging lists will be combined, and single options will be overwritten.</p>
+<p>There are some more optional keys for advanced configuration:</p>
+<ul>
+<li><code>Core</code>: <a href="https://github.com/WAN-Solutions/wan24-Core"><code>wan24-Core</code></a>
+configuration using a <code>AppConfig</code> structure</li>
+<li><code>CLI</code>: <a href="https://github.com/nd1012/wan24-CLI"><code>wan24-CLI</code></a> configuration
+using a <code>CliAppConfig</code> structure</li>
+</ul>
+<h3 id="build-extract-display-and-use-an-i8n-file">Build, extract, display and use an i8n file</h3>
+<p>i8n files contain optional compressed translation terms. They can be created
+from PO/MO and/or JSON dictionary (keyword as key, translation as an array of
+strings as value) input files like this:</p>
+<pre><code class="lang-bash">wan24I8NTool i8n -compress --poInput /path/to/input.po --output /path/to/output.i8n
+</code></pre>
+<p>An i8n file can be embedded into an app, for example.</p>
+<p>To convert all <code>*.json|po|mo</code> files in the current folder to <code>*.i8n</code> files:</p>
+<pre><code class="lang-bash">wan24I8NTool i8n buildmany -compress -verbose
+</code></pre>
+<p>To display some i8n file informations:</p>
+<pre><code class="lang-bash">wan24I8NTool i8n display --input /path/to/input.i8n
+</code></pre>
+<p>To extract some i8n file to a JSON file (prettified):</p>
+<pre><code class="lang-bash">wan24I8NTool i8n extract --input /path/to/input.i8n --jsonOutput /path/to/output.json
+</code></pre>
+<p>To extract some i8n file to a PO file:</p>
+<pre><code class="lang-bash">wan24I8NTool i8n extract --input /path/to/input.i8n --poOutput /path/to/output.po
+</code></pre>
+<p>To extract some i8n file to a wan24-I8NLws file:</p>
+<pre><code class="lang-bash">wan24I8NTool i8n extract --input /path/to/input.i8n --kwsOutput /path/to/output.po
+</code></pre>
+<p><strong>NOTE</strong>: For more options and usage instructions please use the CLI API help
+(see below).</p>
+<p><strong>TIPP</strong>: You can use the i8n API for converting, merging and validating the
+supported source formats also.</p>
+<p>In a .NET app you can use an i8n file using the <code>wan24-I8N(-Compressed)</code> NuGet
+packages and <code>wan24-Core</code>:</p>
+<pre><code class="lang-cs">// Uncompressed using the wan24-I8N NuGet package
+Translation.Current = new(await I8NTranslationTerms.FromStreamAsync(fileStream));
+
+// Compressed using the wan24-I8N-Compressed NuGet package
+Translation.Current = new(await I8NCompressedTranslationTerms.FromStreamAsync(fileStream));
+</code></pre>
+<p>The <code>FromStream(Async)</code> methods also allow to specify, if there's no i8n
+header to read.</p>
+<p>Links to used NuGet packages:</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/wan24-Core/">wan24-Core</a></li>
+<li><a href="https://www.nuget.org/packages/wan24-I8N/">wan24-I8N</a></li>
+<li><a href="https://www.nuget.org/packages/wan24-I8N-Compressed/">wan24-I8N-Compressed</a></li>
+</ul>
+<h4 id="i8n-file-structure-in-detail">i8n file structure in detail</h4>
+<p>If you didn't skip writing a header during build, the first byte contains the
+version number and a flag (bit 8), if the body is compressed. The file body is
+a JSON encoded dictionary, having the keyword as ID, and the translations as
+value (an array of strings with none, one or multiple (plural) translations).</p>
+<p>If compressed, the <code>wan24-Compression</code> default compression algorithm was used.
+This is Brotli at the time of writing. But please note that
+<code>wan24-Compression</code> writes a non-standard header before the body, which is
+required for compatibility of newer <code>wan24-Compression</code> library versions with
+older compressed contents.</p>
+<p><strong>NOTE</strong>: For using compressed i8n files, you'll have to use the
+<a href="https://www.nuget.org/packages/wan24-Compression"><code>wan24-Compression</code></a> NuGet
+package in your .NET app for decompressing the body.</p>
+<p>Please see the <code>I8NApi(.Internals).cs</code> source code in this GitHub repository
+for C# code examples.</p>
+<p><strong>TIPP</strong>: Use compression and the i8n header only, if you're using the i8n
+file from a .NET app. Without a header and compression you can simply
+deserialize the JSON dictionary from the i8n file using any modern programming
+language.</p>
+<h3 id="steps-to-i8n">Steps to i8n</h3>
+<p>Internationalization (i8n) for apps is a common task to make string used in
+apps translatable. gettext is a tool which have been around for many years now
+and seem to satisfy developers, translators and end users.</p>
+<p>The steps to i8n your app are:</p>
+<ol>
+<li>use l10n methods in your code when you want to translate a term</li>
+<li>extract keywords (terms) from your source code into a PO file using an
+extractor</li>
+<li>translate the terms using an editor tool and create a MO file</li>
+<li>load the MO file using your apps gettext-supporting library</li>
+</ol>
+<p><code>wan24-I8NTool</code> is a CLI tool which you can use as extractor to
+automatize things a bit more, and you're also free to use other translation
+file formats.</p>
+<p>If you'd like to use the i8n file format from <code>wan24-I8NTool</code> in your .NET
+app, the last step is replaced by:</p>
+<ul>
+<li>convert the PO/MO file to an i8n file using <code>wan24-I8NTool</code></li>
+<li>load the i8n file using your .NET app using the <code>wan24-I8N</code> library</li>
+</ul>
+<p>This is one additional step, but maybe worth it, if you don't want to miss
+features like compressed i8n files ready-to-use i8n <code>wan24-Core</code> localization
+(l10n) features. You'll also not need to reference any gettext supporting
+library or do the parsing of the PO/MO format by yourself. You also may not
+need to reference the <code>wan24-I8N(-Compressed)</code> NuGet package, if you can
+manage to load the i8n structure by yourself (which is an easy task) - find
+examples in the <code>wan24-I8N(-Compressed)</code> projects in this repository.</p>
+<p>Links to useful NuGet packages:</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/wan24-Core/">wan24-Core</a></li>
+<li><a href="https://www.nuget.org/packages/wan24-I8N/">wan24-I8N</a></li>
+<li><a href="https://www.nuget.org/packages/wan24-I8N-Compressed/">wan24-I8N-Compressed</a></li>
+</ul>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>(c) 2024 Andreas Zimmermann, wan24.de</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="styles/docfx.js"></script>
+        <script type="text/javascript" src="styles/main.js"></script>
+        <script type="text/javascript" src="styles/singulink.js"></script>    </body>
+</html>

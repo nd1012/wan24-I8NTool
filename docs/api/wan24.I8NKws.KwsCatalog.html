@@ -1,0 +1,1145 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class KwsCatalog | wan24-I8N </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class KwsCatalog | wan24-I8N ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <!-- Header required for docfx anchor scroll to work -->
+        <header id="head"></header>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../logo.svg" alt="" class="logomark">
+              <span class="brand-title"></span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../logo.svg" alt="" class="logomark">
+                          <span class="brand-title"></span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  (c) 2024 Andreas Zimmermann, wan24.de
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="wan24.I8NKws.KwsCatalog">
+
+
+
+  <h1 id="wan24_I8NKws_KwsCatalog" data-uid="wan24.I8NKws.KwsCatalog" class="text-break">Class KwsCatalog</h1>
+  <div class="markdown level0 summary"><p>KWS catalog</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">KwsCatalog</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="wan24.I8NKws.KwsCatalog.html">KwsCatalog</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="wan24.html">wan24</a>.<a class="xref" href="wan24.I8NKws.html">I8NKws</a></h6>
+  <h6><strong>Assembly</strong>: wan24I8NKws.dll</h6>
+  <h5 id="wan24_I8NKws_KwsCatalog_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed record KwsCatalog : IEnumerable&lt;KwsKeyword&gt;, IEnumerable, IEquatable&lt;KwsCatalog&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog__ctor.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L16">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog__ctor_" data-uid="wan24.I8NKws.KwsCatalog.#ctor*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog__ctor" data-uid="wan24.I8NKws.KwsCatalog.#ctor">KwsCatalog()</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KwsCatalog()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog__ctor_System_Collections_Generic_Dictionary_System_String_System_String_____.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.%23ctor(System.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%5B%5D%7D%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L22">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog__ctor_" data-uid="wan24.I8NKws.KwsCatalog.#ctor*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog__ctor_System_Collections_Generic_Dictionary_System_String_System_String_____" data-uid="wan24.I8NKws.KwsCatalog.#ctor(System.Collections.Generic.Dictionary{System.String,System.String[]}@)">KwsCatalog(in Dictionary&lt;string, string[]&gt;)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KwsCatalog(in Dictionary&lt;string, string[]&gt; dict)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]&gt;</td>
+        <td><span class="parametername">dict</span></td>
+        <td><p>Dictionary</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_CompleteKeywords.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.CompleteKeywords%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L72">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_CompleteKeywords_" data-uid="wan24.I8NKws.KwsCatalog.CompleteKeywords*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_CompleteKeywords" data-uid="wan24.I8NKws.KwsCatalog.CompleteKeywords">CompleteKeywords</h4>
+  <div class="markdown level1 summary"><p>Complete keywords (non-obsolete)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NoValidation(false)]
+public IEnumerable&lt;KwsKeyword&gt; CompleteKeywords { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_Created.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.Created%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L46">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_Created_" data-uid="wan24.I8NKws.KwsCatalog.Created*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_Created" data-uid="wan24.I8NKws.KwsCatalog.Created">Created</h4>
+  <div class="markdown level1 summary"><p>Created time (UTC)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime Created { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_FuzzyKeywords.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.FuzzyKeywords%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L90">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_FuzzyKeywords_" data-uid="wan24.I8NKws.KwsCatalog.FuzzyKeywords*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_FuzzyKeywords" data-uid="wan24.I8NKws.KwsCatalog.FuzzyKeywords">FuzzyKeywords</h4>
+  <div class="markdown level1 summary"><p>Fuzzy keywords (non-onsolete)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NoValidation(false)]
+public IEnumerable&lt;KwsKeyword&gt; FuzzyKeywords { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_IncompleteKeywords.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.IncompleteKeywords%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L78">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_IncompleteKeywords_" data-uid="wan24.I8NKws.KwsCatalog.IncompleteKeywords*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_IncompleteKeywords" data-uid="wan24.I8NKws.KwsCatalog.IncompleteKeywords">IncompleteKeywords</h4>
+  <div class="markdown level1 summary"><p>Incomplete keywords (non-obsolete)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NoValidation(false)]
+public IEnumerable&lt;KwsKeyword&gt; IncompleteKeywords { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_InvalidKeywords.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.InvalidKeywords%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L96">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_InvalidKeywords_" data-uid="wan24.I8NKws.KwsCatalog.InvalidKeywords*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_InvalidKeywords" data-uid="wan24.I8NKws.KwsCatalog.InvalidKeywords">InvalidKeywords</h4>
+  <div class="markdown level1 summary"><p>Invalid keywords (non-onsolete)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NoValidation(false)]
+public IEnumerable&lt;KwsKeyword&gt; InvalidKeywords { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_Item_System_String_.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.Item(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L36">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_Item_" data-uid="wan24.I8NKws.KwsCatalog.Item*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_Item_System_String_" data-uid="wan24.I8NKws.KwsCatalog.Item(System.String)">this[string]</h4>
+  <div class="markdown level1 summary"><p>Get a keyword</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KwsKeyword? this[string id] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>ID</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a></td>
+        <td><p>Keyword</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_Keywords.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.Keywords%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L120">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_Keywords_" data-uid="wan24.I8NKws.KwsCatalog.Keywords*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_Keywords" data-uid="wan24.I8NKws.KwsCatalog.Keywords">Keywords</h4>
+  <div class="markdown level1 summary"><p>Keywords</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NoValidation(false)]
+public HashSet&lt;KwsKeyword&gt; Keywords { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_KeywordsWithDeveloperComments.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L102">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_KeywordsWithDeveloperComments_" data-uid="wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_KeywordsWithDeveloperComments" data-uid="wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments">KeywordsWithDeveloperComments</h4>
+  <div class="markdown level1 summary"><p>Keywords with developer comments (non-onsolete)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NoValidation(false)]
+public IEnumerable&lt;KwsKeyword&gt; KeywordsWithDeveloperComments { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_Locale.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.Locale%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L61">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_Locale_" data-uid="wan24.I8NKws.KwsCatalog.Locale*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_Locale" data-uid="wan24.I8NKws.KwsCatalog.Locale">Locale</h4>
+  <div class="markdown level1 summary"><p>Locale identifier (<code>en-US</code> for example)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[RegularExpression(&quot;^([a-z]{2})-([A-Z]{2})$&quot;)]
+public string Locale { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_Modified.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.Modified%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L51">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_Modified_" data-uid="wan24.I8NKws.KwsCatalog.Modified*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_Modified" data-uid="wan24.I8NKws.KwsCatalog.Modified">Modified</h4>
+  <div class="markdown level1 summary"><p>Modified time (UTC)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime Modified { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_NonObsoleteKeywords.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.NonObsoleteKeywords%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L114">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_NonObsoleteKeywords_" data-uid="wan24.I8NKws.KwsCatalog.NonObsoleteKeywords*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_NonObsoleteKeywords" data-uid="wan24.I8NKws.KwsCatalog.NonObsoleteKeywords">NonObsoleteKeywords</h4>
+  <div class="markdown level1 summary"><p>Non-obsolete keywords</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NoValidation(false)]
+public IEnumerable&lt;KwsKeyword&gt; NonObsoleteKeywords { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_ObsoleteKeywords.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.ObsoleteKeywords%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L108">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_ObsoleteKeywords_" data-uid="wan24.I8NKws.KwsCatalog.ObsoleteKeywords*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_ObsoleteKeywords" data-uid="wan24.I8NKws.KwsCatalog.ObsoleteKeywords">ObsoleteKeywords</h4>
+  <div class="markdown level1 summary"><p>Obsolete keywords</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NoValidation(false)]
+public IEnumerable&lt;KwsKeyword&gt; ObsoleteKeywords { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_Project.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.Project%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L41">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_Project_" data-uid="wan24.I8NKws.KwsCatalog.Project*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_Project" data-uid="wan24.I8NKws.KwsCatalog.Project">Project</h4>
+  <div class="markdown level1 summary"><p>Project name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Project { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_RevisionedKeywords.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.RevisionedKeywords%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L84">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_RevisionedKeywords_" data-uid="wan24.I8NKws.KwsCatalog.RevisionedKeywords*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_RevisionedKeywords" data-uid="wan24.I8NKws.KwsCatalog.RevisionedKeywords">RevisionedKeywords</h4>
+  <div class="markdown level1 summary"><p>Revisioned keywords (non-onsolete)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NoValidation(false)]
+public IEnumerable&lt;KwsKeyword&gt; RevisionedKeywords { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_RightToLeft.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.RightToLeft%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L67">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_RightToLeft_" data-uid="wan24.I8NKws.KwsCatalog.RightToLeft*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_RightToLeft" data-uid="wan24.I8NKws.KwsCatalog.RightToLeft">RightToLeft</h4>
+  <div class="markdown level1 summary"><p>If the text is written right to left</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RightToLeft { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_Translator.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.Translator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L56">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_Translator_" data-uid="wan24.I8NKws.KwsCatalog.Translator*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_Translator" data-uid="wan24.I8NKws.KwsCatalog.Translator">Translator</h4>
+  <div class="markdown level1 summary"><p>Translator name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Translator { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_ContainsKeyWord_System_String_.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.ContainsKeyWord(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L168">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_ContainsKeyWord_" data-uid="wan24.I8NKws.KwsCatalog.ContainsKeyWord*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_ContainsKeyWord_System_String_" data-uid="wan24.I8NKws.KwsCatalog.ContainsKeyWord(System.String)">ContainsKeyWord(string)</h4>
+  <div class="markdown level1 summary"><p>Determine if a keyword is contained</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsKeyWord(string id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>ID</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>If the keyword is contained</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_GetEnumerator.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.GetEnumerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L203">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_GetEnumerator_" data-uid="wan24.I8NKws.KwsCatalog.GetEnumerator*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_GetEnumerator" data-uid="wan24.I8NKws.KwsCatalog.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;KwsKeyword&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;<a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a>&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_GetOrAddKeyword_wan24_I8NKws_KwsKeyword_.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.GetOrAddKeyword(wan24.I8NKws.KwsKeyword)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L135">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_GetOrAddKeyword_" data-uid="wan24.I8NKws.KwsCatalog.GetOrAddKeyword*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_GetOrAddKeyword_wan24_I8NKws_KwsKeyword_" data-uid="wan24.I8NKws.KwsCatalog.GetOrAddKeyword(wan24.I8NKws.KwsKeyword)">GetOrAddKeyword(KwsKeyword)</h4>
+  <div class="markdown level1 summary"><p>Add a new keyword</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KwsKeyword GetOrAddKeyword(KwsKeyword keyword)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a></td>
+        <td><span class="parametername">keyword</span></td>
+        <td><p>Keyword</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a></td>
+        <td><p>Added or existing keyword</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_ToDictionary.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.ToDictionary%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L199">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_ToDictionary_" data-uid="wan24.I8NKws.KwsCatalog.ToDictionary*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_ToDictionary" data-uid="wan24.I8NKws.KwsCatalog.ToDictionary">ToDictionary()</h4>
+  <div class="markdown level1 summary"><p>Convert to a dictionary (only non-obsolete keywords)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, string[]&gt; ToDictionary()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]&gt;</td>
+        <td><p>Dictionary</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_TryAddKeyword_wan24_I8NKws_KwsKeyword__.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.TryAddKeyword(wan24.I8NKws.KwsKeyword%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L128">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_TryAddKeyword_" data-uid="wan24.I8NKws.KwsCatalog.TryAddKeyword*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_TryAddKeyword_wan24_I8NKws_KwsKeyword__" data-uid="wan24.I8NKws.KwsCatalog.TryAddKeyword(wan24.I8NKws.KwsKeyword@)">TryAddKeyword(in KwsKeyword)</h4>
+  <div class="markdown level1 summary"><p>Try adding a new keyword</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryAddKeyword(in KwsKeyword keyword)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.I8NKws.KwsKeyword.html">KwsKeyword</a></td>
+        <td><span class="parametername">keyword</span></td>
+        <td><p>Keyword</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>If added</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_TryRemoveKeyword_System_String_.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.TryRemoveKeyword(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L147">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_TryRemoveKeyword_" data-uid="wan24.I8NKws.KwsCatalog.TryRemoveKeyword*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_TryRemoveKeyword_System_String_" data-uid="wan24.I8NKws.KwsCatalog.TryRemoveKeyword(System.String)">TryRemoveKeyword(string)</h4>
+  <div class="markdown level1 summary"><p>Remove a keyword</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryRemoveKeyword(string id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>iD</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>If removed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_Validate_System_Boolean__System_Boolean__.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.Validate(System.Boolean%40%2CSystem.Boolean%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L177">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_Validate_" data-uid="wan24.I8NKws.KwsCatalog.Validate*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_Validate_System_Boolean__System_Boolean__" data-uid="wan24.I8NKws.KwsCatalog.Validate(System.Boolean@,System.Boolean@)">Validate(in bool, in bool)</h4>
+  <div class="markdown level1 summary"><p>Validate the catalog (any keyword is required)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Validate(in bool throwOnError = true, in bool requireCompleteTranslations = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">throwOnError</span></td>
+        <td><p>Throw an exception on error?</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">requireCompleteTranslations</span></td>
+        <td><p>Require all translations to be complete?</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>If the catalog is valid</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.invaliddataexception">InvalidDataException</a></td>
+        <td><p>Catalog is invalid</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NKws_KwsCatalog_op_Implicit_wan24_I8NKws_KwsCatalog___System_Int32.md&amp;value=---%0Auid%3A%20wan24.I8NKws.KwsCatalog.op_Implicit(wan24.I8NKws.KwsCatalog%40)~System.Int32%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NKws/KwsCatalog.cs/#L212">View Source</a>
+  </span>
+  <a id="wan24_I8NKws_KwsCatalog_op_Implicit_" data-uid="wan24.I8NKws.KwsCatalog.op_Implicit*"></a>
+  <h4 id="wan24_I8NKws_KwsCatalog_op_Implicit_wan24_I8NKws_KwsCatalog___System_Int32" data-uid="wan24.I8NKws.KwsCatalog.op_Implicit(wan24.I8NKws.KwsCatalog@)~System.Int32">implicit operator int(in KwsCatalog)</h4>
+  <div class="markdown level1 summary"><p>Cast as keyword count</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator int(in KwsCatalog catalog)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.I8NKws.KwsCatalog.html">KwsCatalog</a></td>
+        <td><span class="parametername">catalog</span></td>
+        <td><p>Catalog</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>(c) 2024 Andreas Zimmermann, wan24.de</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

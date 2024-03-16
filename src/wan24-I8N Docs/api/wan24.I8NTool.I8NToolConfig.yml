@@ -1,0 +1,745 @@
+### YamlMime:ManagedReference
+items:
+- uid: wan24.I8NTool.I8NToolConfig
+  commentId: T:wan24.I8NTool.I8NToolConfig
+  id: I8NToolConfig
+  parent: wan24.I8NTool
+  children:
+  - wan24.I8NTool.I8NToolConfig.Exclude
+  - wan24.I8NTool.I8NToolConfig.FailOnError
+  - wan24.I8NTool.I8NToolConfig.FileExtensions
+  - wan24.I8NTool.I8NToolConfig.MergeOutput
+  - wan24.I8NTool.I8NToolConfig.Patterns
+  - wan24.I8NTool.I8NToolConfig.SingleThread
+  - wan24.I8NTool.I8NToolConfig.SourceEncoding
+  langs:
+  - csharp
+  - vb
+  name: I8NToolConfig
+  nameWithType: I8NToolConfig
+  fullName: wan24.I8NTool.I8NToolConfig
+  type: Class
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/I8NToolConfig.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: I8NToolConfig
+    path: ../wan24-I8NTool CLI/I8NToolConfig.cs
+    startLine: 7
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: i8n tool configuration
+  example: []
+  syntax:
+    content: public static class I8NToolConfig
+    content.vb: Public Module I8NToolConfig
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: wan24.I8NTool.I8NToolConfig.SingleThread
+  commentId: P:wan24.I8NTool.I8NToolConfig.SingleThread
+  id: SingleThread
+  parent: wan24.I8NTool.I8NToolConfig
+  langs:
+  - csharp
+  - vb
+  name: SingleThread
+  nameWithType: I8NToolConfig.SingleThread
+  fullName: wan24.I8NTool.I8NToolConfig.SingleThread
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/I8NToolConfig.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: SingleThread
+    path: ../wan24-I8NTool CLI/I8NToolConfig.cs
+    startLine: 69
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: Use only a single thread?
+  example: []
+  syntax:
+    content: public static bool SingleThread { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property SingleThread As Boolean
+  overload: wan24.I8NTool.I8NToolConfig.SingleThread*
+- uid: wan24.I8NTool.I8NToolConfig.SourceEncoding
+  commentId: P:wan24.I8NTool.I8NToolConfig.SourceEncoding
+  id: SourceEncoding
+  parent: wan24.I8NTool.I8NToolConfig
+  langs:
+  - csharp
+  - vb
+  name: SourceEncoding
+  nameWithType: I8NToolConfig.SourceEncoding
+  fullName: wan24.I8NTool.I8NToolConfig.SourceEncoding
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/I8NToolConfig.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: SourceEncoding
+    path: ../wan24-I8NTool CLI/I8NToolConfig.cs
+    startLine: 74
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: Source text encoding
+  example: []
+  syntax:
+    content: public static Encoding SourceEncoding { get; set; }
+    parameters: []
+    return:
+      type: System.Text.Encoding
+    content.vb: Public Shared Property SourceEncoding As Encoding
+  overload: wan24.I8NTool.I8NToolConfig.SourceEncoding*
+- uid: wan24.I8NTool.I8NToolConfig.Patterns
+  commentId: P:wan24.I8NTool.I8NToolConfig.Patterns
+  id: Patterns
+  parent: wan24.I8NTool.I8NToolConfig
+  langs:
+  - csharp
+  - vb
+  name: Patterns
+  nameWithType: I8NToolConfig.Patterns
+  fullName: wan24.I8NTool.I8NToolConfig.Patterns
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/I8NToolConfig.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Patterns
+    path: ../wan24-I8NTool CLI/I8NToolConfig.cs
+    startLine: 79
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: Parser patterns
+  example: []
+  syntax:
+    content: public static HashSet<KeywordParserPattern> Patterns { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.HashSet{wan24.I8NTool.KeywordParserPattern}
+    content.vb: Public Shared ReadOnly Property Patterns As HashSet(Of KeywordParserPattern)
+  overload: wan24.I8NTool.I8NToolConfig.Patterns*
+- uid: wan24.I8NTool.I8NToolConfig.FileExtensions
+  commentId: P:wan24.I8NTool.I8NToolConfig.FileExtensions
+  id: FileExtensions
+  parent: wan24.I8NTool.I8NToolConfig
+  langs:
+  - csharp
+  - vb
+  name: FileExtensions
+  nameWithType: I8NToolConfig.FileExtensions
+  fullName: wan24.I8NTool.I8NToolConfig.FileExtensions
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/I8NToolConfig.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: FileExtensions
+    path: ../wan24-I8NTool CLI/I8NToolConfig.cs
+    startLine: 84
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: File extensions to look for
+  example: []
+  syntax:
+    content: public static HashSet<string> FileExtensions { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.HashSet{System.String}
+    content.vb: Public Shared ReadOnly Property FileExtensions As HashSet(Of String)
+  overload: wan24.I8NTool.I8NToolConfig.FileExtensions*
+- uid: wan24.I8NTool.I8NToolConfig.Exclude
+  commentId: P:wan24.I8NTool.I8NToolConfig.Exclude
+  id: Exclude
+  parent: wan24.I8NTool.I8NToolConfig
+  langs:
+  - csharp
+  - vb
+  name: Exclude
+  nameWithType: I8NToolConfig.Exclude
+  fullName: wan24.I8NTool.I8NToolConfig.Exclude
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/I8NToolConfig.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Exclude
+    path: ../wan24-I8NTool CLI/I8NToolConfig.cs
+    startLine: 89
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: Path to excluded source files (absolute path or filename only (\"*\" (any or none) and \"+\" (one or many) may be used as wildcard); case insensitive)
+  example: []
+  syntax:
+    content: public static HashSet<string> Exclude { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.HashSet{System.String}
+    content.vb: Public Shared ReadOnly Property Exclude As HashSet(Of String)
+  overload: wan24.I8NTool.I8NToolConfig.Exclude*
+- uid: wan24.I8NTool.I8NToolConfig.MergeOutput
+  commentId: P:wan24.I8NTool.I8NToolConfig.MergeOutput
+  id: MergeOutput
+  parent: wan24.I8NTool.I8NToolConfig
+  langs:
+  - csharp
+  - vb
+  name: MergeOutput
+  nameWithType: I8NToolConfig.MergeOutput
+  fullName: wan24.I8NTool.I8NToolConfig.MergeOutput
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/I8NToolConfig.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: MergeOutput
+    path: ../wan24-I8NTool CLI/I8NToolConfig.cs
+    startLine: 94
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: Merge the PO contents with an existing output PO file?
+  example: []
+  syntax:
+    content: public static bool MergeOutput { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property MergeOutput As Boolean
+  overload: wan24.I8NTool.I8NToolConfig.MergeOutput*
+- uid: wan24.I8NTool.I8NToolConfig.FailOnError
+  commentId: P:wan24.I8NTool.I8NToolConfig.FailOnError
+  id: FailOnError
+  parent: wan24.I8NTool.I8NToolConfig
+  langs:
+  - csharp
+  - vb
+  name: FailOnError
+  nameWithType: I8NToolConfig.FailOnError
+  fullName: wan24.I8NTool.I8NToolConfig.FailOnError
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/I8NToolConfig.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: FailOnError
+    path: ../wan24-I8NTool CLI/I8NToolConfig.cs
+    startLine: 99
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: Fail the whole process on any error?
+  example: []
+  syntax:
+    content: public static bool FailOnError { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property FailOnError As Boolean
+  overload: wan24.I8NTool.I8NToolConfig.FailOnError*
+references:
+- uid: wan24.I8NTool
+  commentId: N:wan24.I8NTool
+  href: wan24.html
+  name: wan24.I8NTool
+  nameWithType: wan24.I8NTool
+  fullName: wan24.I8NTool
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NTool
+    name: I8NTool
+    href: wan24.I8NTool.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NTool
+    name: I8NTool
+    href: wan24.I8NTool.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: wan24.I8NTool.I8NToolConfig.SingleThread*
+  commentId: Overload:wan24.I8NTool.I8NToolConfig.SingleThread
+  href: wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_SingleThread
+  name: SingleThread
+  nameWithType: I8NToolConfig.SingleThread
+  fullName: wan24.I8NTool.I8NToolConfig.SingleThread
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: wan24.I8NTool.I8NToolConfig.SourceEncoding*
+  commentId: Overload:wan24.I8NTool.I8NToolConfig.SourceEncoding
+  href: wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_SourceEncoding
+  name: SourceEncoding
+  nameWithType: I8NToolConfig.SourceEncoding
+  fullName: wan24.I8NTool.I8NToolConfig.SourceEncoding
+- uid: System.Text.Encoding
+  commentId: T:System.Text.Encoding
+  parent: System.Text
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.encoding
+  name: Encoding
+  nameWithType: Encoding
+  fullName: System.Text.Encoding
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+- uid: wan24.I8NTool.I8NToolConfig.Patterns*
+  commentId: Overload:wan24.I8NTool.I8NToolConfig.Patterns
+  href: wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_Patterns
+  name: Patterns
+  nameWithType: I8NToolConfig.Patterns
+  fullName: wan24.I8NTool.I8NToolConfig.Patterns
+- uid: System.Collections.Generic.HashSet{wan24.I8NTool.KeywordParserPattern}
+  commentId: T:System.Collections.Generic.HashSet{wan24.I8NTool.KeywordParserPattern}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<KeywordParserPattern>
+  nameWithType: HashSet<KeywordParserPattern>
+  fullName: System.Collections.Generic.HashSet<wan24.I8NTool.KeywordParserPattern>
+  nameWithType.vb: HashSet(Of KeywordParserPattern)
+  fullName.vb: System.Collections.Generic.HashSet(Of wan24.I8NTool.KeywordParserPattern)
+  name.vb: HashSet(Of KeywordParserPattern)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: wan24.I8NTool.KeywordParserPattern
+    name: KeywordParserPattern
+    href: wan24.I8NTool.KeywordParserPattern.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: wan24.I8NTool.KeywordParserPattern
+    name: KeywordParserPattern
+    href: wan24.I8NTool.KeywordParserPattern.html
+  - name: )
+- uid: System.Collections.Generic.HashSet`1
+  commentId: T:System.Collections.Generic.HashSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<T>
+  nameWithType: HashSet<T>
+  fullName: System.Collections.Generic.HashSet<T>
+  nameWithType.vb: HashSet(Of T)
+  fullName.vb: System.Collections.Generic.HashSet(Of T)
+  name.vb: HashSet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: wan24.I8NTool.I8NToolConfig.FileExtensions*
+  commentId: Overload:wan24.I8NTool.I8NToolConfig.FileExtensions
+  href: wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_FileExtensions
+  name: FileExtensions
+  nameWithType: I8NToolConfig.FileExtensions
+  fullName: wan24.I8NTool.I8NToolConfig.FileExtensions
+- uid: System.Collections.Generic.HashSet{System.String}
+  commentId: T:System.Collections.Generic.HashSet{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<string>
+  nameWithType: HashSet<string>
+  fullName: System.Collections.Generic.HashSet<string>
+  nameWithType.vb: HashSet(Of String)
+  fullName.vb: System.Collections.Generic.HashSet(Of String)
+  name.vb: HashSet(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: wan24.I8NTool.I8NToolConfig.Exclude*
+  commentId: Overload:wan24.I8NTool.I8NToolConfig.Exclude
+  href: wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_Exclude
+  name: Exclude
+  nameWithType: I8NToolConfig.Exclude
+  fullName: wan24.I8NTool.I8NToolConfig.Exclude
+- uid: wan24.I8NTool.I8NToolConfig.MergeOutput*
+  commentId: Overload:wan24.I8NTool.I8NToolConfig.MergeOutput
+  href: wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_MergeOutput
+  name: MergeOutput
+  nameWithType: I8NToolConfig.MergeOutput
+  fullName: wan24.I8NTool.I8NToolConfig.MergeOutput
+- uid: wan24.I8NTool.I8NToolConfig.FailOnError*
+  commentId: Overload:wan24.I8NTool.I8NToolConfig.FailOnError
+  href: wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_FailOnError
+  name: FailOnError
+  nameWithType: I8NToolConfig.FailOnError
+  fullName: wan24.I8NTool.I8NToolConfig.FailOnError

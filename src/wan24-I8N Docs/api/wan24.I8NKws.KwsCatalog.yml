@@ -1,0 +1,1964 @@
+### YamlMime:ManagedReference
+items:
+- uid: wan24.I8NKws.KwsCatalog
+  commentId: T:wan24.I8NKws.KwsCatalog
+  id: KwsCatalog
+  parent: wan24.I8NKws
+  children:
+  - wan24.I8NKws.KwsCatalog.#ctor
+  - wan24.I8NKws.KwsCatalog.#ctor(System.Collections.Generic.Dictionary{System.String,System.String[]}@)
+  - wan24.I8NKws.KwsCatalog.CompleteKeywords
+  - wan24.I8NKws.KwsCatalog.ContainsKeyWord(System.String)
+  - wan24.I8NKws.KwsCatalog.Created
+  - wan24.I8NKws.KwsCatalog.FuzzyKeywords
+  - wan24.I8NKws.KwsCatalog.GetEnumerator
+  - wan24.I8NKws.KwsCatalog.GetOrAddKeyword(wan24.I8NKws.KwsKeyword)
+  - wan24.I8NKws.KwsCatalog.IncompleteKeywords
+  - wan24.I8NKws.KwsCatalog.InvalidKeywords
+  - wan24.I8NKws.KwsCatalog.Item(System.String)
+  - wan24.I8NKws.KwsCatalog.Keywords
+  - wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
+  - wan24.I8NKws.KwsCatalog.Locale
+  - wan24.I8NKws.KwsCatalog.Modified
+  - wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
+  - wan24.I8NKws.KwsCatalog.ObsoleteKeywords
+  - wan24.I8NKws.KwsCatalog.Project
+  - wan24.I8NKws.KwsCatalog.RevisionedKeywords
+  - wan24.I8NKws.KwsCatalog.RightToLeft
+  - wan24.I8NKws.KwsCatalog.ToDictionary
+  - wan24.I8NKws.KwsCatalog.Translator
+  - wan24.I8NKws.KwsCatalog.TryAddKeyword(wan24.I8NKws.KwsKeyword@)
+  - wan24.I8NKws.KwsCatalog.TryRemoveKeyword(System.String)
+  - wan24.I8NKws.KwsCatalog.Validate(System.Boolean@,System.Boolean@)
+  - wan24.I8NKws.KwsCatalog.op_Implicit(wan24.I8NKws.KwsCatalog@)~System.Int32
+  langs:
+  - csharp
+  - vb
+  name: KwsCatalog
+  nameWithType: KwsCatalog
+  fullName: wan24.I8NKws.KwsCatalog
+  type: Class
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: KwsCatalog
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 10
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: KWS catalog
+  example: []
+  syntax:
+    content: 'public sealed record KwsCatalog : IEnumerable<KwsKeyword>, IEnumerable, IEquatable<KwsCatalog>'
+    content.vb: Public NotInheritable Class KwsCatalog Implements IEnumerable(Of KwsKeyword), IEnumerable, IEquatable(Of KwsCatalog)
+  inheritance:
+  - System.Object
+  implements:
+  - System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+  - System.Collections.IEnumerable
+  - System.IEquatable{wan24.I8NKws.KwsCatalog}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: wan24.I8NKws.KwsCatalog.#ctor
+  commentId: M:wan24.I8NKws.KwsCatalog.#ctor
+  id: '#ctor'
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: KwsCatalog()
+  nameWithType: KwsCatalog.KwsCatalog()
+  fullName: wan24.I8NKws.KwsCatalog.KwsCatalog()
+  type: Constructor
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: .ctor
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 15
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Constructor
+  example: []
+  syntax:
+    content: public KwsCatalog()
+    content.vb: Public Sub New()
+  overload: wan24.I8NKws.KwsCatalog.#ctor*
+  nameWithType.vb: KwsCatalog.New()
+  fullName.vb: wan24.I8NKws.KwsCatalog.New()
+  name.vb: New()
+- uid: wan24.I8NKws.KwsCatalog.#ctor(System.Collections.Generic.Dictionary{System.String,System.String[]}@)
+  commentId: M:wan24.I8NKws.KwsCatalog.#ctor(System.Collections.Generic.Dictionary{System.String,System.String[]}@)
+  id: '#ctor(System.Collections.Generic.Dictionary{System.String,System.String[]}@)'
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: KwsCatalog(in Dictionary<string, string[]>)
+  nameWithType: KwsCatalog.KwsCatalog(in Dictionary<string, string[]>)
+  fullName: wan24.I8NKws.KwsCatalog.KwsCatalog(in System.Collections.Generic.Dictionary<string, string[]>)
+  type: Constructor
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: .ctor
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 21
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Constructor
+  example: []
+  syntax:
+    content: public KwsCatalog(in Dictionary<string, string[]> dict)
+    parameters:
+    - id: dict
+      type: System.Collections.Generic.Dictionary{System.String,System.String[]}
+      description: Dictionary
+    content.vb: Public Sub New(dict As Dictionary(Of String, String()))
+  overload: wan24.I8NKws.KwsCatalog.#ctor*
+  nameWithType.vb: KwsCatalog.New(Dictionary(Of String, String()))
+  fullName.vb: wan24.I8NKws.KwsCatalog.New(System.Collections.Generic.Dictionary(Of String, String()))
+  name.vb: New(Dictionary(Of String, String()))
+- uid: wan24.I8NKws.KwsCatalog.Item(System.String)
+  commentId: P:wan24.I8NKws.KwsCatalog.Item(System.String)
+  id: Item(System.String)
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: this[string]
+  nameWithType: KwsCatalog.this[string]
+  fullName: wan24.I8NKws.KwsCatalog.this[string]
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: this[]
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 35
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Get a keyword
+  example: []
+  syntax:
+    content: public KwsKeyword? this[string id] { get; }
+    parameters:
+    - id: id
+      type: System.String
+      description: ID
+    return:
+      type: wan24.I8NKws.KwsKeyword
+      description: Keyword
+    content.vb: Public ReadOnly Default Property this[](id As String) As KwsKeyword
+  overload: wan24.I8NKws.KwsCatalog.Item*
+  nameWithType.vb: KwsCatalog.this[](String)
+  fullName.vb: wan24.I8NKws.KwsCatalog.this[](String)
+  name.vb: this[](String)
+- uid: wan24.I8NKws.KwsCatalog.Project
+  commentId: P:wan24.I8NKws.KwsCatalog.Project
+  id: Project
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: Project
+  nameWithType: KwsCatalog.Project
+  fullName: wan24.I8NKws.KwsCatalog.Project
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Project
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 40
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Project name
+  example: []
+  syntax:
+    content: public string Project { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Project As String
+  overload: wan24.I8NKws.KwsCatalog.Project*
+- uid: wan24.I8NKws.KwsCatalog.Created
+  commentId: P:wan24.I8NKws.KwsCatalog.Created
+  id: Created
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: Created
+  nameWithType: KwsCatalog.Created
+  fullName: wan24.I8NKws.KwsCatalog.Created
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Created
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 45
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Created time (UTC)
+  example: []
+  syntax:
+    content: public DateTime Created { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property Created As Date
+  overload: wan24.I8NKws.KwsCatalog.Created*
+- uid: wan24.I8NKws.KwsCatalog.Modified
+  commentId: P:wan24.I8NKws.KwsCatalog.Modified
+  id: Modified
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: Modified
+  nameWithType: KwsCatalog.Modified
+  fullName: wan24.I8NKws.KwsCatalog.Modified
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Modified
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 50
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Modified time (UTC)
+  example: []
+  syntax:
+    content: public DateTime Modified { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property Modified As Date
+  overload: wan24.I8NKws.KwsCatalog.Modified*
+- uid: wan24.I8NKws.KwsCatalog.Translator
+  commentId: P:wan24.I8NKws.KwsCatalog.Translator
+  id: Translator
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: Translator
+  nameWithType: KwsCatalog.Translator
+  fullName: wan24.I8NKws.KwsCatalog.Translator
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Translator
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 55
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Translator name
+  example: []
+  syntax:
+    content: public string Translator { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Translator As String
+  overload: wan24.I8NKws.KwsCatalog.Translator*
+- uid: wan24.I8NKws.KwsCatalog.Locale
+  commentId: P:wan24.I8NKws.KwsCatalog.Locale
+  id: Locale
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: Locale
+  nameWithType: KwsCatalog.Locale
+  fullName: wan24.I8NKws.KwsCatalog.Locale
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Locale
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 60
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Locale identifier (<code>en-US</code> for example)
+  example: []
+  syntax:
+    content: >-
+      [RegularExpression("^([a-z]{2})-([A-Z]{2})$")]
+
+      public string Locale { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RegularExpression("^([a-z]{2})-([A-Z]{2})$")>
+
+      Public Property Locale As String
+  overload: wan24.I8NKws.KwsCatalog.Locale*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+    ctor: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ^([a-z]{2})-([A-Z]{2})$
+- uid: wan24.I8NKws.KwsCatalog.RightToLeft
+  commentId: P:wan24.I8NKws.KwsCatalog.RightToLeft
+  id: RightToLeft
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: RightToLeft
+  nameWithType: KwsCatalog.RightToLeft
+  fullName: wan24.I8NKws.KwsCatalog.RightToLeft
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: RightToLeft
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 66
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: If the text is written right to left
+  example: []
+  syntax:
+    content: public bool RightToLeft { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property RightToLeft As Boolean
+  overload: wan24.I8NKws.KwsCatalog.RightToLeft*
+- uid: wan24.I8NKws.KwsCatalog.CompleteKeywords
+  commentId: P:wan24.I8NKws.KwsCatalog.CompleteKeywords
+  id: CompleteKeywords
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: CompleteKeywords
+  nameWithType: KwsCatalog.CompleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.CompleteKeywords
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: CompleteKeywords
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 71
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Complete keywords (non-obsolete)
+  example: []
+  syntax:
+    content: >-
+      [NoValidation(false)]
+
+      public IEnumerable<KwsKeyword> CompleteKeywords { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+    content.vb: >-
+      <NoValidation(False)>
+
+      Public ReadOnly Property CompleteKeywords As IEnumerable(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.CompleteKeywords*
+  attributes:
+  - type: wan24.ObjectValidation.NoValidationAttribute
+    ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+- uid: wan24.I8NKws.KwsCatalog.IncompleteKeywords
+  commentId: P:wan24.I8NKws.KwsCatalog.IncompleteKeywords
+  id: IncompleteKeywords
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: IncompleteKeywords
+  nameWithType: KwsCatalog.IncompleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.IncompleteKeywords
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: IncompleteKeywords
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 77
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Incomplete keywords (non-obsolete)
+  example: []
+  syntax:
+    content: >-
+      [NoValidation(false)]
+
+      public IEnumerable<KwsKeyword> IncompleteKeywords { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+    content.vb: >-
+      <NoValidation(False)>
+
+      Public ReadOnly Property IncompleteKeywords As IEnumerable(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.IncompleteKeywords*
+  attributes:
+  - type: wan24.ObjectValidation.NoValidationAttribute
+    ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+- uid: wan24.I8NKws.KwsCatalog.RevisionedKeywords
+  commentId: P:wan24.I8NKws.KwsCatalog.RevisionedKeywords
+  id: RevisionedKeywords
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: RevisionedKeywords
+  nameWithType: KwsCatalog.RevisionedKeywords
+  fullName: wan24.I8NKws.KwsCatalog.RevisionedKeywords
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: RevisionedKeywords
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 83
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Revisioned keywords (non-onsolete)
+  example: []
+  syntax:
+    content: >-
+      [NoValidation(false)]
+
+      public IEnumerable<KwsKeyword> RevisionedKeywords { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+    content.vb: >-
+      <NoValidation(False)>
+
+      Public ReadOnly Property RevisionedKeywords As IEnumerable(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.RevisionedKeywords*
+  attributes:
+  - type: wan24.ObjectValidation.NoValidationAttribute
+    ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+- uid: wan24.I8NKws.KwsCatalog.FuzzyKeywords
+  commentId: P:wan24.I8NKws.KwsCatalog.FuzzyKeywords
+  id: FuzzyKeywords
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: FuzzyKeywords
+  nameWithType: KwsCatalog.FuzzyKeywords
+  fullName: wan24.I8NKws.KwsCatalog.FuzzyKeywords
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: FuzzyKeywords
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 89
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Fuzzy keywords (non-onsolete)
+  example: []
+  syntax:
+    content: >-
+      [NoValidation(false)]
+
+      public IEnumerable<KwsKeyword> FuzzyKeywords { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+    content.vb: >-
+      <NoValidation(False)>
+
+      Public ReadOnly Property FuzzyKeywords As IEnumerable(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.FuzzyKeywords*
+  attributes:
+  - type: wan24.ObjectValidation.NoValidationAttribute
+    ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+- uid: wan24.I8NKws.KwsCatalog.InvalidKeywords
+  commentId: P:wan24.I8NKws.KwsCatalog.InvalidKeywords
+  id: InvalidKeywords
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: InvalidKeywords
+  nameWithType: KwsCatalog.InvalidKeywords
+  fullName: wan24.I8NKws.KwsCatalog.InvalidKeywords
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: InvalidKeywords
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 95
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Invalid keywords (non-onsolete)
+  example: []
+  syntax:
+    content: >-
+      [NoValidation(false)]
+
+      public IEnumerable<KwsKeyword> InvalidKeywords { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+    content.vb: >-
+      <NoValidation(False)>
+
+      Public ReadOnly Property InvalidKeywords As IEnumerable(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.InvalidKeywords*
+  attributes:
+  - type: wan24.ObjectValidation.NoValidationAttribute
+    ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+- uid: wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
+  commentId: P:wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
+  id: KeywordsWithDeveloperComments
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: KeywordsWithDeveloperComments
+  nameWithType: KwsCatalog.KeywordsWithDeveloperComments
+  fullName: wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: KeywordsWithDeveloperComments
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 101
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Keywords with developer comments (non-onsolete)
+  example: []
+  syntax:
+    content: >-
+      [NoValidation(false)]
+
+      public IEnumerable<KwsKeyword> KeywordsWithDeveloperComments { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+    content.vb: >-
+      <NoValidation(False)>
+
+      Public ReadOnly Property KeywordsWithDeveloperComments As IEnumerable(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments*
+  attributes:
+  - type: wan24.ObjectValidation.NoValidationAttribute
+    ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+- uid: wan24.I8NKws.KwsCatalog.ObsoleteKeywords
+  commentId: P:wan24.I8NKws.KwsCatalog.ObsoleteKeywords
+  id: ObsoleteKeywords
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: ObsoleteKeywords
+  nameWithType: KwsCatalog.ObsoleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.ObsoleteKeywords
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: ObsoleteKeywords
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 107
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Obsolete keywords
+  example: []
+  syntax:
+    content: >-
+      [NoValidation(false)]
+
+      public IEnumerable<KwsKeyword> ObsoleteKeywords { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+    content.vb: >-
+      <NoValidation(False)>
+
+      Public ReadOnly Property ObsoleteKeywords As IEnumerable(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.ObsoleteKeywords*
+  attributes:
+  - type: wan24.ObjectValidation.NoValidationAttribute
+    ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+- uid: wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
+  commentId: P:wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
+  id: NonObsoleteKeywords
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: NonObsoleteKeywords
+  nameWithType: KwsCatalog.NonObsoleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: NonObsoleteKeywords
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 113
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Non-obsolete keywords
+  example: []
+  syntax:
+    content: >-
+      [NoValidation(false)]
+
+      public IEnumerable<KwsKeyword> NonObsoleteKeywords { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+    content.vb: >-
+      <NoValidation(False)>
+
+      Public ReadOnly Property NonObsoleteKeywords As IEnumerable(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.NonObsoleteKeywords*
+  attributes:
+  - type: wan24.ObjectValidation.NoValidationAttribute
+    ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+- uid: wan24.I8NKws.KwsCatalog.Keywords
+  commentId: P:wan24.I8NKws.KwsCatalog.Keywords
+  id: Keywords
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: Keywords
+  nameWithType: KwsCatalog.Keywords
+  fullName: wan24.I8NKws.KwsCatalog.Keywords
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Keywords
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 119
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Keywords
+  example: []
+  syntax:
+    content: >-
+      [NoValidation(false)]
+
+      public HashSet<KwsKeyword> Keywords { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.HashSet{wan24.I8NKws.KwsKeyword}
+    content.vb: >-
+      <NoValidation(False)>
+
+      Public Property Keywords As HashSet(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.Keywords*
+  attributes:
+  - type: wan24.ObjectValidation.NoValidationAttribute
+    ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+- uid: wan24.I8NKws.KwsCatalog.TryAddKeyword(wan24.I8NKws.KwsKeyword@)
+  commentId: M:wan24.I8NKws.KwsCatalog.TryAddKeyword(wan24.I8NKws.KwsKeyword@)
+  id: TryAddKeyword(wan24.I8NKws.KwsKeyword@)
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: TryAddKeyword(in KwsKeyword)
+  nameWithType: KwsCatalog.TryAddKeyword(in KwsKeyword)
+  fullName: wan24.I8NKws.KwsCatalog.TryAddKeyword(in wan24.I8NKws.KwsKeyword)
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: TryAddKeyword
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 127
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Try adding a new keyword
+  example: []
+  syntax:
+    content: public bool TryAddKeyword(in KwsKeyword keyword)
+    parameters:
+    - id: keyword
+      type: wan24.I8NKws.KwsKeyword
+      description: Keyword
+    return:
+      type: System.Boolean
+      description: If added
+    content.vb: Public Function TryAddKeyword(keyword As KwsKeyword) As Boolean
+  overload: wan24.I8NKws.KwsCatalog.TryAddKeyword*
+  nameWithType.vb: KwsCatalog.TryAddKeyword(KwsKeyword)
+  fullName.vb: wan24.I8NKws.KwsCatalog.TryAddKeyword(wan24.I8NKws.KwsKeyword)
+  name.vb: TryAddKeyword(KwsKeyword)
+- uid: wan24.I8NKws.KwsCatalog.GetOrAddKeyword(wan24.I8NKws.KwsKeyword)
+  commentId: M:wan24.I8NKws.KwsCatalog.GetOrAddKeyword(wan24.I8NKws.KwsKeyword)
+  id: GetOrAddKeyword(wan24.I8NKws.KwsKeyword)
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: GetOrAddKeyword(KwsKeyword)
+  nameWithType: KwsCatalog.GetOrAddKeyword(KwsKeyword)
+  fullName: wan24.I8NKws.KwsCatalog.GetOrAddKeyword(wan24.I8NKws.KwsKeyword)
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: GetOrAddKeyword
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 134
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Add a new keyword
+  example: []
+  syntax:
+    content: public KwsKeyword GetOrAddKeyword(KwsKeyword keyword)
+    parameters:
+    - id: keyword
+      type: wan24.I8NKws.KwsKeyword
+      description: Keyword
+    return:
+      type: wan24.I8NKws.KwsKeyword
+      description: Added or existing keyword
+    content.vb: Public Function GetOrAddKeyword(keyword As KwsKeyword) As KwsKeyword
+  overload: wan24.I8NKws.KwsCatalog.GetOrAddKeyword*
+- uid: wan24.I8NKws.KwsCatalog.TryRemoveKeyword(System.String)
+  commentId: M:wan24.I8NKws.KwsCatalog.TryRemoveKeyword(System.String)
+  id: TryRemoveKeyword(System.String)
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: TryRemoveKeyword(string)
+  nameWithType: KwsCatalog.TryRemoveKeyword(string)
+  fullName: wan24.I8NKws.KwsCatalog.TryRemoveKeyword(string)
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: TryRemoveKeyword
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 146
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Remove a keyword
+  example: []
+  syntax:
+    content: public bool TryRemoveKeyword(string id)
+    parameters:
+    - id: id
+      type: System.String
+      description: iD
+    return:
+      type: System.Boolean
+      description: If removed
+    content.vb: Public Function TryRemoveKeyword(id As String) As Boolean
+  overload: wan24.I8NKws.KwsCatalog.TryRemoveKeyword*
+  nameWithType.vb: KwsCatalog.TryRemoveKeyword(String)
+  fullName.vb: wan24.I8NKws.KwsCatalog.TryRemoveKeyword(String)
+  name.vb: TryRemoveKeyword(String)
+- uid: wan24.I8NKws.KwsCatalog.ContainsKeyWord(System.String)
+  commentId: M:wan24.I8NKws.KwsCatalog.ContainsKeyWord(System.String)
+  id: ContainsKeyWord(System.String)
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: ContainsKeyWord(string)
+  nameWithType: KwsCatalog.ContainsKeyWord(string)
+  fullName: wan24.I8NKws.KwsCatalog.ContainsKeyWord(string)
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: ContainsKeyWord
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 167
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Determine if a keyword is contained
+  example: []
+  syntax:
+    content: public bool ContainsKeyWord(string id)
+    parameters:
+    - id: id
+      type: System.String
+      description: ID
+    return:
+      type: System.Boolean
+      description: If the keyword is contained
+    content.vb: Public Function ContainsKeyWord(id As String) As Boolean
+  overload: wan24.I8NKws.KwsCatalog.ContainsKeyWord*
+  nameWithType.vb: KwsCatalog.ContainsKeyWord(String)
+  fullName.vb: wan24.I8NKws.KwsCatalog.ContainsKeyWord(String)
+  name.vb: ContainsKeyWord(String)
+- uid: wan24.I8NKws.KwsCatalog.Validate(System.Boolean@,System.Boolean@)
+  commentId: M:wan24.I8NKws.KwsCatalog.Validate(System.Boolean@,System.Boolean@)
+  id: Validate(System.Boolean@,System.Boolean@)
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: Validate(in bool, in bool)
+  nameWithType: KwsCatalog.Validate(in bool, in bool)
+  fullName: wan24.I8NKws.KwsCatalog.Validate(in bool, in bool)
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Validate
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 176
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Validate the catalog (any keyword is required)
+  example: []
+  syntax:
+    content: public bool Validate(in bool throwOnError = true, in bool requireCompleteTranslations = false)
+    parameters:
+    - id: throwOnError
+      type: System.Boolean
+      description: Throw an exception on error?
+    - id: requireCompleteTranslations
+      type: System.Boolean
+      description: Require all translations to be complete?
+    return:
+      type: System.Boolean
+      description: If the catalog is valid
+    content.vb: Public Function Validate(throwOnError As Boolean = True, requireCompleteTranslations As Boolean = False) As Boolean
+  overload: wan24.I8NKws.KwsCatalog.Validate*
+  exceptions:
+  - type: System.IO.InvalidDataException
+    commentId: T:System.IO.InvalidDataException
+    description: Catalog is invalid
+  nameWithType.vb: KwsCatalog.Validate(Boolean, Boolean)
+  fullName.vb: wan24.I8NKws.KwsCatalog.Validate(Boolean, Boolean)
+  name.vb: Validate(Boolean, Boolean)
+- uid: wan24.I8NKws.KwsCatalog.ToDictionary
+  commentId: M:wan24.I8NKws.KwsCatalog.ToDictionary
+  id: ToDictionary
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: ToDictionary()
+  nameWithType: KwsCatalog.ToDictionary()
+  fullName: wan24.I8NKws.KwsCatalog.ToDictionary()
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: ToDictionary
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 198
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Convert to a dictionary (only non-obsolete keywords)
+  example: []
+  syntax:
+    content: public Dictionary<string, string[]> ToDictionary()
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String[]}
+      description: Dictionary
+    content.vb: Public Function ToDictionary() As Dictionary(Of String, String())
+  overload: wan24.I8NKws.KwsCatalog.ToDictionary*
+- uid: wan24.I8NKws.KwsCatalog.GetEnumerator
+  commentId: M:wan24.I8NKws.KwsCatalog.GetEnumerator
+  id: GetEnumerator
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: KwsCatalog.GetEnumerator()
+  fullName: wan24.I8NKws.KwsCatalog.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: GetEnumerator
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 202
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Returns an enumerator that iterates through the collection.
+  example: []
+  syntax:
+    content: public IEnumerator<KwsKeyword> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{wan24.I8NKws.KwsKeyword}
+      description: An enumerator that can be used to iterate through the collection.
+    content.vb: Public Function GetEnumerator() As IEnumerator(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}.GetEnumerator
+- uid: wan24.I8NKws.KwsCatalog.op_Implicit(wan24.I8NKws.KwsCatalog@)~System.Int32
+  commentId: M:wan24.I8NKws.KwsCatalog.op_Implicit(wan24.I8NKws.KwsCatalog@)~System.Int32
+  id: op_Implicit(wan24.I8NKws.KwsCatalog@)~System.Int32
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: implicit operator int(in KwsCatalog)
+  nameWithType: KwsCatalog.implicit operator int(in KwsCatalog)
+  fullName: wan24.I8NKws.KwsCatalog.implicit operator int(in wan24.I8NKws.KwsCatalog)
+  type: Operator
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: op_Implicit
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 211
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Cast as keyword count
+  example: []
+  syntax:
+    content: public static implicit operator int(in KwsCatalog catalog)
+    parameters:
+    - id: catalog
+      type: wan24.I8NKws.KwsCatalog
+      description: Catalog
+    return:
+      type: System.Int32
+    content.vb: Public Shared Widening Operator CType(catalog As KwsCatalog) As Integer
+  overload: wan24.I8NKws.KwsCatalog.op_Implicit*
+  nameWithType.vb: KwsCatalog.CType(KwsCatalog)
+  fullName.vb: wan24.I8NKws.KwsCatalog.CType(wan24.I8NKws.KwsCatalog)
+  name.vb: CType(KwsCatalog)
+references:
+- uid: wan24.I8NKws
+  commentId: N:wan24.I8NKws
+  href: wan24.html
+  name: wan24.I8NKws
+  nameWithType: wan24.I8NKws
+  fullName: wan24.I8NKws
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NKws
+    name: I8NKws
+    href: wan24.I8NKws.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NKws
+    name: I8NKws
+    href: wan24.I8NKws.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+  commentId: T:System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<KwsKeyword>
+  nameWithType: IEnumerable<KwsKeyword>
+  fullName: System.Collections.Generic.IEnumerable<wan24.I8NKws.KwsKeyword>
+  nameWithType.vb: IEnumerable(Of KwsKeyword)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of wan24.I8NKws.KwsKeyword)
+  name.vb: IEnumerable(Of KwsKeyword)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: wan24.I8NKws.KwsKeyword
+    name: KwsKeyword
+    href: wan24.I8NKws.KwsKeyword.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: wan24.I8NKws.KwsKeyword
+    name: KwsKeyword
+    href: wan24.I8NKws.KwsKeyword.html
+  - name: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.IEquatable{wan24.I8NKws.KwsCatalog}
+  commentId: T:System.IEquatable{wan24.I8NKws.KwsCatalog}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<KwsCatalog>
+  nameWithType: IEquatable<KwsCatalog>
+  fullName: System.IEquatable<wan24.I8NKws.KwsCatalog>
+  nameWithType.vb: IEquatable(Of KwsCatalog)
+  fullName.vb: System.IEquatable(Of wan24.I8NKws.KwsCatalog)
+  name.vb: IEquatable(Of KwsCatalog)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: wan24.I8NKws.KwsCatalog
+    name: KwsCatalog
+    href: wan24.I8NKws.KwsCatalog.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: wan24.I8NKws.KwsCatalog
+    name: KwsCatalog
+    href: wan24.I8NKws.KwsCatalog.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: wan24.I8NKws.KwsCatalog.#ctor*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.#ctor
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog__ctor
+  name: KwsCatalog
+  nameWithType: KwsCatalog.KwsCatalog
+  fullName: wan24.I8NKws.KwsCatalog.KwsCatalog
+  nameWithType.vb: KwsCatalog.New
+  fullName.vb: wan24.I8NKws.KwsCatalog.New
+  name.vb: New
+- uid: System.Collections.Generic.Dictionary{System.String,System.String[]}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String[]}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, string[]>
+  nameWithType: Dictionary<string, string[]>
+  fullName: System.Collections.Generic.Dictionary<string, string[]>
+  nameWithType.vb: Dictionary(Of String, String())
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, String())
+  name.vb: Dictionary(Of String, String())
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: wan24.I8NKws.KwsCatalog.Item*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Item
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Item_System_String_
+  name: this
+  nameWithType: KwsCatalog.this
+  fullName: wan24.I8NKws.KwsCatalog.this
+  nameWithType.vb: KwsCatalog.this[]
+  fullName.vb: wan24.I8NKws.KwsCatalog.this[]
+  name.vb: this[]
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: wan24.I8NKws.KwsKeyword
+  commentId: T:wan24.I8NKws.KwsKeyword
+  parent: wan24.I8NKws
+  href: wan24.I8NKws.KwsKeyword.html
+  name: KwsKeyword
+  nameWithType: KwsKeyword
+  fullName: wan24.I8NKws.KwsKeyword
+- uid: wan24.I8NKws.KwsCatalog.Project*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Project
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Project
+  name: Project
+  nameWithType: KwsCatalog.Project
+  fullName: wan24.I8NKws.KwsCatalog.Project
+- uid: wan24.I8NKws.KwsCatalog.Created*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Created
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Created
+  name: Created
+  nameWithType: KwsCatalog.Created
+  fullName: wan24.I8NKws.KwsCatalog.Created
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: wan24.I8NKws.KwsCatalog.Modified*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Modified
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Modified
+  name: Modified
+  nameWithType: KwsCatalog.Modified
+  fullName: wan24.I8NKws.KwsCatalog.Modified
+- uid: wan24.I8NKws.KwsCatalog.Translator*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Translator
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Translator
+  name: Translator
+  nameWithType: KwsCatalog.Translator
+  fullName: wan24.I8NKws.KwsCatalog.Translator
+- uid: wan24.I8NKws.KwsCatalog.Locale*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Locale
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Locale
+  name: Locale
+  nameWithType: KwsCatalog.Locale
+  fullName: wan24.I8NKws.KwsCatalog.Locale
+- uid: wan24.I8NKws.KwsCatalog.RightToLeft*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.RightToLeft
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_RightToLeft
+  name: RightToLeft
+  nameWithType: KwsCatalog.RightToLeft
+  fullName: wan24.I8NKws.KwsCatalog.RightToLeft
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: wan24.I8NKws.KwsCatalog.CompleteKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.CompleteKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_CompleteKeywords
+  name: CompleteKeywords
+  nameWithType: KwsCatalog.CompleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.CompleteKeywords
+- uid: wan24.I8NKws.KwsCatalog.IncompleteKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.IncompleteKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_IncompleteKeywords
+  name: IncompleteKeywords
+  nameWithType: KwsCatalog.IncompleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.IncompleteKeywords
+- uid: wan24.I8NKws.KwsCatalog.RevisionedKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.RevisionedKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_RevisionedKeywords
+  name: RevisionedKeywords
+  nameWithType: KwsCatalog.RevisionedKeywords
+  fullName: wan24.I8NKws.KwsCatalog.RevisionedKeywords
+- uid: wan24.I8NKws.KwsCatalog.FuzzyKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.FuzzyKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_FuzzyKeywords
+  name: FuzzyKeywords
+  nameWithType: KwsCatalog.FuzzyKeywords
+  fullName: wan24.I8NKws.KwsCatalog.FuzzyKeywords
+- uid: wan24.I8NKws.KwsCatalog.InvalidKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.InvalidKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_InvalidKeywords
+  name: InvalidKeywords
+  nameWithType: KwsCatalog.InvalidKeywords
+  fullName: wan24.I8NKws.KwsCatalog.InvalidKeywords
+- uid: wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_KeywordsWithDeveloperComments
+  name: KeywordsWithDeveloperComments
+  nameWithType: KwsCatalog.KeywordsWithDeveloperComments
+  fullName: wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
+- uid: wan24.I8NKws.KwsCatalog.ObsoleteKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.ObsoleteKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_ObsoleteKeywords
+  name: ObsoleteKeywords
+  nameWithType: KwsCatalog.ObsoleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.ObsoleteKeywords
+- uid: wan24.I8NKws.KwsCatalog.NonObsoleteKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_NonObsoleteKeywords
+  name: NonObsoleteKeywords
+  nameWithType: KwsCatalog.NonObsoleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
+- uid: wan24.I8NKws.KwsCatalog.Keywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Keywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Keywords
+  name: Keywords
+  nameWithType: KwsCatalog.Keywords
+  fullName: wan24.I8NKws.KwsCatalog.Keywords
+- uid: System.Collections.Generic.HashSet{wan24.I8NKws.KwsKeyword}
+  commentId: T:System.Collections.Generic.HashSet{wan24.I8NKws.KwsKeyword}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<KwsKeyword>
+  nameWithType: HashSet<KwsKeyword>
+  fullName: System.Collections.Generic.HashSet<wan24.I8NKws.KwsKeyword>
+  nameWithType.vb: HashSet(Of KwsKeyword)
+  fullName.vb: System.Collections.Generic.HashSet(Of wan24.I8NKws.KwsKeyword)
+  name.vb: HashSet(Of KwsKeyword)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: wan24.I8NKws.KwsKeyword
+    name: KwsKeyword
+    href: wan24.I8NKws.KwsKeyword.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: wan24.I8NKws.KwsKeyword
+    name: KwsKeyword
+    href: wan24.I8NKws.KwsKeyword.html
+  - name: )
+- uid: System.Collections.Generic.HashSet`1
+  commentId: T:System.Collections.Generic.HashSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<T>
+  nameWithType: HashSet<T>
+  fullName: System.Collections.Generic.HashSet<T>
+  nameWithType.vb: HashSet(Of T)
+  fullName.vb: System.Collections.Generic.HashSet(Of T)
+  name.vb: HashSet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: wan24.I8NKws.KwsCatalog.TryAddKeyword*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.TryAddKeyword
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_TryAddKeyword_wan24_I8NKws_KwsKeyword__
+  name: TryAddKeyword
+  nameWithType: KwsCatalog.TryAddKeyword
+  fullName: wan24.I8NKws.KwsCatalog.TryAddKeyword
+- uid: wan24.I8NKws.KwsCatalog.GetOrAddKeyword*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.GetOrAddKeyword
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_GetOrAddKeyword_wan24_I8NKws_KwsKeyword_
+  name: GetOrAddKeyword
+  nameWithType: KwsCatalog.GetOrAddKeyword
+  fullName: wan24.I8NKws.KwsCatalog.GetOrAddKeyword
+- uid: wan24.I8NKws.KwsCatalog.TryRemoveKeyword*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.TryRemoveKeyword
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_TryRemoveKeyword_System_String_
+  name: TryRemoveKeyword
+  nameWithType: KwsCatalog.TryRemoveKeyword
+  fullName: wan24.I8NKws.KwsCatalog.TryRemoveKeyword
+- uid: wan24.I8NKws.KwsCatalog.ContainsKeyWord*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.ContainsKeyWord
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_ContainsKeyWord_System_String_
+  name: ContainsKeyWord
+  nameWithType: KwsCatalog.ContainsKeyWord
+  fullName: wan24.I8NKws.KwsCatalog.ContainsKeyWord
+- uid: System.IO.InvalidDataException
+  commentId: T:System.IO.InvalidDataException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.invaliddataexception
+  name: InvalidDataException
+  nameWithType: InvalidDataException
+  fullName: System.IO.InvalidDataException
+- uid: wan24.I8NKws.KwsCatalog.Validate*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Validate
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Validate_System_Boolean__System_Boolean__
+  name: Validate
+  nameWithType: KwsCatalog.Validate
+  fullName: wan24.I8NKws.KwsCatalog.Validate
+- uid: wan24.I8NKws.KwsCatalog.ToDictionary*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.ToDictionary
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_ToDictionary
+  name: ToDictionary
+  nameWithType: KwsCatalog.ToDictionary
+  fullName: wan24.I8NKws.KwsCatalog.ToDictionary
+- uid: wan24.I8NKws.KwsCatalog.GetEnumerator*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.GetEnumerator
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_GetEnumerator
+  name: GetEnumerator
+  nameWithType: KwsCatalog.GetEnumerator
+  fullName: wan24.I8NKws.KwsCatalog.GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<KwsKeyword>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<wan24.I8NKws.KwsKeyword>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of KwsKeyword).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of wan24.I8NKws.KwsKeyword).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerator{wan24.I8NKws.KwsKeyword}
+  commentId: T:System.Collections.Generic.IEnumerator{wan24.I8NKws.KwsKeyword}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<KwsKeyword>
+  nameWithType: IEnumerator<KwsKeyword>
+  fullName: System.Collections.Generic.IEnumerator<wan24.I8NKws.KwsKeyword>
+  nameWithType.vb: IEnumerator(Of KwsKeyword)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of wan24.I8NKws.KwsKeyword)
+  name.vb: IEnumerator(Of KwsKeyword)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - uid: wan24.I8NKws.KwsKeyword
+    name: KwsKeyword
+    href: wan24.I8NKws.KwsKeyword.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: wan24.I8NKws.KwsKeyword
+    name: KwsKeyword
+    href: wan24.I8NKws.KwsKeyword.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: wan24.I8NKws.KwsCatalog.op_Implicit*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.op_Implicit
+  name: implicit operator
+  nameWithType: KwsCatalog.implicit operator
+  fullName: wan24.I8NKws.KwsCatalog.implicit operator
+  nameWithType.vb: KwsCatalog.CType
+  fullName.vb: wan24.I8NKws.KwsCatalog.CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: wan24.I8NKws.KwsCatalog
+  commentId: T:wan24.I8NKws.KwsCatalog
+  parent: wan24.I8NKws
+  href: wan24.I8NKws.KwsCatalog.html
+  name: KwsCatalog
+  nameWithType: KwsCatalog
+  fullName: wan24.I8NKws.KwsCatalog
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

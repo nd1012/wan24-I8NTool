@@ -1,0 +1,1626 @@
+### YamlMime:ManagedReference
+items:
+- uid: wan24.I8N.I8NCompressedTranslationTerms
+  commentId: T:wan24.I8N.I8NCompressedTranslationTerms
+  id: I8NCompressedTranslationTerms
+  parent: wan24.I8N
+  children:
+  - wan24.I8N.I8NCompressedTranslationTerms.#ctor(System.Collections.Generic.Dictionary{System.String,System.String[]}@)
+  - wan24.I8N.I8NCompressedTranslationTerms.FromStream(System.IO.Stream@,System.Boolean@,System.Boolean@)
+  - wan24.I8N.I8NCompressedTranslationTerms.FromStreamAsync(System.IO.Stream,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  - wan24.I8N.I8NCompressedTranslationTerms.HEADER_COMPRESSION_FLAG
+  - wan24.I8N.I8NCompressedTranslationTerms.VERSION
+  langs:
+  - csharp
+  - vb
+  name: I8NCompressedTranslationTerms
+  nameWithType: I8NCompressedTranslationTerms
+  fullName: wan24.I8N.I8NCompressedTranslationTerms
+  type: Class
+  source:
+    remote:
+      path: src/wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: I8NCompressedTranslationTerms
+    path: ../wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+    startLine: 14
+  assemblies:
+  - wan24I8NCompressed
+  namespace: wan24.I8N
+  summary: i8n keyword catalog translation terms
+  remarks: Constructor
+  example: []
+  syntax:
+    content: 'public class I8NCompressedTranslationTerms : PluralTranslationTerms, ITranslationTerms, IReadOnlyDictionary<string, string>, IReadOnlyCollection<KeyValuePair<string, string>>, IEnumerable<KeyValuePair<string, string>>, IEnumerable, IStringLocalizer'
+    content.vb: Public Class I8NCompressedTranslationTerms Inherits PluralTranslationTerms Implements ITranslationTerms, IReadOnlyDictionary(Of String, String), IReadOnlyCollection(Of KeyValuePair(Of String, String)), IEnumerable(Of KeyValuePair(Of String, String)), IEnumerable, IStringLocalizer
+  inheritance:
+  - System.Object
+  - wan24.Core.PluralTranslationTerms
+  implements:
+  - wan24.Core.ITranslationTerms
+  - System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  - System.Collections.Generic.IReadOnlyCollection{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  - System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  - System.Collections.IEnumerable
+  - Microsoft.Extensions.Localization.IStringLocalizer
+  inheritedMembers:
+  - wan24.Core.PluralTranslationTerms.GetTerm(System.String@,System.String[])
+  - wan24.Core.PluralTranslationTerms.GetTerm(System.String@,System.Int32@,System.String[])
+  - wan24.Core.PluralTranslationTerms.ContainsKey(System.String)
+  - wan24.Core.PluralTranslationTerms.TryGetValue(System.String,System.String@)
+  - wan24.Core.PluralTranslationTerms.GetEnumerator
+  - wan24.Core.PluralTranslationTerms.StringLocalizer(System.String,System.Object[])
+  - wan24.Core.PluralTranslationTerms.Terms
+  - wan24.Core.PluralTranslationTerms.PluralSupport
+  - wan24.Core.PluralTranslationTerms.Item(System.String@,System.String[])
+  - wan24.Core.PluralTranslationTerms.Item(System.String@,System.Int32@,System.String[])
+  - wan24.Core.PluralTranslationTerms.Keys
+  - wan24.Core.PluralTranslationTerms.Values
+  - wan24.Core.PluralTranslationTerms.Count
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: wan24.I8N.I8NCompressedTranslationTerms.#ctor(System.Collections.Generic.Dictionary{System.String,System.String[]}@)
+  commentId: M:wan24.I8N.I8NCompressedTranslationTerms.#ctor(System.Collections.Generic.Dictionary{System.String,System.String[]}@)
+  id: '#ctor(System.Collections.Generic.Dictionary{System.String,System.String[]}@)'
+  parent: wan24.I8N.I8NCompressedTranslationTerms
+  langs:
+  - csharp
+  - vb
+  name: I8NCompressedTranslationTerms(in Dictionary<string, string[]>)
+  nameWithType: I8NCompressedTranslationTerms.I8NCompressedTranslationTerms(in Dictionary<string, string[]>)
+  fullName: wan24.I8N.I8NCompressedTranslationTerms.I8NCompressedTranslationTerms(in System.Collections.Generic.Dictionary<string, string[]>)
+  type: Constructor
+  source:
+    remote:
+      path: src/wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: .ctor
+    path: ../wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+    startLine: 14
+  assemblies:
+  - wan24I8NCompressed
+  namespace: wan24.I8N
+  summary: i8n keyword catalog translation terms
+  remarks: Constructor
+  example: []
+  syntax:
+    content: public I8NCompressedTranslationTerms(in Dictionary<string, string[]> catalog)
+    parameters:
+    - id: catalog
+      type: System.Collections.Generic.Dictionary{System.String,System.String[]}
+      description: Catalog
+    content.vb: Public Sub New(catalog As Dictionary(Of String, String()))
+  overload: wan24.I8N.I8NCompressedTranslationTerms.#ctor*
+  nameWithType.vb: I8NCompressedTranslationTerms.New(Dictionary(Of String, String()))
+  fullName.vb: wan24.I8N.I8NCompressedTranslationTerms.New(System.Collections.Generic.Dictionary(Of String, String()))
+  name.vb: New(Dictionary(Of String, String()))
+- uid: wan24.I8N.I8NCompressedTranslationTerms.VERSION
+  commentId: F:wan24.I8N.I8NCompressedTranslationTerms.VERSION
+  id: VERSION
+  parent: wan24.I8N.I8NCompressedTranslationTerms
+  langs:
+  - csharp
+  - vb
+  name: VERSION
+  nameWithType: I8NCompressedTranslationTerms.VERSION
+  fullName: wan24.I8N.I8NCompressedTranslationTerms.VERSION
+  type: Field
+  source:
+    remote:
+      path: src/wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: VERSION
+    path: ../wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+    startLine: 19
+  assemblies:
+  - wan24I8NCompressed
+  namespace: wan24.I8N
+  summary: i8n version number
+  example: []
+  syntax:
+    content: public const int VERSION = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const VERSION As Integer = 1
+- uid: wan24.I8N.I8NCompressedTranslationTerms.HEADER_COMPRESSION_FLAG
+  commentId: F:wan24.I8N.I8NCompressedTranslationTerms.HEADER_COMPRESSION_FLAG
+  id: HEADER_COMPRESSION_FLAG
+  parent: wan24.I8N.I8NCompressedTranslationTerms
+  langs:
+  - csharp
+  - vb
+  name: HEADER_COMPRESSION_FLAG
+  nameWithType: I8NCompressedTranslationTerms.HEADER_COMPRESSION_FLAG
+  fullName: wan24.I8N.I8NCompressedTranslationTerms.HEADER_COMPRESSION_FLAG
+  type: Field
+  source:
+    remote:
+      path: src/wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: HEADER_COMPRESSION_FLAG
+    path: ../wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+    startLine: 23
+  assemblies:
+  - wan24I8NCompressed
+  namespace: wan24.I8N
+  summary: i8n file structure header byte compression flag (bit 8)
+  example: []
+  syntax:
+    content: public const int HEADER_COMPRESSION_FLAG = 128
+    return:
+      type: System.Int32
+    content.vb: Public Const HEADER_COMPRESSION_FLAG As Integer = 128
+- uid: wan24.I8N.I8NCompressedTranslationTerms.FromStream(System.IO.Stream@,System.Boolean@,System.Boolean@)
+  commentId: M:wan24.I8N.I8NCompressedTranslationTerms.FromStream(System.IO.Stream@,System.Boolean@,System.Boolean@)
+  id: FromStream(System.IO.Stream@,System.Boolean@,System.Boolean@)
+  parent: wan24.I8N.I8NCompressedTranslationTerms
+  langs:
+  - csharp
+  - vb
+  name: FromStream(in Stream, in bool, in bool)
+  nameWithType: I8NCompressedTranslationTerms.FromStream(in Stream, in bool, in bool)
+  fullName: wan24.I8N.I8NCompressedTranslationTerms.FromStream(in System.IO.Stream, in bool, in bool)
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: FromStream
+    path: ../wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+    startLine: 32
+  assemblies:
+  - wan24I8NCompressed
+  namespace: wan24.I8N
+  summary: Create from stream
+  example: []
+  syntax:
+    content: public static I8NCompressedTranslationTerms FromStream(in Stream stream, in bool noHeader = false, in bool uncompress = true)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: Stream
+    - id: noHeader
+      type: System.Boolean
+      description: Skip reading the header
+    - id: uncompress
+      type: System.Boolean
+      description: Uncompress?
+    return:
+      type: wan24.I8N.I8NCompressedTranslationTerms
+      description: Translation terms
+    content.vb: Public Shared Function FromStream(stream As Stream, noHeader As Boolean = False, uncompress As Boolean = True) As I8NCompressedTranslationTerms
+  overload: wan24.I8N.I8NCompressedTranslationTerms.FromStream*
+  nameWithType.vb: I8NCompressedTranslationTerms.FromStream(Stream, Boolean, Boolean)
+  fullName.vb: wan24.I8N.I8NCompressedTranslationTerms.FromStream(System.IO.Stream, Boolean, Boolean)
+  name.vb: FromStream(Stream, Boolean, Boolean)
+- uid: wan24.I8N.I8NCompressedTranslationTerms.FromStreamAsync(System.IO.Stream,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  commentId: M:wan24.I8N.I8NCompressedTranslationTerms.FromStreamAsync(System.IO.Stream,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  id: FromStreamAsync(System.IO.Stream,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  parent: wan24.I8N.I8NCompressedTranslationTerms
+  langs:
+  - csharp
+  - vb
+  name: FromStreamAsync(Stream, bool, bool, CancellationToken)
+  nameWithType: I8NCompressedTranslationTerms.FromStreamAsync(Stream, bool, bool, CancellationToken)
+  fullName: wan24.I8N.I8NCompressedTranslationTerms.FromStreamAsync(System.IO.Stream, bool, bool, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: FromStreamAsync
+    path: ../wan24-I8N-Compressed/I8NCompressedTranslationTerms.cs
+    startLine: 99
+  assemblies:
+  - wan24I8NCompressed
+  namespace: wan24.I8N
+  summary: Create from stream
+  example: []
+  syntax:
+    content: public static Task<I8NCompressedTranslationTerms> FromStreamAsync(Stream stream, bool noHeader = false, bool uncompress = true, CancellationToken cancellationToken = default)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: Stream
+    - id: noHeader
+      type: System.Boolean
+      description: Skip reading the header
+    - id: uncompress
+      type: System.Boolean
+      description: Uncompress?
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{wan24.I8N.I8NCompressedTranslationTerms}
+      description: Translation terms
+    content.vb: Public Shared Function FromStreamAsync(stream As Stream, noHeader As Boolean = False, uncompress As Boolean = True, cancellationToken As CancellationToken = Nothing) As Task(Of I8NCompressedTranslationTerms)
+  overload: wan24.I8N.I8NCompressedTranslationTerms.FromStreamAsync*
+  nameWithType.vb: I8NCompressedTranslationTerms.FromStreamAsync(Stream, Boolean, Boolean, CancellationToken)
+  fullName.vb: wan24.I8N.I8NCompressedTranslationTerms.FromStreamAsync(System.IO.Stream, Boolean, Boolean, System.Threading.CancellationToken)
+  name.vb: FromStreamAsync(Stream, Boolean, Boolean, CancellationToken)
+references:
+- uid: wan24.I8N
+  commentId: N:wan24.I8N
+  href: wan24.html
+  name: wan24.I8N
+  nameWithType: wan24.I8N
+  fullName: wan24.I8N
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8N
+    name: I8N
+    href: wan24.I8N.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8N
+    name: I8N
+    href: wan24.I8N.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: wan24.Core.PluralTranslationTerms
+  commentId: T:wan24.Core.PluralTranslationTerms
+  parent: wan24.Core
+  isExternal: true
+  name: PluralTranslationTerms
+  nameWithType: PluralTranslationTerms
+  fullName: wan24.Core.PluralTranslationTerms
+- uid: wan24.Core.ITranslationTerms
+  commentId: T:wan24.Core.ITranslationTerms
+  parent: wan24.Core
+  isExternal: true
+  name: ITranslationTerms
+  nameWithType: ITranslationTerms
+  fullName: wan24.Core.ITranslationTerms
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, string>
+  nameWithType: IReadOnlyDictionary<string, string>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, string>
+  nameWithType.vb: IReadOnlyDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, String)
+  name.vb: IReadOnlyDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyCollection{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  commentId: T:System.Collections.Generic.IReadOnlyCollection{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyCollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  name: IReadOnlyCollection<KeyValuePair<string, string>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string, string>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string, string>>
+  nameWithType.vb: IReadOnlyCollection(Of KeyValuePair(Of String, String))
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of System.Collections.Generic.KeyValuePair(Of String, String))
+  name.vb: IReadOnlyCollection(Of KeyValuePair(Of String, String))
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<KeyValuePair<string, string>>
+  nameWithType: IEnumerable<KeyValuePair<string, string>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, string>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, String))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of String, String))
+  name.vb: IEnumerable(Of KeyValuePair(Of String, String))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: Microsoft.Extensions.Localization.IStringLocalizer
+  commentId: T:Microsoft.Extensions.Localization.IStringLocalizer
+  parent: Microsoft.Extensions.Localization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.istringlocalizer
+  name: IStringLocalizer
+  nameWithType: IStringLocalizer
+  fullName: Microsoft.Extensions.Localization.IStringLocalizer
+- uid: wan24.Core.PluralTranslationTerms.GetTerm(System.String@,System.String[])
+  commentId: M:wan24.Core.PluralTranslationTerms.GetTerm(System.String@,System.String[])
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetTerm(in string, params string[])
+  nameWithType: PluralTranslationTerms.GetTerm(in string, params string[])
+  fullName: wan24.Core.PluralTranslationTerms.GetTerm(in string, params string[])
+  nameWithType.vb: PluralTranslationTerms.GetTerm(String, ParamArray String())
+  fullName.vb: wan24.Core.PluralTranslationTerms.GetTerm(String, ParamArray String())
+  name.vb: GetTerm(String, ParamArray String())
+  spec.csharp:
+  - uid: wan24.Core.PluralTranslationTerms.GetTerm(System.String@,System.String[])
+    name: GetTerm
+    isExternal: true
+  - name: (
+  - name: in
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: params
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: wan24.Core.PluralTranslationTerms.GetTerm(System.String@,System.String[])
+    name: GetTerm
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ParamArray
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: wan24.Core.PluralTranslationTerms.GetTerm(System.String@,System.Int32@,System.String[])
+  commentId: M:wan24.Core.PluralTranslationTerms.GetTerm(System.String@,System.Int32@,System.String[])
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetTerm(in string, in int, params string[])
+  nameWithType: PluralTranslationTerms.GetTerm(in string, in int, params string[])
+  fullName: wan24.Core.PluralTranslationTerms.GetTerm(in string, in int, params string[])
+  nameWithType.vb: PluralTranslationTerms.GetTerm(String, Integer, ParamArray String())
+  fullName.vb: wan24.Core.PluralTranslationTerms.GetTerm(String, Integer, ParamArray String())
+  name.vb: GetTerm(String, Integer, ParamArray String())
+  spec.csharp:
+  - uid: wan24.Core.PluralTranslationTerms.GetTerm(System.String@,System.Int32@,System.String[])
+    name: GetTerm
+    isExternal: true
+  - name: (
+  - name: in
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: in
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: params
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: wan24.Core.PluralTranslationTerms.GetTerm(System.String@,System.Int32@,System.String[])
+    name: GetTerm
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: ParamArray
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: wan24.Core.PluralTranslationTerms.ContainsKey(System.String)
+  commentId: M:wan24.Core.PluralTranslationTerms.ContainsKey(System.String)
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: ContainsKey(string)
+  nameWithType: PluralTranslationTerms.ContainsKey(string)
+  fullName: wan24.Core.PluralTranslationTerms.ContainsKey(string)
+  nameWithType.vb: PluralTranslationTerms.ContainsKey(String)
+  fullName.vb: wan24.Core.PluralTranslationTerms.ContainsKey(String)
+  name.vb: ContainsKey(String)
+  spec.csharp:
+  - uid: wan24.Core.PluralTranslationTerms.ContainsKey(System.String)
+    name: ContainsKey
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: wan24.Core.PluralTranslationTerms.ContainsKey(System.String)
+    name: ContainsKey
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: wan24.Core.PluralTranslationTerms.TryGetValue(System.String,System.String@)
+  commentId: M:wan24.Core.PluralTranslationTerms.TryGetValue(System.String,System.String@)
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: TryGetValue(string, out string)
+  nameWithType: PluralTranslationTerms.TryGetValue(string, out string)
+  fullName: wan24.Core.PluralTranslationTerms.TryGetValue(string, out string)
+  nameWithType.vb: PluralTranslationTerms.TryGetValue(String, String)
+  fullName.vb: wan24.Core.PluralTranslationTerms.TryGetValue(String, String)
+  name.vb: TryGetValue(String, String)
+  spec.csharp:
+  - uid: wan24.Core.PluralTranslationTerms.TryGetValue(System.String,System.String@)
+    name: TryGetValue
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: wan24.Core.PluralTranslationTerms.TryGetValue(System.String,System.String@)
+    name: TryGetValue
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: wan24.Core.PluralTranslationTerms.GetEnumerator
+  commentId: M:wan24.Core.PluralTranslationTerms.GetEnumerator
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: PluralTranslationTerms.GetEnumerator()
+  fullName: wan24.Core.PluralTranslationTerms.GetEnumerator()
+  spec.csharp:
+  - uid: wan24.Core.PluralTranslationTerms.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: wan24.Core.PluralTranslationTerms.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+  - name: (
+  - name: )
+- uid: wan24.Core.PluralTranslationTerms.StringLocalizer(System.String,System.Object[])
+  commentId: M:wan24.Core.PluralTranslationTerms.StringLocalizer(System.String,System.Object[])
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: StringLocalizer(string, object[])
+  nameWithType: PluralTranslationTerms.StringLocalizer(string, object[])
+  fullName: wan24.Core.PluralTranslationTerms.StringLocalizer(string, object[])
+  nameWithType.vb: PluralTranslationTerms.StringLocalizer(String, Object())
+  fullName.vb: wan24.Core.PluralTranslationTerms.StringLocalizer(String, Object())
+  name.vb: StringLocalizer(String, Object())
+  spec.csharp:
+  - uid: wan24.Core.PluralTranslationTerms.StringLocalizer(System.String,System.Object[])
+    name: StringLocalizer
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: wan24.Core.PluralTranslationTerms.StringLocalizer(System.String,System.Object[])
+    name: StringLocalizer
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+  - name: )
+- uid: wan24.Core.PluralTranslationTerms.Terms
+  commentId: P:wan24.Core.PluralTranslationTerms.Terms
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  name: Terms
+  nameWithType: PluralTranslationTerms.Terms
+  fullName: wan24.Core.PluralTranslationTerms.Terms
+- uid: wan24.Core.PluralTranslationTerms.PluralSupport
+  commentId: P:wan24.Core.PluralTranslationTerms.PluralSupport
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  name: PluralSupport
+  nameWithType: PluralTranslationTerms.PluralSupport
+  fullName: wan24.Core.PluralTranslationTerms.PluralSupport
+- uid: wan24.Core.PluralTranslationTerms.Item(System.String@,System.String[])
+  commentId: P:wan24.Core.PluralTranslationTerms.Item(System.String@,System.String[])
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: this[string, string[]]
+  nameWithType: PluralTranslationTerms.this[string, string[]]
+  fullName: wan24.Core.PluralTranslationTerms.this[string, string[]]
+  nameWithType.vb: PluralTranslationTerms.this[](String, String())
+  fullName.vb: wan24.Core.PluralTranslationTerms.this[](String, String())
+  name.vb: this[](String, String())
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: ']'
+  spec.vb:
+  - uid: wan24.Core.PluralTranslationTerms.Item(System.String@,System.String[])
+    name: this[]
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: wan24.Core.PluralTranslationTerms.Item(System.String@,System.Int32@,System.String[])
+  commentId: P:wan24.Core.PluralTranslationTerms.Item(System.String@,System.Int32@,System.String[])
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: this[string, int, string[]]
+  nameWithType: PluralTranslationTerms.this[string, int, string[]]
+  fullName: wan24.Core.PluralTranslationTerms.this[string, int, string[]]
+  nameWithType.vb: PluralTranslationTerms.this[](String, Integer, String())
+  fullName.vb: wan24.Core.PluralTranslationTerms.this[](String, Integer, String())
+  name.vb: this[](String, Integer, String())
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: ']'
+  spec.vb:
+  - uid: wan24.Core.PluralTranslationTerms.Item(System.String@,System.Int32@,System.String[])
+    name: this[]
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: wan24.Core.PluralTranslationTerms.Keys
+  commentId: P:wan24.Core.PluralTranslationTerms.Keys
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  name: Keys
+  nameWithType: PluralTranslationTerms.Keys
+  fullName: wan24.Core.PluralTranslationTerms.Keys
+- uid: wan24.Core.PluralTranslationTerms.Values
+  commentId: P:wan24.Core.PluralTranslationTerms.Values
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  name: Values
+  nameWithType: PluralTranslationTerms.Values
+  fullName: wan24.Core.PluralTranslationTerms.Values
+- uid: wan24.Core.PluralTranslationTerms.Count
+  commentId: P:wan24.Core.PluralTranslationTerms.Count
+  parent: wan24.Core.PluralTranslationTerms
+  isExternal: true
+  name: Count
+  nameWithType: PluralTranslationTerms.Count
+  fullName: wan24.Core.PluralTranslationTerms.Count
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: wan24.Core
+  commentId: N:wan24.Core
+  isExternal: true
+  name: wan24.Core
+  nameWithType: wan24.Core
+  fullName: wan24.Core
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    isExternal: true
+  - name: .
+  - uid: wan24.Core
+    name: Core
+    isExternal: true
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    isExternal: true
+  - name: .
+  - uid: wan24.Core
+    name: Core
+    isExternal: true
+- uid: System.Collections.Generic.IReadOnlyDictionary`2
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<TKey, TValue>
+  nameWithType: IReadOnlyDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: IReadOnlyDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue)
+  name.vb: IReadOnlyDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.IReadOnlyCollection`1
+  commentId: T:System.Collections.Generic.IReadOnlyCollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  name: IReadOnlyCollection<T>
+  nameWithType: IReadOnlyCollection<T>
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>
+  nameWithType.vb: IReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T)
+  name.vb: IReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: Microsoft.Extensions.Localization
+  commentId: N:Microsoft.Extensions.Localization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Localization
+  nameWithType: Microsoft.Extensions.Localization
+  fullName: Microsoft.Extensions.Localization
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Localization
+    name: Localization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Localization
+    name: Localization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization
+- uid: wan24.I8N.I8NCompressedTranslationTerms.#ctor*
+  commentId: Overload:wan24.I8N.I8NCompressedTranslationTerms.#ctor
+  href: wan24.I8N.I8NCompressedTranslationTerms.html#wan24_I8N_I8NCompressedTranslationTerms__ctor_System_Collections_Generic_Dictionary_System_String_System_String_____
+  name: I8NCompressedTranslationTerms
+  nameWithType: I8NCompressedTranslationTerms.I8NCompressedTranslationTerms
+  fullName: wan24.I8N.I8NCompressedTranslationTerms.I8NCompressedTranslationTerms
+  nameWithType.vb: I8NCompressedTranslationTerms.New
+  fullName.vb: wan24.I8N.I8NCompressedTranslationTerms.New
+  name.vb: New
+- uid: System.Collections.Generic.Dictionary{System.String,System.String[]}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String[]}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, string[]>
+  nameWithType: Dictionary<string, string[]>
+  fullName: System.Collections.Generic.Dictionary<string, string[]>
+  nameWithType.vb: Dictionary(Of String, String())
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, String())
+  name.vb: Dictionary(Of String, String())
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: wan24.I8N.I8NCompressedTranslationTerms.FromStream*
+  commentId: Overload:wan24.I8N.I8NCompressedTranslationTerms.FromStream
+  href: wan24.I8N.I8NCompressedTranslationTerms.html#wan24_I8N_I8NCompressedTranslationTerms_FromStream_System_IO_Stream__System_Boolean__System_Boolean__
+  name: FromStream
+  nameWithType: I8NCompressedTranslationTerms.FromStream
+  fullName: wan24.I8N.I8NCompressedTranslationTerms.FromStream
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: wan24.I8N.I8NCompressedTranslationTerms
+  commentId: T:wan24.I8N.I8NCompressedTranslationTerms
+  parent: wan24.I8N
+  href: wan24.I8N.I8NCompressedTranslationTerms.html
+  name: I8NCompressedTranslationTerms
+  nameWithType: I8NCompressedTranslationTerms
+  fullName: wan24.I8N.I8NCompressedTranslationTerms
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: wan24.I8N.I8NCompressedTranslationTerms.FromStreamAsync*
+  commentId: Overload:wan24.I8N.I8NCompressedTranslationTerms.FromStreamAsync
+  href: wan24.I8N.I8NCompressedTranslationTerms.html#wan24_I8N_I8NCompressedTranslationTerms_FromStreamAsync_System_IO_Stream_System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  name: FromStreamAsync
+  nameWithType: I8NCompressedTranslationTerms.FromStreamAsync
+  fullName: wan24.I8N.I8NCompressedTranslationTerms.FromStreamAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{wan24.I8N.I8NCompressedTranslationTerms}
+  commentId: T:System.Threading.Tasks.Task{wan24.I8N.I8NCompressedTranslationTerms}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<I8NCompressedTranslationTerms>
+  nameWithType: Task<I8NCompressedTranslationTerms>
+  fullName: System.Threading.Tasks.Task<wan24.I8N.I8NCompressedTranslationTerms>
+  nameWithType.vb: Task(Of I8NCompressedTranslationTerms)
+  fullName.vb: System.Threading.Tasks.Task(Of wan24.I8N.I8NCompressedTranslationTerms)
+  name.vb: Task(Of I8NCompressedTranslationTerms)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: wan24.I8N.I8NCompressedTranslationTerms
+    name: I8NCompressedTranslationTerms
+    href: wan24.I8N.I8NCompressedTranslationTerms.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: wan24.I8N.I8NCompressedTranslationTerms
+    name: I8NCompressedTranslationTerms
+    href: wan24.I8N.I8NCompressedTranslationTerms.html
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

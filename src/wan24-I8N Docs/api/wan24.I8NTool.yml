@@ -1,0 +1,104 @@
+### YamlMime:ManagedReference
+items:
+- uid: wan24.I8NTool
+  commentId: N:wan24.I8NTool
+  id: wan24.I8NTool
+  children:
+  - wan24.I8NTool.I8NApi
+  - wan24.I8NTool.I8NToolAppConfig
+  - wan24.I8NTool.I8NToolConfig
+  - wan24.I8NTool.KeywordExtractorApi
+  - wan24.I8NTool.KeywordMatch
+  - wan24.I8NTool.KeywordMatch.Position
+  - wan24.I8NTool.KeywordParserPattern
+  langs:
+  - csharp
+  - vb
+  name: wan24.I8NTool
+  nameWithType: wan24.I8NTool
+  fullName: wan24.I8NTool
+  type: Namespace
+  assemblies:
+  - wan24I8NTool
+references:
+- uid: wan24.I8NTool.I8NApi
+  commentId: T:wan24.I8NTool.I8NApi
+  href: wan24.I8NTool.I8NApi.html
+  name: I8NApi
+  nameWithType: I8NApi
+  fullName: wan24.I8NTool.I8NApi
+- uid: wan24.I8NTool.I8NToolAppConfig
+  commentId: T:wan24.I8NTool.I8NToolAppConfig
+  parent: wan24.I8NTool
+  href: wan24.I8NTool.I8NToolAppConfig.html
+  name: I8NToolAppConfig
+  nameWithType: I8NToolAppConfig
+  fullName: wan24.I8NTool.I8NToolAppConfig
+- uid: wan24.I8NTool.I8NToolConfig
+  commentId: T:wan24.I8NTool.I8NToolConfig
+  href: wan24.I8NTool.I8NToolConfig.html
+  name: I8NToolConfig
+  nameWithType: I8NToolConfig
+  fullName: wan24.I8NTool.I8NToolConfig
+- uid: wan24.I8NTool.KeywordExtractorApi
+  commentId: T:wan24.I8NTool.KeywordExtractorApi
+  href: wan24.I8NTool.KeywordExtractorApi.html
+  name: KeywordExtractorApi
+  nameWithType: KeywordExtractorApi
+  fullName: wan24.I8NTool.KeywordExtractorApi
+- uid: wan24.I8NTool.KeywordMatch
+  commentId: T:wan24.I8NTool.KeywordMatch
+  href: wan24.I8NTool.KeywordMatch.html
+  name: KeywordMatch
+  nameWithType: KeywordMatch
+  fullName: wan24.I8NTool.KeywordMatch
+- uid: wan24.I8NTool.KeywordMatch.Position
+  commentId: T:wan24.I8NTool.KeywordMatch.Position
+  href: wan24.I8NTool.KeywordMatch.html
+  name: KeywordMatch.Position
+  nameWithType: KeywordMatch.Position
+  fullName: wan24.I8NTool.KeywordMatch.Position
+  spec.csharp:
+  - uid: wan24.I8NTool.KeywordMatch
+    name: KeywordMatch
+    href: wan24.I8NTool.KeywordMatch.html
+  - name: .
+  - uid: wan24.I8NTool.KeywordMatch.Position
+    name: Position
+    href: wan24.I8NTool.KeywordMatch.Position.html
+  spec.vb:
+  - uid: wan24.I8NTool.KeywordMatch
+    name: KeywordMatch
+    href: wan24.I8NTool.KeywordMatch.html
+  - name: .
+  - uid: wan24.I8NTool.KeywordMatch.Position
+    name: Position
+    href: wan24.I8NTool.KeywordMatch.Position.html
+- uid: wan24.I8NTool.KeywordParserPattern
+  commentId: T:wan24.I8NTool.KeywordParserPattern
+  href: wan24.I8NTool.KeywordParserPattern.html
+  name: KeywordParserPattern
+  nameWithType: KeywordParserPattern
+  fullName: wan24.I8NTool.KeywordParserPattern
+- uid: wan24.I8NTool
+  commentId: N:wan24.I8NTool
+  href: wan24.html
+  name: wan24.I8NTool
+  nameWithType: wan24.I8NTool
+  fullName: wan24.I8NTool
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NTool
+    name: I8NTool
+    href: wan24.I8NTool.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8NTool
+    name: I8NTool
+    href: wan24.I8NTool.html

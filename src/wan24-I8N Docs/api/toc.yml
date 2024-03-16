@@ -1,8 +1,38 @@
 ### YamlMime:TableOfContent
 items:
-- uid: wan24.Poedit
-  name: wan24.Poedit
+- uid: wan24.I8N
+  name: wan24.I8N
   items:
-  - uid: wan24.Poedit.PoeditTranslationTerms
-    name: PoeditTranslationTerms
+  - uid: wan24.I8N.I8NCompressedTranslationTerms
+    name: I8NCompressedTranslationTerms
+  - uid: wan24.I8N.I8NTranslationTerms
+    name: I8NTranslationTerms
+- uid: wan24.I8NKws
+  name: wan24.I8NKws
+  items:
+  - uid: wan24.I8NKws.I8NKwsTranslationTerms
+    name: I8NKwsTranslationTerms
+  - uid: wan24.I8NKws.KwsCatalog
+    name: KwsCatalog
+  - uid: wan24.I8NKws.KwsKeyword
+    name: KwsKeyword
+  - uid: wan24.I8NKws.KwsSourceReference
+    name: KwsSourceReference
+- uid: wan24.I8NTool
+  name: wan24.I8NTool
+  items:
+  - uid: wan24.I8NTool.I8NApi
+    name: I8NApi
+  - uid: wan24.I8NTool.I8NToolAppConfig
+    name: I8NToolAppConfig
+  - uid: wan24.I8NTool.I8NToolConfig
+    name: I8NToolConfig
+  - uid: wan24.I8NTool.KeywordExtractorApi
+    name: KeywordExtractorApi
+  - uid: wan24.I8NTool.KeywordMatch
+    name: KeywordMatch
+  - uid: wan24.I8NTool.KeywordMatch.Position
+    name: KeywordMatch.Position
+  - uid: wan24.I8NTool.KeywordParserPattern
+    name: KeywordParserPattern
 memberLayout: SamePage

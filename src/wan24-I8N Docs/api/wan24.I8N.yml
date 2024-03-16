@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: wan24.I8N
+  commentId: N:wan24.I8N
+  id: wan24.I8N
+  children:
+  - wan24.I8N.I8NCompressedTranslationTerms
+  - wan24.I8N.I8NTranslationTerms
+  langs:
+  - csharp
+  - vb
+  name: wan24.I8N
+  nameWithType: wan24.I8N
+  fullName: wan24.I8N
+  type: Namespace
+  assemblies:
+  - wan24I8NCompressed
+references:
+- uid: wan24.I8N.I8NCompressedTranslationTerms
+  commentId: T:wan24.I8N.I8NCompressedTranslationTerms
+  parent: wan24.I8N
+  href: wan24.I8N.I8NCompressedTranslationTerms.html
+  name: I8NCompressedTranslationTerms
+  nameWithType: I8NCompressedTranslationTerms
+  fullName: wan24.I8N.I8NCompressedTranslationTerms
+- uid: wan24.I8N.I8NTranslationTerms
+  commentId: T:wan24.I8N.I8NTranslationTerms
+  parent: wan24.I8N
+  href: wan24.I8N.I8NTranslationTerms.html
+  name: I8NTranslationTerms
+  nameWithType: I8NTranslationTerms
+  fullName: wan24.I8N.I8NTranslationTerms
+- uid: wan24.I8N
+  commentId: N:wan24.I8N
+  href: wan24.html
+  name: wan24.I8N
+  nameWithType: wan24.I8N
+  fullName: wan24.I8N
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8N
+    name: I8N
+    href: wan24.I8N.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.I8N
+    name: I8N
+    href: wan24.I8N.html

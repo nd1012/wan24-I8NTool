@@ -1,0 +1,248 @@
+{
+  "source_base_path": "/home/runner/work/wan24-I8NTool/wan24-I8NTool/src/wan24-I8N Docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8N.I8NCompressedTranslationTerms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8N.I8NCompressedTranslationTerms.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8N.I8NTranslationTerms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8N.I8NTranslationTerms.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8N.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8N.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NKws.I8NKwsTranslationTerms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NKws.I8NKwsTranslationTerms.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NKws.KwsCatalog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NKws.KwsCatalog.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NKws.KwsKeyword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NKws.KwsKeyword.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NKws.KwsSourceReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NKws.KwsSourceReference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NKws.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NKws.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NTool.I8NApi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NTool.I8NApi.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NTool.I8NToolAppConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NTool.I8NToolAppConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NTool.I8NToolConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NTool.I8NToolConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NTool.KeywordExtractorApi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NTool.KeywordExtractorApi.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NTool.KeywordMatch.Position.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NTool.KeywordMatch.Position.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NTool.KeywordMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NTool.KeywordMatch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NTool.KeywordParserPattern.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NTool.KeywordParserPattern.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.I8NTool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.I8NTool.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "articles/toc.json"
+        },
+        ".html": {
+          "relative_path": "articles/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
