@@ -115,6 +115,12 @@ namespace wan24.I8NKws
         public IEnumerable<KwsKeyword> NonObsoleteKeywords => Keywords.Where(k => !k.Obsolete);
 
         /// <summary>
+        /// Unvalidated keywords
+        /// </summary>
+        [NoValidation]
+        public IEnumerable<KwsKeyword> UnvalidatedKeywords => Keywords.Where(k => !k.Validate(throwOnError: false));
+
+        /// <summary>
         /// Keywords
         /// </summary>
         [NoValidation]
