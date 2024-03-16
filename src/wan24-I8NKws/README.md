@@ -146,6 +146,9 @@ Example parser JSON configuration:
 When loading the configuration, the pattern property `Options` will be 
 extended by the `SingleLine` and `Compiled` default options.
 
+**TIPP**: You may use the variable `%{rxStringLiteral}` to match a double 
+quoted string literal.
+
 The parser looks for any matching non-replacement-only expression, then 
 applies all matching replacement expressions to refer to the keyword to use, 
 finally.
