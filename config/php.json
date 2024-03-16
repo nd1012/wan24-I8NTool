@@ -15,7 +15,7 @@
 			"ReplaceOnly": true
 		},
 		{
-			"Pattern": "^.*(_+|gettextn?)\\s*\\(\\s*(%{rxStringLiteral}).*$",
+			"Pattern": "^.*(_+|gettext[nd]?)\\s*\\(\\s*(%{rxStringLiteral}).*$",
 			"Options": "NonBacktracking",
 			"Replacement": "$4"
 		},

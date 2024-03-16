@@ -60,6 +60,7 @@ namespace wan24.I8NTool
                 }
                 ];
             FileExtensions = [".cs", ".razor", ".cshtml", ".aspx", ".cake", ".vb"];
+            TextFileExtensions = [".translate.txt", ".translate.md"];
             Exclude = ["*/obj/*"];
             SourceEncoding = Encoding.UTF8;
         }
@@ -80,9 +81,14 @@ namespace wan24.I8NTool
         public static HashSet<KeywordParserPattern> Patterns { get; }
 
         /// <summary>
-        /// File extensions to look for
+        /// File extensions to look for (including dot)
         /// </summary>
         public static HashSet<string> FileExtensions { get; }
+
+        /// <summary>
+        /// File extensions of text files to translate (including dot; keyword ID will be the filename without extension)
+        /// </summary>
+        public static HashSet<string> TextFileExtensions { get; }
 
         /// <summary>
         /// Path to excluded source files (absolute path or filename only (\"*\" (any or none) and \"+\" (one or many) may be used as wildcard); case insensitive)

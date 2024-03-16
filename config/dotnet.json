@@ -15,7 +15,7 @@
 			"ReplaceOnly": true
 		},
 		{
-			"Pattern": "^.*(_+|gettextn?|Translate(Plural)?|GetTerm|Std(In|OutErr)|Description|DisplayText)\\s*\\(\\s*(%{rxStringLiteral}).*$",
+			"Pattern": "^.*(_+|gettext[nd]?|Translate(Plural)?|GetTerm|Std(In|OutErr)|Description|DisplayText)\\s*\\(\\s*(%{rxStringLiteral}).*$",
 			"Options": "NonBacktracking",
 			"Replacement": "$4"
 		},

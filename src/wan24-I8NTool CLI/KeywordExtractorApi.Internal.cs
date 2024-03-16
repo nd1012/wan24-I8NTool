@@ -59,6 +59,11 @@ namespace wan24.I8NTool
                             continue;
                         }
                         parsedLines++;
+                        if (line.Contains("wan24I8NTool:exclude"))
+                        {
+                            if (trace) WriteTrace($"Skipping excluded source file \"{fileName}\" line #{lineNumber}");
+                            continue;
+                        }
                         currentLine = keyword = line;
 #if DEBUG
                         matched.Clear();
@@ -192,6 +197,56 @@ namespace wan24.I8NTool
         }
 
         /// <summary>
+        /// Process a text file
+        /// </summary>
+        /// <param name="stream">Stream (will be disposed!)</param>
+        /// <param name="keywords">Keywords</param>
+        /// <param name="verbose">Be verbose?</param>
+        /// <param name="fileName">Filename</param>
+        /// <returns><c>1</c></returns>
+        private static async Task<int> ProcessTextFileAsync(
+            FileStream stream,
+            HashSet<KeywordMatch> keywords,
+            bool verbose,
+            string? fileName = null
+            )
+        {
+            if (verbose) WriteInfo($"Processing text file \"{fileName}\"");
+            string fn = stream.Name,// Filename
+                id,// Keyword
+                text;// Text
+            await using (stream.DynamicContext())
+            {
+                using StreamReader reader = new(stream, I8NToolConfig.SourceEncoding, leaveOpen: true);
+                id = Path.GetFileNameWithoutExtension(stream.Name);
+                text = await reader.ReadToEndAsync().DynamicContext();
+            }
+            lock (keywords)
+            {
+                if (keywords.FirstOrDefault(m => m.Keyword == id) is not null)
+                {
+                    WriteError($"Text file \"{fn}\" overrides existing keyword \"{id}\", which isn't supported");
+                    FailOnErrorIfRequested();
+                }
+                else
+                {
+                    if (Trace) WriteTrace($"Text file \"{fn}\" new keyword \"{id}\"");
+                    keywords.Add(new()
+                    {
+                        Keyword = id,
+                        Text = text,
+                        Positions = [new() {
+                            FileName = fn,
+                            LineNumber = 1
+                        }]
+                    });
+                }
+            }
+            if (verbose) WriteInfo($"Found keyword \"{id}\" in text file \"{fn}\"");
+            return 1;
+        }
+
+        /// <summary>
         /// Fail on error, if requested
         /// </summary>
         private static void FailOnErrorIfRequested()
@@ -265,7 +320,9 @@ namespace wan24.I8NTool
                 long lines;
                 FileStream fs = FsHelper.CreateFileStream(item, FileMode.Open, FileAccess.Read, FileShare.Read);
                 await using (fs.DynamicContext())
-                     lines = await ProcessFileAsync(fs, Keywords, Verbose, item).DynamicContext();
+                    lines = I8NToolConfig.TextFileExtensions.Contains(Path.GetExtension(item), StringComparer.OrdinalIgnoreCase)
+                        ? await ProcessTextFileAsync(fs, Keywords, Verbose, item).DynamicContext()
+                        : await ProcessFileAsync(fs, Keywords, Verbose, item).DynamicContext();
                 lock (ParsedLinesSync) _ParsedLines += lines;
             }
         }

@@ -67,7 +67,7 @@ expressions, until the final quoted keyword was extracted from a line.
 These default translation method names can be parsed from source code:
 
 - `_`
-- `gettext(n)("..."`
+- `gettext(n|d)("..."`
 - `Translate(Plural)("..."`
 - `GetTerm("..."`
 
@@ -89,6 +89,10 @@ argument after a numeric argument:
 
 - `ExitCode(N, "..."`
 
+**NOTE**: (Multiline) concatenated string value definitions (like 
+`@"Part \ a" + $"Part b {variable}"`) or interpolations can't be parsed. The 
+matched string literal must be JSON style escaped.
+
 To force including any string (from a constant definition, for example), 
 simply add a comment `wan24I8NTool:include` at the end of the line - example:
 
@@ -96,9 +100,15 @@ simply add a comment `wan24I8NTool:include` at the end of the line - example:
 public const string NAME = "Any PO included keyword";// wan24I8NTool:include
 ```
 
-**NOTE**: (Multiline) concatenated string value definitions (like 
-`@"Part \ a" + $"Part b {variable}"`) or interpolations can't be parsed. The 
-matched string literal must be JSON style escaped.
+To force excluding any line, simply add a comment `wan24I8NTool:exclude` to 
+that line - example:
+
+```cs
+string text = gettext("Text file keyword");// wan24I8NTool:exclude
+```
+
+This will avoid including the text file ID `Text file keyword` (see below) 
+as an additional term to translate into the catalog.
 
 ### Custom parser configuration
 
@@ -137,6 +147,10 @@ Example parser JSON configuration:
 		".ext",
 		...
 	],
+	"TextFileExtensions": [// (optional) Text file extensions to include when walking through a folder tree (may be overridden by --textFileExt)
+		".ext.txt",
+		...
+	],
 	"MergeOutput": true,// (optional) Merge the extracted keywords to the existing output PO file
 	"FailOnError": true,// (optional) To fail thewhole process on any error
 	"Merge": false// (optional) Set to true to merge your custom configuration with the default configuration
@@ -164,6 +178,24 @@ There are some more optional keys for advanced configuration:
 configuration using a `AppConfig` structure
 - `CLI`: [`wan24-CLI`](https://github.com/nd1012/wan24-CLI) configuration 
 using a `CliAppConfig` structure
+
+### About including text files
+
+The extractor API does also incude text files - per default filtered by:
+
+- `*.translate.txt` (for simple text)
+- `*.translate.md` (for MarkDown text)
+
+When doing so, you can address the translation using the filename without 
+extensions as keyword - example for `Info text.translate.txt`:
+
+```cs
+string text = _("Info text");// wan24I8NTool:exclude
+```
+
+The `wan24I8NTool:exclude` does tell the extractor to skip adding `Info text` 
+as keyword to translate, because what you want to translate, is the text file 
+content, but not the keyword used to load the translation in that case.
 
 ### Build, extract, display and use an i8n file
 

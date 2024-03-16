@@ -28,7 +28,7 @@ namespace wan24.I8NTool
         /// <summary>
         /// Methods and attributes
         /// </summary>
-        public const string METHODS_AND_ATTRIBUTES = @$"^.*(_+|gettextn?|Translate(Plural)?|GetTerm|Std(In|OutErr)|Description|DisplayText)\s*\(\s*({STRING_LITERAL}).*$";
+        public const string METHODS_AND_ATTRIBUTES = @$"^.*(_+|gettext[nd]?|Translate(Plural)?|GetTerm|Std(In|OutErr)|Description|DisplayText)\s*\(\s*({STRING_LITERAL}).*$";
         /// <summary>
         /// Attribute properties
         /// </summary>
