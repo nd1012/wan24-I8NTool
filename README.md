@@ -201,7 +201,7 @@ content, but not the keyword used to load the translation in that case.
 
 i8n files contain optional compressed translation terms. They can be created 
 from PO/MO and/or JSON dictionary (keyword as key, translation as an array of 
-strings as value) input files like this:
+strings as value) or wan24-I8NKws input files like this:
 
 ```bash
 wan24I8NTool i8n -compress --poInput /path/to/input.po --output /path/to/output.i8n
@@ -209,7 +209,7 @@ wan24I8NTool i8n -compress --poInput /path/to/input.po --output /path/to/output.
 
 An i8n file can be embedded into an app, for example.
 
-To convert all `*.json|po|mo` files in the current folder to `*.i8n` files:
+To convert all `*.json|po|mo|kws` files in the current folder to `*.i8n` files:
 
 ```bash
 wan24I8NTool i8n buildmany -compress -verbose
@@ -233,10 +233,10 @@ To extract some i8n file to a PO file:
 wan24I8NTool i8n extract --input /path/to/input.i8n --poOutput /path/to/output.po
 ```
 
-To extract some i8n file to a wan24-I8NLws file:
+To extract some i8n file to a wan24-I8NKws file:
 
 ```bash
-wan24I8NTool i8n extract --input /path/to/input.i8n --kwsOutput /path/to/output.po
+wan24I8NTool i8n extract --input /path/to/input.i8n --kwsOutput /path/to/output.kws
 ```
 
 **NOTE**: For more options and usage instructions please use the CLI API help 
