@@ -29,6 +29,19 @@ namespace wan24.I8NKws
         }
 
         /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="dict">Dictionary</param>
+        public KwsCatalog(in Dictionary<string, string> dict) : this()
+        {
+            Keywords.AddRange(from kvp in dict
+                              select new KwsKeyword(kvp.Key)
+                              {
+                                  Translations = [kvp.Value]
+                              });
+        }
+
+        /// <summary>
         /// Get a keyword
         /// </summary>
         /// <param name="id">ID</param>
@@ -70,6 +83,12 @@ namespace wan24.I8NKws
         /// Properties
         /// </summary>
         public Dictionary<string, string> Properties { get; init; } = [];
+
+        /// <summary>
+        /// Keywords
+        /// </summary>
+        [NoValidation]
+        public HashSet<KwsKeyword> Keywords { get; init; } = [];
 
         /// <summary>
         /// Complete keywords (non-obsolete)
@@ -124,12 +143,6 @@ namespace wan24.I8NKws
         /// </summary>
         [NoValidation]
         public IEnumerable<KwsKeyword> UnvalidatedKeywords => Keywords.Where(k => !k.Validate(throwOnError: false));
-
-        /// <summary>
-        /// Keywords
-        /// </summary>
-        [NoValidation]
-        public HashSet<KwsKeyword> Keywords { get; init; } = [];
 
         /// <summary>
         /// Try adding a new keyword
