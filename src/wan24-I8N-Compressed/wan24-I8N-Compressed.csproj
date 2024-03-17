@@ -50,6 +50,7 @@
     <None Update="LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="README.md">
       <Pack>True</Pack>
