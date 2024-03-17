@@ -10,7 +10,7 @@
     <Configurations>Debug;Release;Trunk</Configurations>
     <PackageId>wan24-I8NKws</PackageId>
     <Title>wan24-I8NKws</Title>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>nd1012</Authors>
     <Company>Andreas Zimmermann, wan24.de</Company>
     <Product>wan24-I8NKws</Product>
@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <PackageReference Include="ObjectValidation" Version="2.4.0" Condition="'$(Configuration)' != 'Trunk'" />
-    <PackageReference Include="wan24-Core" Version="2.12.0" Condition="'$(Configuration)' != 'Trunk'" />
+    <PackageReference Include="wan24-Core" Version="2.13.0" Condition="'$(Configuration)' != 'Trunk'" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +43,7 @@
     <None Update="LICENSE">
       <PackagePath>\</PackagePath>
       <Pack>True</Pack>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="README.md">
       <PackagePath>\</PackagePath>

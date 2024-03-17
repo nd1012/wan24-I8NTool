@@ -70,6 +70,11 @@ namespace wan24.I8NTool
         public string[]? FileExtensions { get; set; }
 
         /// <summary>
+        /// File extensions of text files to translate (including dot; keyword ID will be the filename without extension)
+        /// </summary>
+        public string[]? TextFileExtensions { get; }
+
+        /// <summary>
         /// Path to excluded source files (absolute path or filename only (\"*\" (any or none) and \"+\" (one or many) may be used as wildcard); case insensitive)
         /// </summary>
         public static string[]? Exclude { get; }
@@ -111,6 +116,11 @@ namespace wan24.I8NTool
                 if (!Merge) I8NToolConfig.FileExtensions.Clear();
                 I8NToolConfig.FileExtensions.AddRange(FileExtensions);
             }
+            if(TextFileExtensions is not null)
+            {
+                if (!Merge) I8NToolConfig.TextFileExtensions.Clear();
+                I8NToolConfig.TextFileExtensions.AddRange(TextFileExtensions);
+            }
             if(Exclude is not null)
             {
                 if (!Merge) I8NToolConfig.Exclude.Clear();
@@ -141,6 +151,11 @@ namespace wan24.I8NTool
             {
                 if (!Merge) I8NToolConfig.FileExtensions.Clear();
                 I8NToolConfig.FileExtensions.AddRange(FileExtensions);
+            }
+            if (TextFileExtensions is not null)
+            {
+                if (!Merge) I8NToolConfig.TextFileExtensions.Clear();
+                I8NToolConfig.TextFileExtensions.AddRange(TextFileExtensions);
             }
             if (Exclude is not null)
             {

@@ -40,6 +40,7 @@ namespace wan24.I8NTool
         /// <param name="verbose">Be verbose?</param>
         /// <param name="noRecursive">Disable directory recursion?</param>
         /// <param name="ext">File extensions to use (including dot; will override the configuration)</param>
+        /// <param name="textFileExt">File extensions of text files to translate (including dot; keyword ID will be the filename without extension; will override the configuration)</param>
         /// <param name="encoding">Source text encoding identifier</param>
         /// <param name="input">Input file-/foldernames (may be relative or absolute)</param>
         /// <param name="exclude">Excluded file-/foldernames (absolute path or filename only; will override the configuration)</param>
@@ -80,6 +81,11 @@ namespace wan24.I8NTool
             [DisplayText("Extensions")]
             [Description("File extensions to look for (including dot; will override the configuration)")]
             string[]? ext = null,
+
+            [CliApi]
+            [DisplayText("Text file extensions")]
+            [Description("File extensions of text files to translate (including dot; keyword ID will be the filename without extension; will override the configuration)")]
+            string[]? textFileExt = null,
 
             [CliApi(Example = "UTF-8")]
             [DisplayText("Encoding")]
@@ -145,7 +151,14 @@ namespace wan24.I8NTool
                 I8NToolConfig.FileExtensions.Clear();
                 I8NToolConfig.FileExtensions.AddRange(ext);
             }
-            if(exclude is not null && exclude.Length > 0)
+            if (textFileExt is not null && textFileExt.Length > 0)
+            {
+                // Override text file extensions
+                if (Trace) WriteTrace($"Override text file extensions with \"{string.Join(", ", textFileExt)}\"");
+                I8NToolConfig.TextFileExtensions.Clear();
+                I8NToolConfig.TextFileExtensions.AddRange(textFileExt);
+            }
+            if (exclude is not null && exclude.Length > 0)
             {
                 // Override excludes
                 if (Trace) WriteTrace($"Override excludes with \"{string.Join(" | ", exclude)}\"");
@@ -182,11 +195,13 @@ namespace wan24.I8NTool
                 WriteInfo($"Patterns: {I8NToolConfig.Patterns.Count}");
                 WriteInfo($"Fuzzy distance: {fuzzy}");
                 WriteInfo($"File extensions: {string.Join(", ", I8NToolConfig.FileExtensions)}");
+                WriteInfo($"Text file extensions: {string.Join(", ", I8NToolConfig.TextFileExtensions)}");
                 WriteInfo($"Merge to output PO file: {I8NToolConfig.MergeOutput}");
                 WriteInfo($"wan24-I8NKws JSON output: {json}");
                 WriteInfo($"Fail on error: {FailOnError || I8NToolConfig.FailOnError}");
             }
-            if (input is not null && I8NToolConfig.FileExtensions.Count < 1) throw new InvalidDataException("Missing file extensions to look for");
+            if (input is not null && I8NToolConfig.FileExtensions.Count < 1 && I8NToolConfig.TextFileExtensions.Count < 1)
+                throw new InvalidDataException("Missing file extensions to look for");
             if (!I8NToolConfig.Patterns.Any(p => !p.ReplaceOnly)) throw new InvalidDataException("Missing matching-only patterns");
             if (I8NToolConfig.Patterns.Any(p => p.ReplaceOnly && p.Replacement is null)) throw new InvalidDataException("Found replace pattern without replacement");
             if (!I8NToolConfig.Patterns.Any(p => p.ReplaceOnly && p.Replacement is not null)) throw new InvalidDataException("Missing replace patterns");
@@ -216,7 +231,7 @@ namespace wan24.I8NTool
                 {
                     // Start the parallel worker
                     await worker.StartAsync().DynamicContext();
-                    string[] extensions = [.. I8NToolConfig.FileExtensions],// File extensions to look for
+                    string[] extensions = [.. I8NToolConfig.FileExtensions.Concat(I8NToolConfig.TextFileExtensions).Distinct()],// File extensions to look for
                         files;// Found files in an input source folder
                     HashSet<string> filteredFiles;// Filtered files without excluded files
                     string fullPath;// Full path of the current input source
@@ -242,7 +257,7 @@ namespace wan24.I8NTool
                                 continue;
                             }
                             filteredFiles = new(files.Length);
-                            foreach(string fn in files)
+                            foreach (string fn in files)
                                 if (excluding.IsMatch(fn))
                                 {
                                     if (verbose) WriteInfo($"File \"{fn}\" was excluded");
@@ -317,16 +332,27 @@ namespace wan24.I8NTool
                         {
                             // Update existing entry
                             if (Trace) WriteTrace($"Keyword \"{match.KeywordLiteral}\" found at {match.Positions.Count} position(s) exists already - updating source references only");
+                            entry.CreateRevision();
                             entry.SourceReferences.Clear();
                             entry.SourceReferences.AddRange(match.Positions.Select(pos => new KwsSourceReference()
                             {
                                 FileName = pos.FileName ?? "STDIN",
                                 LineNumber = pos.LineNumber
                             }));
+                            if(match.Text is not null)
+                            {
+                                if (!entry.Document)
+                                {
+                                    WriteWarning($"Keyword \"{entry.ID}\" is a document now");
+                                    entry.Document = true;
+                                }
+                                entry.Translations.Clear();
+                                entry.Translations.Add(match.Text);
+                            }
                             existingKeywords++;
                             continue;
                         }
-                        else if (fuzzy > 0 && catalogKeywords.Length > 0 && FuzzyKeywordLookup(match.Keyword, catalogKeywords, minWeight) is string fuzzyKeyword)
+                        else if (fuzzy > 0 && match.Text is null && catalogKeywords.Length > 0 && FuzzyKeywordLookup(match.Keyword, catalogKeywords, minWeight) is string fuzzyKeyword)
                         {
                             // Fuzzy keyword update
                             if (Trace) WriteTrace($"Keyword \"{match.KeywordLiteral}\" at {match.Positions.Count} position(s) exists already (found by fuzzy matching) - updating the entry \"{fuzzyKeyword.ToLiteral()}\"");
@@ -344,11 +370,13 @@ namespace wan24.I8NTool
                         if (Trace) WriteTrace($"Adding new keyword \"{match.KeywordLiteral}\" found at {match.Positions.Count} position(s)");
                         catalog.Keywords.Add(new KwsKeyword(match.Keyword)
                         {
+                            Document = match.Text is not null,
                             SourceReferences = new(match.Positions.Select(pos => new KwsSourceReference()
                             {
                                 FileName = pos.FileName ?? "STDIN",
                                 LineNumber = pos.LineNumber
-                            }))
+                            })),
+                            Translations = match.Text is null ? [] : [match.Text]
                         });
                         newKeywords++;
                     }
@@ -376,11 +404,13 @@ namespace wan24.I8NTool
                     {
                         Keywords = new(keywords.Select(keyword => new KwsKeyword(keyword.Keyword)
                         {
+                            Document = keyword.Text is not null,
                             SourceReferences = new(keyword.Positions.Select(pos => new KwsSourceReference()
                             {
                                 FileName = pos.FileName ?? "STDIN",
                                 LineNumber = pos.LineNumber
-                            }))
+                            })),
+                            Translations = keyword.Text is null ? [] : [keyword.Text]
                         }))
                     };
                     if (Trace) WriteTrace($"Writing wan24-I8NKws JSON contents to {(output is null ? "STDOUT" : $"the output wan24-I8NKws JSON file \"{output}\"")}");
@@ -478,7 +508,7 @@ namespace wan24.I8NTool
                             {
                                 References = new List<POSourceReference>(match.Positions.Select(p => new POSourceReference(p.FileName ?? "STDIN", p.LineNumber)))
                             };
-                            if (catalog.TryGetValue(new(match.Keyword), out IPOEntry? entry))
+                            if (catalog.TryGetValue(new(match.Keyword), out IPOEntry? entry) && (match.Text is null || entry is POSingularEntry))
                             {
                                 // Update existing entry
                                 if (Trace) WriteTrace($"Keyword \"{match.KeywordLiteral}\" found at {match.Positions.Count} position(s) exists already - updating references comment only");
@@ -496,10 +526,16 @@ namespace wan24.I8NTool
                                     }
                                     entry.Comments.Add(referencesComment);
                                 }
+                                if (match.Text is not null && entry is POSingularEntry singularEntry)
+                                {
+                                    // Update text-entry
+                                    if (Trace) WriteTrace("Updating text-entry");
+                                    singularEntry.Translation = match.Text;
+                                }
                                 existingKeywords++;
                                 continue;
                             }
-                            else if (fuzzy > 0 && catalogKeywords.Length > 0 && FuzzyKeywordLookup(match.Keyword, catalogKeywords, minWeight) is string fuzzyKeyword)
+                            else if (fuzzy > 0 && match.Text is null && catalogKeywords.Length > 0 && FuzzyKeywordLookup(match.Keyword, catalogKeywords, minWeight) is string fuzzyKeyword)
                             {
                                 // Fuzzy keyword update
                                 if (Trace) WriteTrace($"Keyword \"{match.KeywordLiteral}\" at {match.Positions.Count} position(s) exists already (found by fuzzy matching) - updating the entry \"{fuzzyKeyword.ToLiteral()}\"");
@@ -552,21 +588,27 @@ namespace wan24.I8NTool
                                 fuzzyKeywords++;
                                 continue;
                             }
+                            // Remove existing non-text entry
+                            if (match.Text is not null && entry is not null)
+                            {
+                                WriteWarning($"Replacing non-text keyword \"{match.Keyword}\"");
+                                catalog.Remove(entry);
+                            }
                             // Create new entry
                             if (Trace) WriteTrace($"Adding new keyword \"{match.KeywordLiteral}\" found at {match.Positions.Count} position(s)");
                             catalog.Add(new POSingularEntry(new(match.Keyword))
                             {
                                 Comments = [referencesComment],
-                                Translation = string.Empty
+                                Translation = match.Text ?? string.Empty
                             });
                             newKeywords++;
                         }
                         // Handle obsolete keywords
                         int obsolete = 0;// Number of removed obsolete keywords
-                        foreach (IPOEntry entry in catalog.Values.Where(entry => !keywords.Any(kw => kw.Keyword == entry.Key.Id)).ToArray())
+                        foreach (IPOEntry obsoleteEntry in catalog.Values.Where(entry => !keywords.Any(kw => kw.Keyword == entry.Key.Id)).ToArray())
                         {
-                            if (Trace) WriteTrace($"Removing obsolete keyword \"{entry.Key.Id.ToLiteral()}\"");
-                            catalog.Remove(entry);
+                            if (Trace) WriteTrace($"Removing obsolete keyword \"{obsoleteEntry.Key.Id.ToLiteral()}\"");
+                            catalog.Remove(obsoleteEntry);
                             obsolete++;
                         }
                         if (verbose) WriteInfo($"Merging PO contents done ({newKeywords} keywords added, {existingKeywords} updated, {fuzzyKeywords} fuzzy updates, {obsolete} obsolete keywords removed)");
@@ -590,7 +632,7 @@ namespace wan24.I8NTool
                                 References = new List<POSourceReference>(k.Positions.Select(p => new POSourceReference(p.FileName ?? "STDIN", p.LineNumber)))
                             }
                             ],
-                            Translation = string.Empty
+                            Translation = k.Text ?? string.Empty
                         }))
                         {
                             Encoding = Encoding.UTF8.WebName

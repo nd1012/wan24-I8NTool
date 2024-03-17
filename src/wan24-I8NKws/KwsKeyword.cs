@@ -75,6 +75,11 @@ namespace wan24.I8NKws
         public string TranslatorComments { get; set; } = string.Empty;
 
         /// <summary>
+        /// If this keyword is a large document
+        /// </summary>
+        public bool Document { get; set; }
+
+        /// <summary>
         /// If this keyword is obsolete and should not be exported
         /// </summary>
         public bool Obsolete { get; set; }
@@ -109,6 +114,11 @@ namespace wan24.I8NKws
         /// Revisions of this keyword
         /// </summary>
         public HashSet<KwsKeyword> Revisions { get; init; } = [];
+
+        /// <summary>
+        /// Properties
+        /// </summary>
+        public Dictionary<string, string> Properties { get; init; } = [];
 
         /// <summary>
         /// Get a plural translation
@@ -150,6 +160,7 @@ namespace wan24.I8NKws
             Translator = revision.Translator;
             DeveloperComments = revision.DeveloperComments;
             TranslatorComments = revision.TranslatorComments;
+            Document = revision.Document;
             Fuzzy = revision.Fuzzy;
             Invalid = revision.Invalid;
             Translations.Clear();
@@ -163,6 +174,8 @@ namespace wan24.I8NKws
                 if (revisions[i] == revision) break;
                 Revisions.Add(revisions[i]);
             }
+            Properties.Clear();
+            Properties.AddRange(revision.Properties);
         }
 
         /// <summary>
@@ -195,10 +208,18 @@ namespace wan24.I8NKws
                 if (!throwOnError) return false;
                 throw new InvalidDataException("Missing keyword ID");
             }
-            if (requireCompleteTranslations && !Obsolete && TranslationMissing)
+            if (!Obsolete)
             {
-                if (!throwOnError) return false;
-                throw new InvalidDataException($"Missing translation of keyword \"{IdLiteral}\"");
+                if (requireCompleteTranslations && TranslationMissing)
+                {
+                    if (!throwOnError) return false;
+                    throw new InvalidDataException($"Missing translation of keyword \"{IdLiteral}\"");
+                }
+                if (Document && Translations.Count > 1)
+                {
+                    if (!throwOnError) return false;
+                    throw new InvalidDataException($"Keyword \"{IdLiteral}\" is a document, plural isn't supported");
+                }
             }
             if (!this.TryValidateObject(out List<ValidationResult> results, throwOnError: false))
             {
@@ -206,6 +227,61 @@ namespace wan24.I8NKws
                 throw new InvalidDataException($"Found {results.Count} keyword object \"{IdLiteral}\" errors - first error: {results.First().ErrorMessage}");
             }
             return true;
+        }
+
+        /// <summary>
+        /// Merge with another keyword
+        /// </summary>
+        /// <param name="other">Other keyword</param>
+        public void Merge(KwsKeyword other)
+        {
+            // Create a revision of the existing keyword
+            CreateRevision();
+            // Merge general meta data
+            Updated = DateTime.UtcNow;
+            if (string.IsNullOrWhiteSpace(Translator) && !string.IsNullOrWhiteSpace(other.Translator))
+                Translator = other.Translator;
+            if (string.IsNullOrWhiteSpace(DeveloperComments) && !string.IsNullOrWhiteSpace(other.DeveloperComments))
+                DeveloperComments = other.DeveloperComments;
+            if (string.IsNullOrWhiteSpace(TranslatorComments) && !string.IsNullOrWhiteSpace(other.TranslatorComments))
+                TranslatorComments = other.TranslatorComments;
+            Document = other.Document;
+            Obsolete = false;
+            Fuzzy = other.Fuzzy;
+            Invalid = other.Invalid;
+            // Merge translations
+            List<string> translations = new(Math.Max(Translations.Count, other.Translations.Count));
+            for (int i = 0, len = translations.Count; i < len; i++)
+                if (i > Translations.Count)
+                {
+                    Translations.Add(other.Translations[i]);
+                }
+                else if (i > other.Translations.Count)
+                {
+                }
+                else if (string.IsNullOrWhiteSpace(Translations[i]))
+                {
+                    Translations[i] = other.Translations[i];
+                }
+                else if (string.IsNullOrWhiteSpace(other.Translations[i]))
+                {
+                }
+                else
+                {
+                    Translations[i] = other.Translations[i];
+                }
+            Translations.Clear();
+            Translations.AddRange(translations);
+            // Merge references
+            HashSet<KwsSourceReference> references = [.. SourceReferences, .. other.SourceReferences];
+            SourceReferences.Clear();
+            SourceReferences.AddRange(references);
+            // Merge revisions
+            HashSet<KwsKeyword> revisions = [.. Revisions.Concat(other.Revisions).OrderBy(r => r.Updated).Distinct()];
+            Revisions.Clear();
+            Revisions.AddRange(revisions);
+            // Merge properties
+            foreach (var kvp in other.Properties) Properties[kvp.Key] = kvp.Value;
         }
     }
 }

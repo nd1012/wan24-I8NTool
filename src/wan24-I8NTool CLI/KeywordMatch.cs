@@ -37,6 +37,11 @@ namespace wan24.I8NTool
         public string KeywordQuotedLiteral => _KeywordQuotedLiteral ??= $"\"{KeywordLiteral}\"";
 
         /// <summary>
+        /// Text file contents
+        /// </summary>
+        public string? Text { get; set; }
+
+        /// <summary>
         /// Positions
         /// </summary>
         public HashSet<Position> Positions { get; init; } = [];

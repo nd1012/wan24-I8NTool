@@ -29,6 +29,19 @@ namespace wan24.I8NKws
         }
 
         /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="dict">Dictionary</param>
+        public KwsCatalog(in Dictionary<string, string> dict) : this()
+        {
+            Keywords.AddRange(from kvp in dict
+                              select new KwsKeyword(kvp.Key)
+                              {
+                                  Translations = [kvp.Value]
+                              });
+        }
+
+        /// <summary>
         /// Get a keyword
         /// </summary>
         /// <param name="id">ID</param>
@@ -65,6 +78,17 @@ namespace wan24.I8NKws
         /// If the text is written right to left
         /// </summary>
         public bool RightToLeft { get; set; }
+
+        /// <summary>
+        /// Properties
+        /// </summary>
+        public Dictionary<string, string> Properties { get; init; } = [];
+
+        /// <summary>
+        /// Keywords
+        /// </summary>
+        [NoValidation]
+        public HashSet<KwsKeyword> Keywords { get; init; } = [];
 
         /// <summary>
         /// Complete keywords (non-obsolete)
@@ -115,10 +139,10 @@ namespace wan24.I8NKws
         public IEnumerable<KwsKeyword> NonObsoleteKeywords => Keywords.Where(k => !k.Obsolete);
 
         /// <summary>
-        /// Keywords
+        /// Unvalidated keywords
         /// </summary>
         [NoValidation]
-        public HashSet<KwsKeyword> Keywords { get; init; } = [];
+        public IEnumerable<KwsKeyword> UnvalidatedKeywords => Keywords.Where(k => !k.Validate(throwOnError: false));
 
         /// <summary>
         /// Try adding a new keyword
@@ -190,6 +214,36 @@ namespace wan24.I8NKws
                 throw new InvalidDataException($"Found {results.Count} catalog object errors - first error: {results.First().ErrorMessage}");
             }
             return true;
+        }
+
+        /// <summary>
+        /// Merge with another catalog (existing keywords will be revisioned for merging)
+        /// </summary>
+        /// <param name="other">Other catalog to merge into this catalog</param>
+        /// <param name="ignoreLocale">Ignore merging with another locale?</param>
+        /// <returns>Merged existing keywords</returns>
+        public KwsKeyword[] Merge(KwsCatalog other, bool ignoreLocale = false)
+        {
+            if (!ignoreLocale && other.Locale != Locale) throw new ArgumentException("Locale mismatch", nameof(other));
+            List<KwsKeyword> res = [];
+            Modified = DateTime.UtcNow;
+            // Merge the catalog meta data
+            if (string.IsNullOrWhiteSpace(Project) && !string.IsNullOrWhiteSpace(other.Project)) Project = other.Project;
+            if (string.IsNullOrWhiteSpace(Translator) && !string.IsNullOrWhiteSpace(other.Translator)) Translator = other.Translator;
+            RightToLeft = other.RightToLeft;
+            foreach (var kvp in other.Properties) Properties[kvp.Key] = kvp.Value;
+            // Merge keywords
+            foreach(KwsKeyword otherKeyword in other.NonObsoleteKeywords)
+            {
+                if (this[otherKeyword.ID] is not KwsKeyword existing)
+                {
+                    Keywords.Add(otherKeyword);
+                    continue;
+                }
+                existing.Merge(otherKeyword);
+                res.Add(existing);
+            }
+            return [.. res];
         }
 
         /// <summary>
