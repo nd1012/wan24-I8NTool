@@ -229,6 +229,15 @@ references:
   fullName.vb: wan24.I8NKws.KwsCatalog.New(System.Collections.Generic.Dictionary(Of String, String()))
   nameWithType: KwsCatalog.KwsCatalog(in Dictionary<string, string[]>)
   nameWithType.vb: KwsCatalog.New(Dictionary(Of String, String()))
+- uid: wan24.I8NKws.KwsCatalog.#ctor(System.Collections.Generic.Dictionary{System.String,System.String}@)
+  name: KwsCatalog(in Dictionary<string, string>)
+  href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog__ctor_System_Collections_Generic_Dictionary_System_String_System_String___
+  commentId: M:wan24.I8NKws.KwsCatalog.#ctor(System.Collections.Generic.Dictionary{System.String,System.String}@)
+  name.vb: New(Dictionary(Of String, String))
+  fullName: wan24.I8NKws.KwsCatalog.KwsCatalog(in System.Collections.Generic.Dictionary<string, string>)
+  fullName.vb: wan24.I8NKws.KwsCatalog.New(System.Collections.Generic.Dictionary(Of String, String))
+  nameWithType: KwsCatalog.KwsCatalog(in Dictionary<string, string>)
+  nameWithType.vb: KwsCatalog.New(Dictionary(Of String, String))
 - uid: wan24.I8NKws.KwsCatalog.#ctor*
   name: KwsCatalog
   href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog__ctor_
@@ -404,6 +413,22 @@ references:
   isSpec: "True"
   fullName: wan24.I8NKws.KwsCatalog.Locale
   nameWithType: KwsCatalog.Locale
+- uid: wan24.I8NKws.KwsCatalog.Merge(wan24.I8NKws.KwsCatalog,System.Boolean)
+  name: Merge(KwsCatalog, bool)
+  href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Merge_wan24_I8NKws_KwsCatalog_System_Boolean_
+  commentId: M:wan24.I8NKws.KwsCatalog.Merge(wan24.I8NKws.KwsCatalog,System.Boolean)
+  name.vb: Merge(KwsCatalog, Boolean)
+  fullName: wan24.I8NKws.KwsCatalog.Merge(wan24.I8NKws.KwsCatalog, bool)
+  fullName.vb: wan24.I8NKws.KwsCatalog.Merge(wan24.I8NKws.KwsCatalog, Boolean)
+  nameWithType: KwsCatalog.Merge(KwsCatalog, bool)
+  nameWithType.vb: KwsCatalog.Merge(KwsCatalog, Boolean)
+- uid: wan24.I8NKws.KwsCatalog.Merge*
+  name: Merge
+  href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Merge_
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Merge
+  isSpec: "True"
+  fullName: wan24.I8NKws.KwsCatalog.Merge
+  nameWithType: KwsCatalog.Merge
 - uid: wan24.I8NKws.KwsCatalog.Modified
   name: Modified
   href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Modified
@@ -456,6 +481,19 @@ references:
   isSpec: "True"
   fullName: wan24.I8NKws.KwsCatalog.Project
   nameWithType: KwsCatalog.Project
+- uid: wan24.I8NKws.KwsCatalog.Properties
+  name: Properties
+  href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Properties
+  commentId: P:wan24.I8NKws.KwsCatalog.Properties
+  fullName: wan24.I8NKws.KwsCatalog.Properties
+  nameWithType: KwsCatalog.Properties
+- uid: wan24.I8NKws.KwsCatalog.Properties*
+  name: Properties
+  href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Properties_
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Properties
+  isSpec: "True"
+  fullName: wan24.I8NKws.KwsCatalog.Properties
+  nameWithType: KwsCatalog.Properties
 - uid: wan24.I8NKws.KwsCatalog.RevisionedKeywords
   name: RevisionedKeywords
   href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_RevisionedKeywords
@@ -540,6 +578,19 @@ references:
   isSpec: "True"
   fullName: wan24.I8NKws.KwsCatalog.TryRemoveKeyword
   nameWithType: KwsCatalog.TryRemoveKeyword
+- uid: wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
+  name: UnvalidatedKeywords
+  href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_UnvalidatedKeywords
+  commentId: P:wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
+  fullName: wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
+  nameWithType: KwsCatalog.UnvalidatedKeywords
+- uid: wan24.I8NKws.KwsCatalog.UnvalidatedKeywords*
+  name: UnvalidatedKeywords
+  href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_UnvalidatedKeywords_
+  commentId: Overload:wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
+  isSpec: "True"
+  fullName: wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
+  nameWithType: KwsCatalog.UnvalidatedKeywords
 - uid: wan24.I8NKws.KwsCatalog.Validate(System.Boolean@,System.Boolean@)
   name: Validate(in bool, in bool)
   href: api/wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Validate_System_Boolean__System_Boolean__
@@ -635,6 +686,19 @@ references:
   isSpec: "True"
   fullName: wan24.I8NKws.KwsKeyword.DeveloperComments
   nameWithType: KwsKeyword.DeveloperComments
+- uid: wan24.I8NKws.KwsKeyword.Document
+  name: Document
+  href: api/wan24.I8NKws.KwsKeyword.html#wan24_I8NKws_KwsKeyword_Document
+  commentId: P:wan24.I8NKws.KwsKeyword.Document
+  fullName: wan24.I8NKws.KwsKeyword.Document
+  nameWithType: KwsKeyword.Document
+- uid: wan24.I8NKws.KwsKeyword.Document*
+  name: Document
+  href: api/wan24.I8NKws.KwsKeyword.html#wan24_I8NKws_KwsKeyword_Document_
+  commentId: Overload:wan24.I8NKws.KwsKeyword.Document
+  isSpec: "True"
+  fullName: wan24.I8NKws.KwsKeyword.Document
+  nameWithType: KwsKeyword.Document
 - uid: wan24.I8NKws.KwsKeyword.Extracted
   name: Extracted
   href: api/wan24.I8NKws.KwsKeyword.html#wan24_I8NKws_KwsKeyword_Extracted
@@ -719,6 +783,19 @@ references:
   fullName.vb: wan24.I8NKws.KwsKeyword.this[]
   nameWithType: KwsKeyword.this
   nameWithType.vb: KwsKeyword.this[]
+- uid: wan24.I8NKws.KwsKeyword.Merge(wan24.I8NKws.KwsKeyword)
+  name: Merge(KwsKeyword)
+  href: api/wan24.I8NKws.KwsKeyword.html#wan24_I8NKws_KwsKeyword_Merge_wan24_I8NKws_KwsKeyword_
+  commentId: M:wan24.I8NKws.KwsKeyword.Merge(wan24.I8NKws.KwsKeyword)
+  fullName: wan24.I8NKws.KwsKeyword.Merge(wan24.I8NKws.KwsKeyword)
+  nameWithType: KwsKeyword.Merge(KwsKeyword)
+- uid: wan24.I8NKws.KwsKeyword.Merge*
+  name: Merge
+  href: api/wan24.I8NKws.KwsKeyword.html#wan24_I8NKws_KwsKeyword_Merge_
+  commentId: Overload:wan24.I8NKws.KwsKeyword.Merge
+  isSpec: "True"
+  fullName: wan24.I8NKws.KwsKeyword.Merge
+  nameWithType: KwsKeyword.Merge
 - uid: wan24.I8NKws.KwsKeyword.Obsolete
   name: Obsolete
   href: api/wan24.I8NKws.KwsKeyword.html#wan24_I8NKws_KwsKeyword_Obsolete
@@ -748,6 +825,19 @@ references:
   isSpec: "True"
   fullName: wan24.I8NKws.KwsKeyword.Plural
   nameWithType: KwsKeyword.Plural
+- uid: wan24.I8NKws.KwsKeyword.Properties
+  name: Properties
+  href: api/wan24.I8NKws.KwsKeyword.html#wan24_I8NKws_KwsKeyword_Properties
+  commentId: P:wan24.I8NKws.KwsKeyword.Properties
+  fullName: wan24.I8NKws.KwsKeyword.Properties
+  nameWithType: KwsKeyword.Properties
+- uid: wan24.I8NKws.KwsKeyword.Properties*
+  name: Properties
+  href: api/wan24.I8NKws.KwsKeyword.html#wan24_I8NKws_KwsKeyword_Properties_
+  commentId: Overload:wan24.I8NKws.KwsKeyword.Properties
+  isSpec: "True"
+  fullName: wan24.I8NKws.KwsKeyword.Properties
+  nameWithType: KwsKeyword.Properties
 - uid: wan24.I8NKws.KwsKeyword.RestoreRevision(wan24.I8NKws.KwsKeyword@)
   name: RestoreRevision(in KwsKeyword)
   href: api/wan24.I8NKws.KwsKeyword.html#wan24_I8NKws_KwsKeyword_RestoreRevision_wan24_I8NKws_KwsKeyword__
@@ -1268,6 +1358,19 @@ references:
   isSpec: "True"
   fullName: wan24.I8NTool.I8NToolAppConfig.SingleThread
   nameWithType: I8NToolAppConfig.SingleThread
+- uid: wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
+  name: TextFileExtensions
+  href: api/wan24.I8NTool.I8NToolAppConfig.html#wan24_I8NTool_I8NToolAppConfig_TextFileExtensions
+  commentId: P:wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
+  fullName: wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
+  nameWithType: I8NToolAppConfig.TextFileExtensions
+- uid: wan24.I8NTool.I8NToolAppConfig.TextFileExtensions*
+  name: TextFileExtensions
+  href: api/wan24.I8NTool.I8NToolAppConfig.html#wan24_I8NTool_I8NToolAppConfig_TextFileExtensions_
+  commentId: Overload:wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
+  isSpec: "True"
+  fullName: wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
+  nameWithType: I8NToolAppConfig.TextFileExtensions
 - uid: wan24.I8NTool.I8NToolConfig
   name: I8NToolConfig
   href: api/wan24.I8NTool.I8NToolConfig.html
@@ -1365,6 +1468,19 @@ references:
   isSpec: "True"
   fullName: wan24.I8NTool.I8NToolConfig.SourceEncoding
   nameWithType: I8NToolConfig.SourceEncoding
+- uid: wan24.I8NTool.I8NToolConfig.TextFileExtensions
+  name: TextFileExtensions
+  href: api/wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_TextFileExtensions
+  commentId: P:wan24.I8NTool.I8NToolConfig.TextFileExtensions
+  fullName: wan24.I8NTool.I8NToolConfig.TextFileExtensions
+  nameWithType: I8NToolConfig.TextFileExtensions
+- uid: wan24.I8NTool.I8NToolConfig.TextFileExtensions*
+  name: TextFileExtensions
+  href: api/wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_TextFileExtensions_
+  commentId: Overload:wan24.I8NTool.I8NToolConfig.TextFileExtensions
+  isSpec: "True"
+  fullName: wan24.I8NTool.I8NToolConfig.TextFileExtensions
+  nameWithType: I8NToolConfig.TextFileExtensions
 - uid: wan24.I8NTool.KeywordExtractorApi
   name: KeywordExtractorApi
   href: api/wan24.I8NTool.KeywordExtractorApi.html
@@ -1390,15 +1506,15 @@ references:
   fullName.vb: wan24.I8NTool.KeywordExtractorApi.New
   nameWithType: KeywordExtractorApi.KeywordExtractorApi
   nameWithType.vb: KeywordExtractorApi.New
-- uid: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
-  name: ExtractAsync(string?, bool, bool, bool, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
-  href: api/wan24.I8NTool.KeywordExtractorApi.html#wan24_I8NTool_KeywordExtractorApi_ExtractAsync_System_String_System_Boolean_System_Boolean_System_Boolean_System_String___System_String_System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Int32_
-  commentId: M:wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
-  name.vb: ExtractAsync(String, Boolean, Boolean, Boolean, String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
-  fullName: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(string?, bool, bool, bool, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
-  fullName.vb: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(String, Boolean, Boolean, Boolean, String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
-  nameWithType: KeywordExtractorApi.ExtractAsync(string?, bool, bool, bool, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
-  nameWithType.vb: KeywordExtractorApi.ExtractAsync(String, Boolean, Boolean, Boolean, String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
+- uid: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+  name: ExtractAsync(string?, bool, bool, bool, string[]?, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
+  href: api/wan24.I8NTool.KeywordExtractorApi.html#wan24_I8NTool_KeywordExtractorApi_ExtractAsync_System_String_System_Boolean_System_Boolean_System_Boolean_System_String___System_String___System_String_System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Int32_
+  commentId: M:wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+  name.vb: ExtractAsync(String, Boolean, Boolean, Boolean, String(), String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
+  fullName: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(string?, bool, bool, bool, string[]?, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
+  fullName.vb: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(String, Boolean, Boolean, Boolean, String(), String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
+  nameWithType: KeywordExtractorApi.ExtractAsync(string?, bool, bool, bool, string[]?, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
+  nameWithType.vb: KeywordExtractorApi.ExtractAsync(String, Boolean, Boolean, Boolean, String(), String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
 - uid: wan24.I8NTool.KeywordExtractorApi.ExtractAsync*
   name: ExtractAsync
   href: api/wan24.I8NTool.KeywordExtractorApi.html#wan24_I8NTool_KeywordExtractorApi_ExtractAsync_
@@ -1547,6 +1663,19 @@ references:
   isSpec: "True"
   fullName: wan24.I8NTool.KeywordMatch.Positions
   nameWithType: KeywordMatch.Positions
+- uid: wan24.I8NTool.KeywordMatch.Text
+  name: Text
+  href: api/wan24.I8NTool.KeywordMatch.html#wan24_I8NTool_KeywordMatch_Text
+  commentId: P:wan24.I8NTool.KeywordMatch.Text
+  fullName: wan24.I8NTool.KeywordMatch.Text
+  nameWithType: KeywordMatch.Text
+- uid: wan24.I8NTool.KeywordMatch.Text*
+  name: Text
+  href: api/wan24.I8NTool.KeywordMatch.html#wan24_I8NTool_KeywordMatch_Text_
+  commentId: Overload:wan24.I8NTool.KeywordMatch.Text
+  isSpec: "True"
+  fullName: wan24.I8NTool.KeywordMatch.Text
+  nameWithType: KeywordMatch.Text
 - uid: wan24.I8NTool.KeywordParserPattern
   name: KeywordParserPattern
   href: api/wan24.I8NTool.KeywordParserPattern.html

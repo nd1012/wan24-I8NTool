@@ -21,6 +21,7 @@ items:
   - wan24.I8NTool.I8NToolAppConfig.MergeOutput
   - wan24.I8NTool.I8NToolAppConfig.Patterns
   - wan24.I8NTool.I8NToolAppConfig.SingleThread
+  - wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
   langs:
   - csharp
   - vb
@@ -381,6 +382,37 @@ items:
       type: System.String[]
     content.vb: Public Property FileExtensions As String()
   overload: wan24.I8NTool.I8NToolAppConfig.FileExtensions*
+- uid: wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
+  commentId: P:wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
+  id: TextFileExtensions
+  parent: wan24.I8NTool.I8NToolAppConfig
+  langs:
+  - csharp
+  - vb
+  name: TextFileExtensions
+  nameWithType: I8NToolAppConfig.TextFileExtensions
+  fullName: wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/I8NToolAppConfig.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: TextFileExtensions
+    path: ../wan24-I8NTool CLI/I8NToolAppConfig.cs
+    startLine: 74
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: File extensions of text files to translate (including dot; keyword ID will be the filename without extension)
+  example: []
+  syntax:
+    content: public string[]? TextFileExtensions { get; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public ReadOnly Property TextFileExtensions As String()
+  overload: wan24.I8NTool.I8NToolAppConfig.TextFileExtensions*
 - uid: wan24.I8NTool.I8NToolAppConfig.Exclude
   commentId: P:wan24.I8NTool.I8NToolAppConfig.Exclude
   id: Exclude
@@ -399,7 +431,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Exclude
     path: ../wan24-I8NTool CLI/I8NToolAppConfig.cs
-    startLine: 74
+    startLine: 79
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -430,7 +462,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: MergeOutput
     path: ../wan24-I8NTool CLI/I8NToolAppConfig.cs
-    startLine: 79
+    startLine: 84
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -461,7 +493,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: FailOnError
     path: ../wan24-I8NTool CLI/I8NToolAppConfig.cs
-    startLine: 84
+    startLine: 89
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -492,7 +524,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Merge
     path: ../wan24-I8NTool CLI/I8NToolAppConfig.cs
-    startLine: 89
+    startLine: 94
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -523,7 +555,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Apply
     path: ../wan24-I8NTool CLI/I8NToolAppConfig.cs
-    startLine: 92
+    startLine: 97
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -552,7 +584,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: ApplyAsync
     path: ../wan24-I8NTool CLI/I8NToolAppConfig.cs
-    startLine: 123
+    startLine: 133
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -1014,6 +1046,12 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: (
   - name: )
+- uid: wan24.I8NTool.I8NToolAppConfig.TextFileExtensions*
+  commentId: Overload:wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
+  href: wan24.I8NTool.I8NToolAppConfig.html#wan24_I8NTool_I8NToolAppConfig_TextFileExtensions
+  name: TextFileExtensions
+  nameWithType: I8NToolAppConfig.TextFileExtensions
+  fullName: wan24.I8NTool.I8NToolAppConfig.TextFileExtensions
 - uid: wan24.I8NTool.I8NToolAppConfig.Exclude*
   commentId: Overload:wan24.I8NTool.I8NToolAppConfig.Exclude
   href: wan24.I8NTool.I8NToolAppConfig.html#wan24_I8NTool_I8NToolAppConfig_Exclude

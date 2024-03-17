@@ -140,7 +140,7 @@ expressions, until the final quoted keyword was extracted from a line.</p>
 <p>These default translation method names can be parsed from source code:</p>
 <ul>
 <li><code>_</code></li>
-<li><code>gettext(n)(&quot;...&quot;</code></li>
+<li><code>gettext(n|d)(&quot;...&quot;</code></li>
 <li><code>Translate(Plural)(&quot;...&quot;</code></li>
 <li><code>GetTerm(&quot;...&quot;</code></li>
 </ul>
@@ -162,13 +162,19 @@ argument after a numeric argument:</p>
 <ul>
 <li><code>ExitCode(N, &quot;...&quot;</code></li>
 </ul>
+<p><strong>NOTE</strong>: (Multiline) concatenated string value definitions (like
+<code>@&quot;Part \ a&quot; + $&quot;Part b {variable}&quot;</code>) or interpolations can't be parsed. The
+matched string literal must be JSON style escaped.</p>
 <p>To force including any string (from a constant definition, for example),
 simply add a comment <code>wan24I8NTool:include</code> at the end of the line - example:</p>
 <pre><code class="lang-cs">public const string NAME = &quot;Any PO included keyword&quot;;// wan24I8NTool:include
 </code></pre>
-<p><strong>NOTE</strong>: (Multiline) concatenated string value definitions (like
-<code>@&quot;Part \ a&quot; + $&quot;Part b {variable}&quot;</code>) or interpolations can't be parsed. The
-matched string literal must be JSON style escaped.</p>
+<p>To force excluding any line, simply add a comment <code>wan24I8NTool:exclude</code> to
+that line - example:</p>
+<pre><code class="lang-cs">string text = gettext(&quot;Text file keyword&quot;);// wan24I8NTool:exclude
+</code></pre>
+<p>This will avoid including the text file ID <code>Text file keyword</code> (see below)
+as an additional term to translate into the catalog.</p>
 <h3 id="custom-parser-configuration">Custom parser configuration</h3>
 <p>In the <code>config/dotnet.json</code> file of this repository you find the default
 configuration. You can download and modify it for your needs, and use it with
@@ -202,6 +208,10 @@ the <code>--config</code> parameter.</p>
 		&quot;.ext&quot;,
 		...
 	],
+	&quot;TextFileExtensions&quot;: [// (optional) Text file extensions to include when walking through a folder tree (may be overridden by --textFileExt)
+		&quot;.ext.txt&quot;,
+		...
+	],
 	&quot;MergeOutput&quot;: true,// (optional) Merge the extracted keywords to the existing output PO file
 	&quot;FailOnError&quot;: true,// (optional) To fail thewhole process on any error
 	&quot;Merge&quot;: false// (optional) Set to true to merge your custom configuration with the default configuration
@@ -224,14 +234,27 @@ configuration using a <code>AppConfig</code> structure</li>
 <li><code>CLI</code>: <a href="https://github.com/nd1012/wan24-CLI"><code>wan24-CLI</code></a> configuration
 using a <code>CliAppConfig</code> structure</li>
 </ul>
+<h3 id="about-including-text-files">About including text files</h3>
+<p>The extractor API does also incude text files - per default filtered by:</p>
+<ul>
+<li><code>*.translate.txt</code> (for simple text)</li>
+<li><code>*.translate.md</code> (for MarkDown text)</li>
+</ul>
+<p>When doing so, you can address the translation using the filename without
+extensions as keyword - example for <code>Info text.translate.txt</code>:</p>
+<pre><code class="lang-cs">string text = _(&quot;Info text&quot;);// wan24I8NTool:exclude
+</code></pre>
+<p>The <code>wan24I8NTool:exclude</code> does tell the extractor to skip adding <code>Info text</code>
+as keyword to translate, because what you want to translate, is the text file
+content, but not the keyword used to load the translation in that case.</p>
 <h3 id="build-extract-display-and-use-an-i8n-file">Build, extract, display and use an i8n file</h3>
 <p>i8n files contain optional compressed translation terms. They can be created
 from PO/MO and/or JSON dictionary (keyword as key, translation as an array of
-strings as value) input files like this:</p>
+strings as value) or wan24-I8NKws input files like this:</p>
 <pre><code class="lang-bash">wan24I8NTool i8n -compress --poInput /path/to/input.po --output /path/to/output.i8n
 </code></pre>
 <p>An i8n file can be embedded into an app, for example.</p>
-<p>To convert all <code>*.json|po|mo</code> files in the current folder to <code>*.i8n</code> files:</p>
+<p>To convert all <code>*.json|po|mo|kws</code> files in the current folder to <code>*.i8n</code> files:</p>
 <pre><code class="lang-bash">wan24I8NTool i8n buildmany -compress -verbose
 </code></pre>
 <p>To display some i8n file informations:</p>
@@ -243,8 +266,8 @@ strings as value) input files like this:</p>
 <p>To extract some i8n file to a PO file:</p>
 <pre><code class="lang-bash">wan24I8NTool i8n extract --input /path/to/input.i8n --poOutput /path/to/output.po
 </code></pre>
-<p>To extract some i8n file to a wan24-I8NLws file:</p>
-<pre><code class="lang-bash">wan24I8NTool i8n extract --input /path/to/input.i8n --kwsOutput /path/to/output.po
+<p>To extract some i8n file to a wan24-I8NKws file:</p>
+<pre><code class="lang-bash">wan24I8NTool i8n extract --input /path/to/input.i8n --kwsOutput /path/to/output.kws
 </code></pre>
 <p><strong>NOTE</strong>: For more options and usage instructions please use the CLI API help
 (see below).</p>

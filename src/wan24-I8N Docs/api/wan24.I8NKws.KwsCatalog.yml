@@ -7,6 +7,7 @@ items:
   children:
   - wan24.I8NKws.KwsCatalog.#ctor
   - wan24.I8NKws.KwsCatalog.#ctor(System.Collections.Generic.Dictionary{System.String,System.String[]}@)
+  - wan24.I8NKws.KwsCatalog.#ctor(System.Collections.Generic.Dictionary{System.String,System.String}@)
   - wan24.I8NKws.KwsCatalog.CompleteKeywords
   - wan24.I8NKws.KwsCatalog.ContainsKeyWord(System.String)
   - wan24.I8NKws.KwsCatalog.Created
@@ -19,16 +20,19 @@ items:
   - wan24.I8NKws.KwsCatalog.Keywords
   - wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
   - wan24.I8NKws.KwsCatalog.Locale
+  - wan24.I8NKws.KwsCatalog.Merge(wan24.I8NKws.KwsCatalog,System.Boolean)
   - wan24.I8NKws.KwsCatalog.Modified
   - wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
   - wan24.I8NKws.KwsCatalog.ObsoleteKeywords
   - wan24.I8NKws.KwsCatalog.Project
+  - wan24.I8NKws.KwsCatalog.Properties
   - wan24.I8NKws.KwsCatalog.RevisionedKeywords
   - wan24.I8NKws.KwsCatalog.RightToLeft
   - wan24.I8NKws.KwsCatalog.ToDictionary
   - wan24.I8NKws.KwsCatalog.Translator
   - wan24.I8NKws.KwsCatalog.TryAddKeyword(wan24.I8NKws.KwsKeyword@)
   - wan24.I8NKws.KwsCatalog.TryRemoveKeyword(System.String)
+  - wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
   - wan24.I8NKws.KwsCatalog.Validate(System.Boolean@,System.Boolean@)
   - wan24.I8NKws.KwsCatalog.op_Implicit(wan24.I8NKws.KwsCatalog@)~System.Int32
   langs:
@@ -133,6 +137,41 @@ items:
   nameWithType.vb: KwsCatalog.New(Dictionary(Of String, String()))
   fullName.vb: wan24.I8NKws.KwsCatalog.New(System.Collections.Generic.Dictionary(Of String, String()))
   name.vb: New(Dictionary(Of String, String()))
+- uid: wan24.I8NKws.KwsCatalog.#ctor(System.Collections.Generic.Dictionary{System.String,System.String}@)
+  commentId: M:wan24.I8NKws.KwsCatalog.#ctor(System.Collections.Generic.Dictionary{System.String,System.String}@)
+  id: '#ctor(System.Collections.Generic.Dictionary{System.String,System.String}@)'
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: KwsCatalog(in Dictionary<string, string>)
+  nameWithType: KwsCatalog.KwsCatalog(in Dictionary<string, string>)
+  fullName: wan24.I8NKws.KwsCatalog.KwsCatalog(in System.Collections.Generic.Dictionary<string, string>)
+  type: Constructor
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: .ctor
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 34
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Constructor
+  example: []
+  syntax:
+    content: public KwsCatalog(in Dictionary<string, string> dict)
+    parameters:
+    - id: dict
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: Dictionary
+    content.vb: Public Sub New(dict As Dictionary(Of String, String))
+  overload: wan24.I8NKws.KwsCatalog.#ctor*
+  nameWithType.vb: KwsCatalog.New(Dictionary(Of String, String))
+  fullName.vb: wan24.I8NKws.KwsCatalog.New(System.Collections.Generic.Dictionary(Of String, String))
+  name.vb: New(Dictionary(Of String, String))
 - uid: wan24.I8NKws.KwsCatalog.Item(System.String)
   commentId: P:wan24.I8NKws.KwsCatalog.Item(System.String)
   id: Item(System.String)
@@ -151,7 +190,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: this[]
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 35
+    startLine: 48
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -189,7 +228,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Project
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 40
+    startLine: 53
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -220,7 +259,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Created
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 45
+    startLine: 58
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -251,7 +290,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Modified
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -282,7 +321,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Translator
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 55
+    startLine: 68
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -313,7 +352,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Locale
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 60
+    startLine: 73
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -356,7 +395,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: RightToLeft
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -369,6 +408,80 @@ items:
       type: System.Boolean
     content.vb: Public Property RightToLeft As Boolean
   overload: wan24.I8NKws.KwsCatalog.RightToLeft*
+- uid: wan24.I8NKws.KwsCatalog.Properties
+  commentId: P:wan24.I8NKws.KwsCatalog.Properties
+  id: Properties
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: Properties
+  nameWithType: KwsCatalog.Properties
+  fullName: wan24.I8NKws.KwsCatalog.Properties
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Properties
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 84
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Properties
+  example: []
+  syntax:
+    content: public Dictionary<string, string> Properties { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+    content.vb: Public Property Properties As Dictionary(Of String, String)
+  overload: wan24.I8NKws.KwsCatalog.Properties*
+- uid: wan24.I8NKws.KwsCatalog.Keywords
+  commentId: P:wan24.I8NKws.KwsCatalog.Keywords
+  id: Keywords
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: Keywords
+  nameWithType: KwsCatalog.Keywords
+  fullName: wan24.I8NKws.KwsCatalog.Keywords
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Keywords
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 89
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Keywords
+  example: []
+  syntax:
+    content: >-
+      [NoValidation(false)]
+
+      public HashSet<KwsKeyword> Keywords { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.HashSet{wan24.I8NKws.KwsKeyword}
+    content.vb: >-
+      <NoValidation(False)>
+
+      Public Property Keywords As HashSet(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.Keywords*
+  attributes:
+  - type: wan24.ObjectValidation.NoValidationAttribute
+    ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
 - uid: wan24.I8NKws.KwsCatalog.CompleteKeywords
   commentId: P:wan24.I8NKws.KwsCatalog.CompleteKeywords
   id: CompleteKeywords
@@ -387,7 +500,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: CompleteKeywords
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 71
+    startLine: 95
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -430,7 +543,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: IncompleteKeywords
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 77
+    startLine: 101
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -473,7 +586,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: RevisionedKeywords
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 83
+    startLine: 107
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -516,7 +629,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: FuzzyKeywords
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 89
+    startLine: 113
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -559,7 +672,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: InvalidKeywords
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 95
+    startLine: 119
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -602,7 +715,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: KeywordsWithDeveloperComments
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 101
+    startLine: 125
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -645,7 +758,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: ObsoleteKeywords
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 107
+    startLine: 131
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -688,7 +801,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: NonObsoleteKeywords
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 113
+    startLine: 137
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -713,43 +826,43 @@ items:
     arguments:
     - type: System.Boolean
       value: false
-- uid: wan24.I8NKws.KwsCatalog.Keywords
-  commentId: P:wan24.I8NKws.KwsCatalog.Keywords
-  id: Keywords
+- uid: wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
+  commentId: P:wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
+  id: UnvalidatedKeywords
   parent: wan24.I8NKws.KwsCatalog
   langs:
   - csharp
   - vb
-  name: Keywords
-  nameWithType: KwsCatalog.Keywords
-  fullName: wan24.I8NKws.KwsCatalog.Keywords
+  name: UnvalidatedKeywords
+  nameWithType: KwsCatalog.UnvalidatedKeywords
+  fullName: wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
   type: Property
   source:
     remote:
       path: src/wan24-I8NKws/KwsCatalog.cs
       branch: main
       repo: https://github.com/nd1012/wan24-I8NTool
-    id: Keywords
+    id: UnvalidatedKeywords
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 119
+    startLine: 143
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
-  summary: Keywords
+  summary: Unvalidated keywords
   example: []
   syntax:
     content: >-
       [NoValidation(false)]
 
-      public HashSet<KwsKeyword> Keywords { get; init; }
+      public IEnumerable<KwsKeyword> UnvalidatedKeywords { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.HashSet{wan24.I8NKws.KwsKeyword}
+      type: System.Collections.Generic.IEnumerable{wan24.I8NKws.KwsKeyword}
     content.vb: >-
       <NoValidation(False)>
 
-      Public Property Keywords As HashSet(Of KwsKeyword)
-  overload: wan24.I8NKws.KwsCatalog.Keywords*
+      Public ReadOnly Property UnvalidatedKeywords As IEnumerable(Of KwsKeyword)
+  overload: wan24.I8NKws.KwsCatalog.UnvalidatedKeywords*
   attributes:
   - type: wan24.ObjectValidation.NoValidationAttribute
     ctor: wan24.ObjectValidation.NoValidationAttribute.#ctor(System.Boolean)
@@ -774,7 +887,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: TryAddKeyword
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 127
+    startLine: 151
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -812,7 +925,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: GetOrAddKeyword
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 134
+    startLine: 158
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -847,7 +960,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: TryRemoveKeyword
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 146
+    startLine: 170
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -885,7 +998,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: ContainsKeyWord
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 167
+    startLine: 191
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -923,7 +1036,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Validate
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 176
+    startLine: 200
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -950,6 +1063,47 @@ items:
   nameWithType.vb: KwsCatalog.Validate(Boolean, Boolean)
   fullName.vb: wan24.I8NKws.KwsCatalog.Validate(Boolean, Boolean)
   name.vb: Validate(Boolean, Boolean)
+- uid: wan24.I8NKws.KwsCatalog.Merge(wan24.I8NKws.KwsCatalog,System.Boolean)
+  commentId: M:wan24.I8NKws.KwsCatalog.Merge(wan24.I8NKws.KwsCatalog,System.Boolean)
+  id: Merge(wan24.I8NKws.KwsCatalog,System.Boolean)
+  parent: wan24.I8NKws.KwsCatalog
+  langs:
+  - csharp
+  - vb
+  name: Merge(KwsCatalog, bool)
+  nameWithType: KwsCatalog.Merge(KwsCatalog, bool)
+  fullName: wan24.I8NKws.KwsCatalog.Merge(wan24.I8NKws.KwsCatalog, bool)
+  type: Method
+  source:
+    remote:
+      path: src/wan24-I8NKws/KwsCatalog.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Merge
+    path: ../wan24-I8NKws/KwsCatalog.cs
+    startLine: 224
+  assemblies:
+  - wan24I8NKws
+  namespace: wan24.I8NKws
+  summary: Merge with another catalog (existing keywords will be revisioned for merging)
+  example: []
+  syntax:
+    content: public KwsKeyword[] Merge(KwsCatalog other, bool ignoreLocale = false)
+    parameters:
+    - id: other
+      type: wan24.I8NKws.KwsCatalog
+      description: Other catalog to merge into this catalog
+    - id: ignoreLocale
+      type: System.Boolean
+      description: Ignore merging with another locale?
+    return:
+      type: wan24.I8NKws.KwsKeyword[]
+      description: Merged existing keywords
+    content.vb: Public Function Merge(other As KwsCatalog, ignoreLocale As Boolean = False) As KwsKeyword()
+  overload: wan24.I8NKws.KwsCatalog.Merge*
+  nameWithType.vb: KwsCatalog.Merge(KwsCatalog, Boolean)
+  fullName.vb: wan24.I8NKws.KwsCatalog.Merge(wan24.I8NKws.KwsCatalog, Boolean)
+  name.vb: Merge(KwsCatalog, Boolean)
 - uid: wan24.I8NKws.KwsCatalog.ToDictionary
   commentId: M:wan24.I8NKws.KwsCatalog.ToDictionary
   id: ToDictionary
@@ -968,7 +1122,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: ToDictionary
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 198
+    startLine: 252
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -999,7 +1153,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: GetEnumerator
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 202
+    startLine: 256
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -1032,7 +1186,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: op_Implicit
     path: ../wan24-I8NKws/KwsCatalog.cs
-    startLine: 211
+    startLine: 265
   assemblies:
   - wan24I8NKws
   namespace: wan24.I8NKws
@@ -1575,6 +1729,53 @@ references:
   - name: " "
   - name: TValue
   - name: )
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, string>
+  nameWithType: Dictionary<string, string>
+  fullName: System.Collections.Generic.Dictionary<string, string>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: wan24.I8NKws.KwsCatalog.Item*
   commentId: Overload:wan24.I8NKws.KwsCatalog.Item
   href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Item_System_String_
@@ -1660,54 +1861,12 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: wan24.I8NKws.KwsCatalog.CompleteKeywords*
-  commentId: Overload:wan24.I8NKws.KwsCatalog.CompleteKeywords
-  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_CompleteKeywords
-  name: CompleteKeywords
-  nameWithType: KwsCatalog.CompleteKeywords
-  fullName: wan24.I8NKws.KwsCatalog.CompleteKeywords
-- uid: wan24.I8NKws.KwsCatalog.IncompleteKeywords*
-  commentId: Overload:wan24.I8NKws.KwsCatalog.IncompleteKeywords
-  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_IncompleteKeywords
-  name: IncompleteKeywords
-  nameWithType: KwsCatalog.IncompleteKeywords
-  fullName: wan24.I8NKws.KwsCatalog.IncompleteKeywords
-- uid: wan24.I8NKws.KwsCatalog.RevisionedKeywords*
-  commentId: Overload:wan24.I8NKws.KwsCatalog.RevisionedKeywords
-  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_RevisionedKeywords
-  name: RevisionedKeywords
-  nameWithType: KwsCatalog.RevisionedKeywords
-  fullName: wan24.I8NKws.KwsCatalog.RevisionedKeywords
-- uid: wan24.I8NKws.KwsCatalog.FuzzyKeywords*
-  commentId: Overload:wan24.I8NKws.KwsCatalog.FuzzyKeywords
-  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_FuzzyKeywords
-  name: FuzzyKeywords
-  nameWithType: KwsCatalog.FuzzyKeywords
-  fullName: wan24.I8NKws.KwsCatalog.FuzzyKeywords
-- uid: wan24.I8NKws.KwsCatalog.InvalidKeywords*
-  commentId: Overload:wan24.I8NKws.KwsCatalog.InvalidKeywords
-  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_InvalidKeywords
-  name: InvalidKeywords
-  nameWithType: KwsCatalog.InvalidKeywords
-  fullName: wan24.I8NKws.KwsCatalog.InvalidKeywords
-- uid: wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments*
-  commentId: Overload:wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
-  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_KeywordsWithDeveloperComments
-  name: KeywordsWithDeveloperComments
-  nameWithType: KwsCatalog.KeywordsWithDeveloperComments
-  fullName: wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
-- uid: wan24.I8NKws.KwsCatalog.ObsoleteKeywords*
-  commentId: Overload:wan24.I8NKws.KwsCatalog.ObsoleteKeywords
-  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_ObsoleteKeywords
-  name: ObsoleteKeywords
-  nameWithType: KwsCatalog.ObsoleteKeywords
-  fullName: wan24.I8NKws.KwsCatalog.ObsoleteKeywords
-- uid: wan24.I8NKws.KwsCatalog.NonObsoleteKeywords*
-  commentId: Overload:wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
-  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_NonObsoleteKeywords
-  name: NonObsoleteKeywords
-  nameWithType: KwsCatalog.NonObsoleteKeywords
-  fullName: wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
+- uid: wan24.I8NKws.KwsCatalog.Properties*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Properties
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Properties
+  name: Properties
+  nameWithType: KwsCatalog.Properties
+  fullName: wan24.I8NKws.KwsCatalog.Properties
 - uid: wan24.I8NKws.KwsCatalog.Keywords*
   commentId: Overload:wan24.I8NKws.KwsCatalog.Keywords
   href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Keywords
@@ -1775,6 +1934,60 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: wan24.I8NKws.KwsCatalog.CompleteKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.CompleteKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_CompleteKeywords
+  name: CompleteKeywords
+  nameWithType: KwsCatalog.CompleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.CompleteKeywords
+- uid: wan24.I8NKws.KwsCatalog.IncompleteKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.IncompleteKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_IncompleteKeywords
+  name: IncompleteKeywords
+  nameWithType: KwsCatalog.IncompleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.IncompleteKeywords
+- uid: wan24.I8NKws.KwsCatalog.RevisionedKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.RevisionedKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_RevisionedKeywords
+  name: RevisionedKeywords
+  nameWithType: KwsCatalog.RevisionedKeywords
+  fullName: wan24.I8NKws.KwsCatalog.RevisionedKeywords
+- uid: wan24.I8NKws.KwsCatalog.FuzzyKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.FuzzyKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_FuzzyKeywords
+  name: FuzzyKeywords
+  nameWithType: KwsCatalog.FuzzyKeywords
+  fullName: wan24.I8NKws.KwsCatalog.FuzzyKeywords
+- uid: wan24.I8NKws.KwsCatalog.InvalidKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.InvalidKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_InvalidKeywords
+  name: InvalidKeywords
+  nameWithType: KwsCatalog.InvalidKeywords
+  fullName: wan24.I8NKws.KwsCatalog.InvalidKeywords
+- uid: wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_KeywordsWithDeveloperComments
+  name: KeywordsWithDeveloperComments
+  nameWithType: KwsCatalog.KeywordsWithDeveloperComments
+  fullName: wan24.I8NKws.KwsCatalog.KeywordsWithDeveloperComments
+- uid: wan24.I8NKws.KwsCatalog.ObsoleteKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.ObsoleteKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_ObsoleteKeywords
+  name: ObsoleteKeywords
+  nameWithType: KwsCatalog.ObsoleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.ObsoleteKeywords
+- uid: wan24.I8NKws.KwsCatalog.NonObsoleteKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_NonObsoleteKeywords
+  name: NonObsoleteKeywords
+  nameWithType: KwsCatalog.NonObsoleteKeywords
+  fullName: wan24.I8NKws.KwsCatalog.NonObsoleteKeywords
+- uid: wan24.I8NKws.KwsCatalog.UnvalidatedKeywords*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_UnvalidatedKeywords
+  name: UnvalidatedKeywords
+  nameWithType: KwsCatalog.UnvalidatedKeywords
+  fullName: wan24.I8NKws.KwsCatalog.UnvalidatedKeywords
 - uid: wan24.I8NKws.KwsCatalog.TryAddKeyword*
   commentId: Overload:wan24.I8NKws.KwsCatalog.TryAddKeyword
   href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_TryAddKeyword_wan24_I8NKws_KwsKeyword__
@@ -1812,6 +2025,40 @@ references:
   name: Validate
   nameWithType: KwsCatalog.Validate
   fullName: wan24.I8NKws.KwsCatalog.Validate
+- uid: wan24.I8NKws.KwsCatalog.Merge*
+  commentId: Overload:wan24.I8NKws.KwsCatalog.Merge
+  href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_Merge_wan24_I8NKws_KwsCatalog_System_Boolean_
+  name: Merge
+  nameWithType: KwsCatalog.Merge
+  fullName: wan24.I8NKws.KwsCatalog.Merge
+- uid: wan24.I8NKws.KwsCatalog
+  commentId: T:wan24.I8NKws.KwsCatalog
+  parent: wan24.I8NKws
+  href: wan24.I8NKws.KwsCatalog.html
+  name: KwsCatalog
+  nameWithType: KwsCatalog
+  fullName: wan24.I8NKws.KwsCatalog
+- uid: wan24.I8NKws.KwsKeyword[]
+  isExternal: true
+  href: wan24.I8NKws.KwsKeyword.html
+  name: KwsKeyword[]
+  nameWithType: KwsKeyword[]
+  fullName: wan24.I8NKws.KwsKeyword[]
+  nameWithType.vb: KwsKeyword()
+  fullName.vb: wan24.I8NKws.KwsKeyword()
+  name.vb: KwsKeyword()
+  spec.csharp:
+  - uid: wan24.I8NKws.KwsKeyword
+    name: KwsKeyword
+    href: wan24.I8NKws.KwsKeyword.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: wan24.I8NKws.KwsKeyword
+    name: KwsKeyword
+    href: wan24.I8NKws.KwsKeyword.html
+  - name: (
+  - name: )
 - uid: wan24.I8NKws.KwsCatalog.ToDictionary*
   commentId: Overload:wan24.I8NKws.KwsCatalog.ToDictionary
   href: wan24.I8NKws.KwsCatalog.html#wan24_I8NKws_KwsCatalog_ToDictionary
@@ -1944,13 +2191,6 @@ references:
   - name: implicit
   - name: " "
   - name: operator
-- uid: wan24.I8NKws.KwsCatalog
-  commentId: T:wan24.I8NKws.KwsCatalog
-  parent: wan24.I8NKws
-  href: wan24.I8NKws.KwsCatalog.html
-  name: KwsCatalog
-  nameWithType: KwsCatalog
-  fullName: wan24.I8NKws.KwsCatalog
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System

@@ -12,6 +12,7 @@ items:
   - wan24.I8NTool.I8NToolConfig.Patterns
   - wan24.I8NTool.I8NToolConfig.SingleThread
   - wan24.I8NTool.I8NToolConfig.SourceEncoding
+  - wan24.I8NTool.I8NToolConfig.TextFileExtensions
   langs:
   - csharp
   - vb
@@ -63,7 +64,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: SingleThread
     path: ../wan24-I8NTool CLI/I8NToolConfig.cs
-    startLine: 69
+    startLine: 70
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -94,7 +95,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: SourceEncoding
     path: ../wan24-I8NTool CLI/I8NToolConfig.cs
-    startLine: 74
+    startLine: 75
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -125,7 +126,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Patterns
     path: ../wan24-I8NTool CLI/I8NToolConfig.cs
-    startLine: 79
+    startLine: 80
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -156,11 +157,11 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: FileExtensions
     path: ../wan24-I8NTool CLI/I8NToolConfig.cs
-    startLine: 84
+    startLine: 85
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
-  summary: File extensions to look for
+  summary: File extensions to look for (including dot)
   example: []
   syntax:
     content: public static HashSet<string> FileExtensions { get; }
@@ -169,6 +170,37 @@ items:
       type: System.Collections.Generic.HashSet{System.String}
     content.vb: Public Shared ReadOnly Property FileExtensions As HashSet(Of String)
   overload: wan24.I8NTool.I8NToolConfig.FileExtensions*
+- uid: wan24.I8NTool.I8NToolConfig.TextFileExtensions
+  commentId: P:wan24.I8NTool.I8NToolConfig.TextFileExtensions
+  id: TextFileExtensions
+  parent: wan24.I8NTool.I8NToolConfig
+  langs:
+  - csharp
+  - vb
+  name: TextFileExtensions
+  nameWithType: I8NToolConfig.TextFileExtensions
+  fullName: wan24.I8NTool.I8NToolConfig.TextFileExtensions
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/I8NToolConfig.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: TextFileExtensions
+    path: ../wan24-I8NTool CLI/I8NToolConfig.cs
+    startLine: 90
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: File extensions of text files to translate (including dot; keyword ID will be the filename without extension)
+  example: []
+  syntax:
+    content: public static HashSet<string> TextFileExtensions { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.HashSet{System.String}
+    content.vb: Public Shared ReadOnly Property TextFileExtensions As HashSet(Of String)
+  overload: wan24.I8NTool.I8NToolConfig.TextFileExtensions*
 - uid: wan24.I8NTool.I8NToolConfig.Exclude
   commentId: P:wan24.I8NTool.I8NToolConfig.Exclude
   id: Exclude
@@ -187,7 +219,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Exclude
     path: ../wan24-I8NTool CLI/I8NToolConfig.cs
-    startLine: 89
+    startLine: 95
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -218,7 +250,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: MergeOutput
     path: ../wan24-I8NTool CLI/I8NToolConfig.cs
-    startLine: 94
+    startLine: 100
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -249,7 +281,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: FailOnError
     path: ../wan24-I8NTool CLI/I8NToolConfig.cs
-    startLine: 99
+    startLine: 105
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -725,6 +757,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: wan24.I8NTool.I8NToolConfig.TextFileExtensions*
+  commentId: Overload:wan24.I8NTool.I8NToolConfig.TextFileExtensions
+  href: wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_TextFileExtensions
+  name: TextFileExtensions
+  nameWithType: I8NToolConfig.TextFileExtensions
+  fullName: wan24.I8NTool.I8NToolConfig.TextFileExtensions
 - uid: wan24.I8NTool.I8NToolConfig.Exclude*
   commentId: Overload:wan24.I8NTool.I8NToolConfig.Exclude
   href: wan24.I8NTool.I8NToolConfig.html#wan24_I8NTool_I8NToolConfig_Exclude

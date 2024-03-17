@@ -195,13 +195,13 @@ public static bool FailOnError { get; set; }</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NTool_KeywordExtractorApi_ExtractAsync_System_String_System_Boolean_System_Boolean_System_Boolean_System_String___System_String_System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.String%5B%5D%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/nd1012/wan24-I8NTool/new/main/apiSpec/new?filename=wan24_I8NTool_KeywordExtractorApi_ExtractAsync_System_String_System_Boolean_System_Boolean_System_Boolean_System_String___System_String___System_String_System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NTool CLI/KeywordExtractorApi.cs/#L51">View Source</a>
+    <a href="https://github.com/nd1012/wan24-I8NTool/blob/main/src/wan24-I8NTool CLI/KeywordExtractorApi.cs/#L52">View Source</a>
   </span>
   <a id="wan24_I8NTool_KeywordExtractorApi_ExtractAsync_" data-uid="wan24.I8NTool.KeywordExtractorApi.ExtractAsync*"></a>
-  <h4 id="wan24_I8NTool_KeywordExtractorApi_ExtractAsync_System_String_System_Boolean_System_Boolean_System_Boolean_System_String___System_String_System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Int32_" data-uid="wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)">ExtractAsync(string?, bool, bool, bool, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)</h4>
+  <h4 id="wan24_I8NTool_KeywordExtractorApi_ExtractAsync_System_String_System_Boolean_System_Boolean_System_Boolean_System_String___System_String___System_String_System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Int32_" data-uid="wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)">ExtractAsync(string?, bool, bool, bool, string[]?, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)</h4>
   <div class="markdown level1 summary"><p>Extract keywords from source code</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -212,7 +212,7 @@ public static bool FailOnError { get; set; }</code></pre>
 [StdIn(&quot;/path/to/source.cs&quot;, false)]
 [StdOut(&quot;/path/to/target.po&quot;, false)]
 [StdErr(&quot;Verbose output and errors&quot;)]
-public static Task ExtractAsync(string? config = null, bool singleThread = false, bool verbose = false, bool noRecursive = false, string[]? ext = null, string? encoding = null, string[]? input = null, string[]? exclude = null, string? output = null, bool noHeader = false, bool mergeOutput = false, bool json = false, int fuzzy = 0)</code></pre>
+public static Task ExtractAsync(string? config = null, bool singleThread = false, bool verbose = false, bool noRecursive = false, string[]? ext = null, string[]? textFileExt = null, string? encoding = null, string[]? input = null, string[]? exclude = null, string? output = null, bool noHeader = false, bool mergeOutput = false, bool json = false, int fuzzy = 0)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -252,6 +252,12 @@ public static Task ExtractAsync(string? config = null, bool singleThread = false
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
         <td><span class="parametername">ext</span></td>
         <td><p>File extensions to use (including dot; will override the configuration)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">textFileExt</span></td>
+        <td><p>File extensions of text files to translate (including dot; keyword ID will be the filename without extension; will override the configuration)</p>
 </td>
       </tr>
       <tr>

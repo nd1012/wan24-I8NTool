@@ -22,7 +22,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Position
     path: ../wan24-I8NTool CLI/KeywordMatch.cs
-    startLine: 58
+    startLine: 63
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -60,7 +60,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: .ctor
     path: ../wan24-I8NTool CLI/KeywordMatch.cs
-    startLine: 63
+    startLine: 68
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -91,7 +91,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: FileName
     path: ../wan24-I8NTool CLI/KeywordMatch.cs
-    startLine: 68
+    startLine: 73
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -122,7 +122,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: LineNumber
     path: ../wan24-I8NTool CLI/KeywordMatch.cs
-    startLine: 73
+    startLine: 78
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool

@@ -10,6 +10,7 @@ items:
   - wan24.I8NTool.KeywordMatch.KeywordLiteral
   - wan24.I8NTool.KeywordMatch.KeywordQuotedLiteral
   - wan24.I8NTool.KeywordMatch.Positions
+  - wan24.I8NTool.KeywordMatch.Text
   langs:
   - csharp
   - vb
@@ -168,6 +169,37 @@ items:
       type: System.String
     content.vb: Public ReadOnly Property KeywordQuotedLiteral As String
   overload: wan24.I8NTool.KeywordMatch.KeywordQuotedLiteral*
+- uid: wan24.I8NTool.KeywordMatch.Text
+  commentId: P:wan24.I8NTool.KeywordMatch.Text
+  id: Text
+  parent: wan24.I8NTool.KeywordMatch
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: KeywordMatch.Text
+  fullName: wan24.I8NTool.KeywordMatch.Text
+  type: Property
+  source:
+    remote:
+      path: src/wan24-I8NTool CLI/KeywordMatch.cs
+      branch: main
+      repo: https://github.com/nd1012/wan24-I8NTool
+    id: Text
+    path: ../wan24-I8NTool CLI/KeywordMatch.cs
+    startLine: 41
+  assemblies:
+  - wan24I8NTool
+  namespace: wan24.I8NTool
+  summary: Text file contents
+  example: []
+  syntax:
+    content: public string? Text { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Text As String
+  overload: wan24.I8NTool.KeywordMatch.Text*
 - uid: wan24.I8NTool.KeywordMatch.Positions
   commentId: P:wan24.I8NTool.KeywordMatch.Positions
   id: Positions
@@ -186,7 +218,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: Positions
     path: ../wan24-I8NTool CLI/KeywordMatch.cs
-    startLine: 41
+    startLine: 46
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -534,6 +566,12 @@ references:
   name: KeywordQuotedLiteral
   nameWithType: KeywordMatch.KeywordQuotedLiteral
   fullName: wan24.I8NTool.KeywordMatch.KeywordQuotedLiteral
+- uid: wan24.I8NTool.KeywordMatch.Text*
+  commentId: Overload:wan24.I8NTool.KeywordMatch.Text
+  href: wan24.I8NTool.KeywordMatch.html#wan24_I8NTool_KeywordMatch_Text
+  name: Text
+  nameWithType: KeywordMatch.Text
+  fullName: wan24.I8NTool.KeywordMatch.Text
 - uid: wan24.I8NTool.KeywordMatch.Positions*
   commentId: Overload:wan24.I8NTool.KeywordMatch.Positions
   href: wan24.I8NTool.KeywordMatch.html#wan24_I8NTool_KeywordMatch_Positions

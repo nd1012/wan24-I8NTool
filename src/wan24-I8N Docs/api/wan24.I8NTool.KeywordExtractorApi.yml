@@ -6,7 +6,7 @@ items:
   parent: wan24.I8NTool
   children:
   - wan24.I8NTool.KeywordExtractorApi.#ctor
-  - wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+  - wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
   - wan24.I8NTool.KeywordExtractorApi.FailOnError
   langs:
   - csharp
@@ -152,16 +152,16 @@ items:
     arguments:
     - type: System.String
       value: Fail on error
-- uid: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
-  commentId: M:wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
-  id: ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+- uid: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+  commentId: M:wan24.I8NTool.KeywordExtractorApi.ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+  id: ExtractAsync(System.String,System.Boolean,System.Boolean,System.Boolean,System.String[],System.String[],System.String,System.String[],System.String[],System.String,System.Boolean,System.Boolean,System.Boolean,System.Int32)
   parent: wan24.I8NTool.KeywordExtractorApi
   langs:
   - csharp
   - vb
-  name: ExtractAsync(string?, bool, bool, bool, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
-  nameWithType: KeywordExtractorApi.ExtractAsync(string?, bool, bool, bool, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
-  fullName: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(string?, bool, bool, bool, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
+  name: ExtractAsync(string?, bool, bool, bool, string[]?, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
+  nameWithType: KeywordExtractorApi.ExtractAsync(string?, bool, bool, bool, string[]?, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
+  fullName: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(string?, bool, bool, bool, string[]?, string[]?, string?, string[]?, string[]?, string?, bool, bool, bool, int)
   type: Method
   source:
     remote:
@@ -170,7 +170,7 @@ items:
       repo: https://github.com/nd1012/wan24-I8NTool
     id: ExtractAsync
     path: ../wan24-I8NTool CLI/KeywordExtractorApi.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - wan24I8NTool
   namespace: wan24.I8NTool
@@ -188,7 +188,7 @@ items:
 
       [StdErr("Verbose output and errors")]
 
-      public static Task ExtractAsync(string? config = null, bool singleThread = false, bool verbose = false, bool noRecursive = false, string[]? ext = null, string? encoding = null, string[]? input = null, string[]? exclude = null, string? output = null, bool noHeader = false, bool mergeOutput = false, bool json = false, int fuzzy = 0)
+      public static Task ExtractAsync(string? config = null, bool singleThread = false, bool verbose = false, bool noRecursive = false, string[]? ext = null, string[]? textFileExt = null, string? encoding = null, string[]? input = null, string[]? exclude = null, string? output = null, bool noHeader = false, bool mergeOutput = false, bool json = false, int fuzzy = 0)
     parameters:
     - id: config
       type: System.String
@@ -269,6 +269,21 @@ items:
         arguments:
         - type: System.String
           value: Extensions
+    - id: textFileExt
+      type: System.String[]
+      description: File extensions of text files to translate (including dot; keyword ID will be the filename without extension; will override the configuration)
+      attributes:
+      - type: wan24.CLI.CliApiAttribute
+        ctor: wan24.CLI.CliApiAttribute.#ctor(System.String,System.Boolean)
+        arguments:
+        - type: System.String
+        - type: System.Boolean
+          value: false
+      - type: wan24.Core.DisplayTextAttribute
+        ctor: wan24.Core.DisplayTextAttribute.#ctor(System.String)
+        arguments:
+        - type: System.String
+          value: Text file extensions
     - id: encoding
       type: System.String
       description: Source text encoding identifier
@@ -425,7 +440,7 @@ items:
 
       <StdErr("Verbose output and errors")>
 
-      Public Shared Function ExtractAsync(config As String = Nothing, singleThread As Boolean = False, verbose As Boolean = False, noRecursive As Boolean = False, ext As String() = Nothing, encoding As String = Nothing, input As String() = Nothing, exclude As String() = Nothing, output As String = Nothing, noHeader As Boolean = False, mergeOutput As Boolean = False, json As Boolean = False, fuzzy As Integer = 0) As Task
+      Public Shared Function ExtractAsync(config As String = Nothing, singleThread As Boolean = False, verbose As Boolean = False, noRecursive As Boolean = False, ext As String() = Nothing, textFileExt As String() = Nothing, encoding As String = Nothing, input As String() = Nothing, exclude As String() = Nothing, output As String = Nothing, noHeader As Boolean = False, mergeOutput As Boolean = False, json As Boolean = False, fuzzy As Integer = 0) As Task
   overload: wan24.I8NTool.KeywordExtractorApi.ExtractAsync*
   attributes:
   - type: wan24.CLI.CliApiAttribute
@@ -463,9 +478,9 @@ items:
     arguments:
     - type: System.String
       value: Verbose output and errors
-  nameWithType.vb: KeywordExtractorApi.ExtractAsync(String, Boolean, Boolean, Boolean, String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
-  fullName.vb: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(String, Boolean, Boolean, Boolean, String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
-  name.vb: ExtractAsync(String, Boolean, Boolean, Boolean, String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
+  nameWithType.vb: KeywordExtractorApi.ExtractAsync(String, Boolean, Boolean, Boolean, String(), String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
+  fullName.vb: wan24.I8NTool.KeywordExtractorApi.ExtractAsync(String, Boolean, Boolean, Boolean, String(), String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
+  name.vb: ExtractAsync(String, Boolean, Boolean, Boolean, String(), String(), String, String(), String(), String, Boolean, Boolean, Boolean, Integer)
 references:
 - uid: wan24.I8NTool
   commentId: N:wan24.I8NTool
@@ -730,7 +745,7 @@ references:
   name.vb: Boolean
 - uid: wan24.I8NTool.KeywordExtractorApi.ExtractAsync*
   commentId: Overload:wan24.I8NTool.KeywordExtractorApi.ExtractAsync
-  href: wan24.I8NTool.KeywordExtractorApi.html#wan24_I8NTool_KeywordExtractorApi_ExtractAsync_System_String_System_Boolean_System_Boolean_System_Boolean_System_String___System_String_System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Int32_
+  href: wan24.I8NTool.KeywordExtractorApi.html#wan24_I8NTool_KeywordExtractorApi_ExtractAsync_System_String_System_Boolean_System_Boolean_System_Boolean_System_String___System_String___System_String_System_String___System_String___System_String_System_Boolean_System_Boolean_System_Boolean_System_Int32_
   name: ExtractAsync
   nameWithType: KeywordExtractorApi.ExtractAsync
   fullName: wan24.I8NTool.KeywordExtractorApi.ExtractAsync
