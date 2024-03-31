@@ -42,7 +42,7 @@
     <PackageReference Include="Stream-Serializer-Extensions" Version="3.5.0" Condition="'$(Configuration)' != 'Trunk'" />
     <PackageReference Include="wan24-CLI" Version="1.3.0" Condition="'$(Configuration)' != 'Trunk'" />
     <PackageReference Include="wan24-Compression" Version="2.5.0" Condition="'$(Configuration)' != 'Trunk'" />
-    <PackageReference Include="wan24-Core" Version="2.13.0" Condition="'$(Configuration)' != 'Trunk'" />
+    <PackageReference Include="wan24-Core" Version="2.16.0" Condition="'$(Configuration)' != 'Trunk'" />
     <PackageReference Include="wan24-I8NKws" Version="1.1.0" Condition="'$(Configuration)' != 'Trunk'" />
   </ItemGroup>
 
@@ -63,6 +63,72 @@
     <None Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
+    </None>
+    <None Update="wan24-I8NTool licenses\FuzzySharp.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\GetText.NET.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Karambolo.Common.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Karambolo.PO.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Microsoft.Extensions.Configuration.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Microsoft.Extensions.DependencyInjection.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Microsoft.Extensions.Diagnostics.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Microsoft.Extensions.FileProviders.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Microsoft.Extensions.Hosting.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Microsoft.Extensions.Localization.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Microsoft.Extensions.Logging.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Microsoft.Extensions.Options.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Microsoft.Extensions.Primitives.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\ObjectValidation.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Spectre.Console.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\Stream-Serializer-Extensions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\System.Diagnostics.DiagnosticSource.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\wan24-Compression.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\wan24-Core.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8NTool licenses\wan24-I8NKws.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
