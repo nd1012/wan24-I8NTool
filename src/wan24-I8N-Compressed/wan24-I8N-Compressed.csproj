@@ -36,7 +36,7 @@
 
   <ItemGroup>
     <PackageReference Include="wan24-Compression" Version="2.5.0" Condition="'$(Configuration)' != 'Trunk'" />
-    <PackageReference Include="wan24-Core" Version="2.13.0" Condition="'$(Configuration)' != 'Trunk'" />
+    <PackageReference Include="wan24-Core" Version="2.18.0" Condition="'$(Configuration)' != 'Trunk'" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,6 +55,54 @@
     <None Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\Microsoft.Extensions.Configuration.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\Microsoft.Extensions.DependencyInjection.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\Microsoft.Extensions.Diagnostics.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\Microsoft.Extensions.FileProviders.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\Microsoft.Extensions.Hosting.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\Microsoft.Extensions.Localization.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\Microsoft.Extensions.Logging.Abstractions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\Microsoft.Extensions.Options.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\Microsoft.Extensions.Primitives.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\ObjectValidation.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\Stream-Serializer-Extensions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\System.Diagnostics.DiagnosticSource.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\wan24-Compression.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-I8N-Compressed licenses\wan24-Core.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

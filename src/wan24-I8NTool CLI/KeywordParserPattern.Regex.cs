@@ -28,7 +28,7 @@ namespace wan24.I8NTool
         /// <summary>
         /// Methods and attributes
         /// </summary>
-        public const string METHODS_AND_ATTRIBUTES = @$"^.*(_+|gettext[nd]?|Translate(Plural)?|GetTerm|Std(In|OutErr)|Description|DisplayText)\s*\(\s*({STRING_LITERAL}).*$";
+        public const string METHODS_AND_ATTRIBUTES = @$"^.*(_+|gettext[nd]?|Translate(Plural)?|Get(Html)?Term|Std(In|OutErr)|Description|DisplayText)\s*\(\s*({STRING_LITERAL}).*$";
         /// <summary>
         /// Attribute properties
         /// </summary>
@@ -56,7 +56,7 @@ namespace wan24.I8NTool
         /// <summary>
         /// Replacement for <see cref="RX_METHODS_AND_ATTRIBUTES"/>
         /// </summary>
-        public const string METHODS_AND_ATTRIBUTES_RPL = "$4";
+        public const string METHODS_AND_ATTRIBUTES_RPL = "$5";
         /// <summary>
         /// Replacement for <see cref="RX_ATTRIBUTE_PROPERTIES"/>
         /// </summary>
