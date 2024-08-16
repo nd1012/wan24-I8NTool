@@ -10,7 +10,7 @@
     <Configurations>Debug;Release;Trunk</Configurations>
     <PackageId>wan24-I8NTool</PackageId>
     <Title>wan24-I8NTool</Title>
-    <Version>1.4.1</Version>
+    <Version>1.5.0</Version>
     <Authors>nd1012</Authors>
     <Company>Andreas Zimmermann, wan24.de</Company>
     <Product>wan24-I8NTool</Product>

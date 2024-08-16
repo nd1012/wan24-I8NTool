@@ -10,7 +10,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageId>wan24-I8N-Compressed</PackageId>
     <Title>wan24-I8N-Compressed</Title>
-    <Version>1.1.1</Version>
+    <Version>1.2.0</Version>
     <Authors>nd1012</Authors>
     <Company>Andreas Zimmermann, wan24.de</Company>
     <Product>wan24-I8N-Compressed</Product>

@@ -10,7 +10,7 @@
     <Configurations>Debug;Release;Trunk</Configurations>
     <PackageId>wan24-I8NKws</PackageId>
     <Title>wan24-I8NKws</Title>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
     <Authors>nd1012</Authors>
     <Company>Andreas Zimmermann, wan24.de</Company>
     <Product>wan24-I8NKws</Product>
