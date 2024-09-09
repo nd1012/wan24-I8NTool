@@ -14,15 +14,8 @@ items:
   fullName: wan24.I8N
   type: Namespace
   assemblies:
-  - wan24I8NCompressed
+  - wan24I8N
 references:
-- uid: wan24.I8N.I8NCompressedTranslationTerms
-  commentId: T:wan24.I8N.I8NCompressedTranslationTerms
-  parent: wan24.I8N
-  href: wan24.I8N.I8NCompressedTranslationTerms.html
-  name: I8NCompressedTranslationTerms
-  nameWithType: I8NCompressedTranslationTerms
-  fullName: wan24.I8N.I8NCompressedTranslationTerms
 - uid: wan24.I8N.I8NTranslationTerms
   commentId: T:wan24.I8N.I8NTranslationTerms
   parent: wan24.I8N
@@ -30,6 +23,13 @@ references:
   name: I8NTranslationTerms
   nameWithType: I8NTranslationTerms
   fullName: wan24.I8N.I8NTranslationTerms
+- uid: wan24.I8N.I8NCompressedTranslationTerms
+  commentId: T:wan24.I8N.I8NCompressedTranslationTerms
+  parent: wan24.I8N
+  href: wan24.I8N.I8NCompressedTranslationTerms.html
+  name: I8NCompressedTranslationTerms
+  nameWithType: I8NCompressedTranslationTerms
+  fullName: wan24.I8N.I8NCompressedTranslationTerms
 - uid: wan24.I8N
   commentId: N:wan24.I8N
   href: wan24.html
